@@ -1,4 +1,38 @@
-p.prompt {
-    font-family: Arial;
-    font-weight: bold;
+.response {
+  font-family: "Roboto Slab", "Roboto", sans-serif;
+}
+
+header, h3 {
+  font-family: "Roboto Slab", "Roboto", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 35px;
+}
+
+h2 {
+  text-align: center;
+  margin-top: -15px;
+  font-size: 20px;
+}
+
+h3 {
+  text-decoration: underline;
+  font-size: 18px;
+  margin-bottom: -15px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 300px;
+  width: 198px;
+}
+
+a {
+  color: black;
 }
