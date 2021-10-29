@@ -1,34 +1,28 @@
-
 html {
     font-family: "Roboto", "Roboto-Slab";
 }
-
-
+h1 {
+    font-family: "Roboto Slab", "Roboto", sans-serif;
+    text-align: "center";
+}
+h2 {
+    font-family: "Roboto Slab", "Roboto", sans-serif;
+}
 .main_header  {
     background-color: grey;
     padding: 2em;
     text-align: center;
-    
-
 }
-
-
 .profile {
     text-align: center;
     background-color:beige;
     padding: 2em;
-    
 }
-
-
 .profile > img {
     border-radius: 200px;
     width: 15em;
     height: 15em;
-    
 }
-
-
 button {
     background-color: grey; /* Green */
     border: none;
@@ -38,14 +32,20 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-  }
-
-  .navigate {
-      text-align: center;
-  }
-
-
-  
-
-
-  
+}
+.navigate {
+    text-align: center;
+}
+body > div.container {
+    background-color: #171952;
+    border-radius: 5px;
+    width: 97%;
+    text-align: left;
+    /* height: auto; */
+}
+body > div.container > p {
+    padding-left: .5rem;
+    /* align-items: left; */
+    color: white;
+    padding: 1rem;
+}
