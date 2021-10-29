@@ -3,30 +3,56 @@
 <head>
   <meta charset="utf-8">
   <title>Habit Tracker</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%22%3E">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab%22%3E">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab">
+<link rel="stylesheet" href="css/style.css">
 
  </head>
 <body>
 
     <div class="main_header">
         <h1>Habit Tracker</h1>
-        <img src="img/andrew.jpeg" alt="profile photo">
-
-
-
+        
     </div>
 
 
     <div class="profile">
+        <h2>Welcome back Andrew</h2>
+        <img src="img/andrew.jpeg" alt="profile photo">
+        
 
 
     </div>
 
 
     <div class="habit_list">
+        
+        
+        <div id="myDIV" class="header">
+            <h2>Today's List</h2>
+            <input type="text" id="myInput" placeholder="Title...">
+            <span onclick="newElement()" class="addBtn">Add</span>
+          </div>
+          
+          <ul id="myUL">
+            <li>Hit the gym</li>
+            <li class="checked">Pay bills</li>
+            <li>Meet George</li>
+            <li>Buy eggs</li>
+            <li>Read a book</li>
+            <li>Organize office</li>
+          </ul>
+
+        
 
 
+    </div>
+
+
+    <div class="navigate">
+        <a href="action.html">
+            <button>Action Center</button>
+        </a>
     </div>
 
    
