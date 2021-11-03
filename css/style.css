@@ -7,21 +7,13 @@ h1 {
   text-align: "center";
 }
 
-<<<<<<< HEAD
-.main_header  {
-    background-color:#57598d;
-    padding: 2em;
-    text-align: center;
-    
-=======
 h2 {
   font-family: "Roboto Slab", "Roboto", sans-serif;
 }
->>>>>>> 8a025834eec739c5aa490d2d912e19df3c17dc64
 
 img {
-  width: 100px;
-  height: 100px;
+  width: 3rem;
+  height: 3rem;
 }
 
 .main_header {
@@ -42,9 +34,6 @@ img {
   height: 15em;
 }
 
-
-
-
 form {
   text-align: left;
   width: 30%;
@@ -53,7 +42,6 @@ form {
   box-sizing: border-box;
   background-color: #57598d;
 }
-
 
 button {
   background-color: grey;
@@ -151,6 +139,11 @@ button {
     display: table;
     clear: both;
   }
+
+  .habits-page-back-link {
+    height: 3rem;
+    width: 3rem;
+  }
   
   /* Style the input */
   input {
@@ -180,20 +173,42 @@ button {
   .addBtn:hover {
     background-color: #bbb;
   }
-  
+
 
 body>div.container {
+  color: white;
+  padding: .5rem;
+  margin: .5rem;
   background-color: #171952;
   border-radius: 5px;
   width: 97%;
   text-align: left;
+  height: 3rem;
+}
+
+body>div.container:hover {
+  color: #171952;
+  background-color:#f9da4d;
 }
 
 body>div.container>p {
-  padding-left: .5rem;
-  color: white;
-  padding: 1rem;
+  margin: .5rem;
 }
+
+.habits-page-back-div {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 5px;
+}
+
 @media screen and (min-width: 798px) {
-    
+  /* Make back button change color. */
+  .habits-page-back-div:hover {
+    background-color:#171952;
+  }
+  /* Make icon invert colors. */
+  img.habits-page-back-link:hover {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+  }
 }

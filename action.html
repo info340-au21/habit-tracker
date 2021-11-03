@@ -4,10 +4,23 @@
 <!-- Rename this file "settings.html". -->
 <!-- ----------------------------------------------------------------------------------------------- -->
 
+<!--
+JOHN:
+- [x] Complete metadata in head.
+- [x] Media queries.
+- [x] Make habits on action.html change color when hovered over w/ a mouse.
+
+AUGENE:
+- ARIA labels.
+- Favicon.
+- Flexbox.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="author" content="John Danielsson, Auguene Pak">
         <title>Habit Settings</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab">
@@ -15,7 +28,9 @@
     </head>
     <body>
         <header>
-            <p><a href="index.html"><img src="img/home.png" alt="Home icon"></a></p>
+            <div class="habits-page-back-div">
+                <a href="index.html"><img src="img/home.png" alt="Home icon" class="habits-page-back-link"></a>
+            </div>
             <h1>Habit Settings</h1>
         </header>
         <!-- Daily section -->
@@ -36,8 +51,8 @@
         <div class="container flexbox">
             <p>GET DINNER WITH FAMILY</p>
         </div>
-    <footer>
-        &copy;
-    </footer>
+        <footer>
+            <p>&copy;</p>
+        </footer>
     </body>
 </html>
