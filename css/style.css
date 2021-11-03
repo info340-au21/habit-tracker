@@ -4,7 +4,7 @@ html {
 
 
 .main_header  {
-    background-color: grey;
+    background-color:#57598d;
     padding: 2em;
     text-align: center;
     
@@ -25,6 +25,18 @@ html {
     width: 15em;
     height: 15em;
     
+}
+
+
+
+
+form {
+  text-align: left;
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: #57598d;
 }
 
 
@@ -109,13 +121,13 @@ button {
   }
   
   .close:hover {
-    background-color: #f44336;
+    background-color: #888;
     color: white;
   }
   
   /* Style the header */
   .header {
-    background-color: #f44336;
+    background-color: #57598d;
     padding: 30px 40px;
     color: white;
     text-align: center;

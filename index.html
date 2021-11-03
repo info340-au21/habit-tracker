@@ -1,6 +1,11 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Andrew Frazier, Luka Marceta-->
+  <!-- index.html file -->
+  <!-- Main navigation page for our website-->
   <meta charset="utf-8">
   <title>Habit Tracker</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
@@ -27,12 +32,13 @@
 
     <div class="habit_list">
         
+        
         <div id="myDIV" class="header">
             <h2>Today's List</h2>
-                <form>
-                    <input type="text" id="myInput" placeholder="Title...">
-                </form>
-            <span onclick="newElement()" class="addBtn">Add</span>
+            <form>
+                <label for="add">Add to Today's List: </label><br>
+                <input type="text" name='add'><br>
+            </form>
           </div>
           
           <ul id="myUL">
@@ -55,6 +61,11 @@
             <button>Action Center</button>
         </a>
     </div>
+
+
+    <footer>
+        &copy;
+    </footer>
 
    
 </body>
