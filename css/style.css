@@ -7,9 +7,17 @@ h1 {
   text-align: "center";
 }
 
+<<<<<<< HEAD
 h2 {
   font-family: "Roboto Slab", "Roboto", sans-serif;
 }
+=======
+.main_header  {
+    background-color:#57598d;
+    padding: 2em;
+    text-align: center;
+} 
+>>>>>>> e13bd39702a3b0fa12f774a35e9c60949e044ff8
 
 img {
   width: 3rem;
@@ -63,16 +71,20 @@ button {
   ul {
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
   
   /* Style the list items */
   ul li {
-    cursor: pointer; /* what does this do */
-    position: relative; /* what does this do */
-    padding: 12px 8px 12px 40px; /* what does this do */
+    cursor: pointer; 
+    position: relative; 
+    padding: 12px 8px 12px 40px; 
     background: #eee;
     font-size: 1.25rem;
-    transition: 0.2s; /* what does this do */
+    transition: 0.2s; 
+  
   
     /* make the list items unselectable */
     -webkit-user-select: none;
