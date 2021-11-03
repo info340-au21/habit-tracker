@@ -1,30 +1,45 @@
 html {
-    font-family: "Roboto", "Roboto-Slab";
+  font-family: "Roboto", "Roboto-Slab";
 }
 
+h1 {
+  font-family: "Roboto Slab", "Roboto", sans-serif;
+  text-align: "center";
+}
 
+<<<<<<< HEAD
 .main_header  {
     background-color:#57598d;
     padding: 2em;
     text-align: center;
     
+=======
+h2 {
+  font-family: "Roboto Slab", "Roboto", sans-serif;
+}
+>>>>>>> 8a025834eec739c5aa490d2d912e19df3c17dc64
 
+img {
+  width: 100px;
+  height: 100px;
 }
 
+.main_header {
+  background-color: grey;
+  padding: 2em;
+  text-align: center;
+}
 
 .profile {
-    text-align: center;
-    background-color:beige;
-    padding: 2em;
-    
+  text-align: center;
+  background-color: beige;
+  padding: 2em;
 }
 
-
-.profile > img {
-    border-radius: 200px;
-    width: 15em;
-    height: 15em;
-    
+.profile>img {
+  border-radius: 200px;
+  width: 15em;
+  height: 15em;
 }
 
 
@@ -41,19 +56,16 @@ form {
 
 
 button {
-    background-color: grey; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-  }
-
-  .navigate {
-      text-align: center;
-  }
+  background-color: grey;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 
   * {
     box-sizing: border-box;
@@ -170,5 +182,15 @@ button {
   }
   
 
+body>div.container {
+  background-color: #171952;
+  border-radius: 5px;
+  width: 97%;
+  text-align: left;
+}
 
-  
+body>div.container>p {
+  padding-left: .5rem;
+  color: white;
+  padding: 1rem;
+}
