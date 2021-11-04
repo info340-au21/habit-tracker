@@ -7,17 +7,11 @@ h1 {
   text-align: "center";
 }
 
-<<<<<<< HEAD
-h2 {
-  font-family: "Roboto Slab", "Roboto", sans-serif;
-}
-=======
 .main_header  {
     background-color:#57598d;
     padding: 2em;
     text-align: center;
 } 
->>>>>>> e13bd39702a3b0fa12f774a35e9c60949e044ff8
 
 img {
   width: 3rem;
