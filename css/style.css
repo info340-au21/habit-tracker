@@ -1,33 +1,31 @@
+/*=============== FONTS ===============*/
 html {
   font-family: "Roboto", "Roboto-Slab";
 }
-
 h1 {
   font-family: "Roboto Slab", "Roboto", sans-serif;
   text-align: "center";
 }
-
-<<<<<<< HEAD
 h2 {
   font-family: "Roboto Slab", "Roboto", sans-serif;
 }
-=======
-.main_header  {
-    background-color:#57598d;
-    padding: 2em;
-    text-align: center;
-} 
->>>>>>> e13bd39702a3b0fa12f774a35e9c60949e044ff8
 
+/*=============== IMAGE SPECS ===============*/
 img {
   width: 3rem;
   height: 3rem;
 }
 
-.main_header {
-  background-color: grey;
+/*=============== CONTENT ===============*/
+header {
+  background-color: #57598d;
   padding: 2em;
   text-align: center;
+}
+
+header>img {
+  width: 15em;
+  height: 15em;
 }
 
 .profile {
@@ -42,18 +40,23 @@ img {
   height: 15em;
 }
 
+section.non_list_content {
+  background-color: #57598d;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
 form {
   text-align: left;
   width: 30%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
-  background-color: #57598d;
 }
 
 button {
   background-color: grey;
-  /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -67,6 +70,7 @@ button {
     box-sizing: border-box;
   }
   
+  /*=============== LIST ===============*/
   /* Remove margins and padding from the list */
   ul {
     margin: 0;
