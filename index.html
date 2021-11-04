@@ -1,74 +1,77 @@
 <!--=============== Andrew Frazier, Luka Marceta ===============-->
 <!--=============== index.html file ===============-->
 <!--=============== Primary Interactive Page ("Main Page") ===============-->
- 
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-   <!--=============== FONTS ===============-->
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab">
- 
-   <!--=============== CSS ===============-->
-   <link rel="stylesheet" href="css/style.css">
-  
-   <title>Habit Tracker</title>
-</head>
- 
-<body>
-   <!--==================== HEADER ====================-->
-   <header class="header">
-       <img src="img/Carousel.jpeg" alt="running person">
-       <h1 id="title">Habit Tracker</h1>
-   </header>
- 
-   <!--==================== MAIN ====================-->
-   <main class = "main">
-       <!-- Welcome Section -->
-       <section class="welcome section">
-           <div class="profile">
-               <h2>Welcome back, Andrew</h2>
-               <img src="img/andrew.jpeg" alt="profile photo">
-           </div>
-       </section>
- 
-       <!-- Current Habits Tracker -->
-       <section class="current habits tracker">
-           <div class="habit_tracker">
-                <section class="non_list_content">
-                    <h2 class="current_habits">Current Habits</h2>
-                    <form>
-                        <label for="add">Add to Current List: </label><br>
-                        <input type="text" name='add'><br>
-                    </form>
-                </section>
-               <ul id="habit list">
-                   <li class="checked"> Wake up </li>
-                   <li>Do laundry</li>
-                   <li>Call friend</li>
-                   <li>Get dinner</li>
-                   <li>Read a book</li>
-                   <li>Organize office</li>
-               </ul>
-           </div>
-       </section>
- 
-       <!-- Go to habit settings page -->
-       <div class="navigate" role="navigation">
-           <a href="action.html">
-               <button>Action Center</button>
-           </a>
-       </div>
-   </main>
- 
-    <!--==================== FOOTER ====================-->
-   <footer>
-       &copy; Augene Pak, John Danielsson, Andrew Frazier, Luka Marceta
-   </footer>
-</body>
-</html>
- 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!--=============== FONTS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab"
+    />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Habit Tracker</title>
+  </head>
+
+  <body>
+    <!--==================== HEADER ====================-->
+    <header class="header">
+      <img src="img/Carousel.jpeg" alt="running person" />
+      <h1 id="title">Habit Tracker</h1>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <!-- Welcome Section -->
+      <section class="welcome section">
+        <div class="profile">
+          <h2>Welcome back, Andrew</h2>
+          <img src="img/andrew.jpeg" alt="profile photo" />
+        </div>
+      </section>
+
+      <!-- Current Habits Tracker -->
+      <section class="current habits tracker">
+        <div class="habit_tracker">
+          <section class="non_list_content">
+            <h2 class="current_habits">Today's Habits (Nov. 4th, Thursday)</h2>
+            <form>
+              <label for="add">Add to Current List: </label><br />
+              <input type="text" name="add" /><br />
+            </form>
+          </section>
+          <ul id="habit list">
+            <li class="checked">Wake up at 6am</li>
+            <li>Study at Odegaard</li>
+            <li>Go to bed before midnight</li>
+            <li>Do laundry (weekly)</li>
+            <li>Get dinner with family (monthly)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Go to habit settings page -->
+      <div class="navigate" role="navigation">
+        <a href="action.html">
+          <button>Action Center</button>
+        </a>
+      </div>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer>
+      &copy; Augene Pak, John Danielsson, Andrew Frazier, Luka Marceta
+    </footer>
+  </body>
+</html>
