@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="author" content="John Danielsson, Auguene Pak" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Habit Settings</title>
     <link rel="icon" href="favicon.ico" />
     <link
@@ -17,11 +18,12 @@
   </head>
   <body>
     <header>
-      <div class="habits-page-back-div">
+      <div class="habits-page-back-div" a>
         <a href="index.html"
           ><img
             src="img/home.png"
             alt="Home icon"
+            role="button"
             class="habits-page-back-link"
         /></a>
       </div>
@@ -30,27 +32,29 @@
     <!-- Daily section -->
     <h2>DAILY</h2>
     <div class="container flexbox">
-      <p>Wake up at 6am</p>
+      <p aria-label="Daily habit">Wake up at 6am</p>
     </div>
     <div class="container flexbox">
-      <p>Study at Odegaard</p>
+      <p aria-label="Daily habit">Study at Odegaard</p>
     </div>
     <div class="container flexbox">
-      <p>Go to bed before midnight</p>
+      <p aria-label="Daily habit">Go to bed before midnight</p>
     </div>
 
     <!-- Weekly section -->
     <h2>WEEKLY</h2>
     <div class="container flexbox">
-      <p>Do laundry (every Thursday)</p>
+      <p aria-label="Weekly habit">Do laundry (every Thursday)</p>
     </div>
     <!-- Monthly section -->
     <h2>MONTHLY</h2>
     <div class="container flexbox">
-      <p>Call friend (every 2nd Friday)</p>
+      <p aria-label="Monthly habit">Call friend (every 2nd Friday)</p>
     </div>
     <div class="container flexbox">
-      <p>Get dinner with family (every 1st Thursday)</p>
+      <p aria-label="Monthly habit">
+        Get dinner with family (every 1st Thursday)
+      </p>
     </div>
     <footer>
       <p>&copy;Augene Pak, John Danielsson, Andrew Frazier, Luka Marceta</p>
