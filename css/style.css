@@ -215,7 +215,8 @@ body > div.container > p {
   border-radius: 5px;
 }
 
-@media screen and (min-width: 798px) {
+@media (min-width: 798px) {
+  display: flex;
   /* Make back button change color. */
   .habits-page-back-div:hover {
     background-color: #171952;
