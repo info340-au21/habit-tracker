@@ -145,7 +145,7 @@ input {
   font-size: 16px;
 }
 
-body > div.container {
+.flexbox.container {
   color: white;
   padding: 0.5rem;
   margin: 0.5rem;
@@ -156,17 +156,13 @@ body > div.container {
   height: 3rem;
 }
 
-body > div.container:hover {
+.flexbox.container:hover {
   color: #171952;
   background-color: #f9da4d;
 }
 
-body > div.container > p {
+.flexbox.container p {
   margin: 0.5rem;
-}
-
-footer {
-  display: none;
 }
 
 .habits-page-back-div {
@@ -175,11 +171,13 @@ footer {
   border-radius: 5px;
 }
 
-.container.flexbox {
+.flex-row {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
-@media (min-width: 798px) {
+@media (min-width: 912px) {
   /* Make back button change color. */
   .habits-page-back-div:hover {
     background-color: #171952;
@@ -190,4 +188,8 @@ footer {
     filter: invert(1);
   }
 
+  .flex-row {
+    flex: 60%;
+    flex-direction: column;
+  }
 }
