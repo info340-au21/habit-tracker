@@ -1,6 +1,6 @@
 /*=============== FONTS ===============*/
 html {
-  font-family: "Roboto", "Roboto-Slab", sans;
+  font-family: "Roboto", sans-serif;
 }
 h1 {
   font-family: "Roboto Slab", "Roboto", sans-serif;
@@ -216,7 +216,6 @@ body > div.container > p {
 }
 
 @media (min-width: 798px) {
-  display: flex;
   /* Make back button change color. */
   .habits-page-back-div:hover {
     background-color: #171952;
