@@ -33,14 +33,22 @@ img {
 
 /*=============== CONTENT ===============*/
 header {
+    position: fixed;
     background-color: #57598d;
     padding: 2em;
     text-align: center;
 }
 
-header>img {
-    width: 15em;
-    height: 15em;
+footer {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    text-align: left;
+    font-size: 0.5rem;
 }
 
 .profile {
