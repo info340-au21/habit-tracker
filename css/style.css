@@ -1,27 +1,40 @@
+/*=============== FONTS ===============*/
 html {
-  font-family: "Roboto", "Roboto-Slab";
+  font-family: "Roboto", sans-serif;
 }
-
 h1 {
   font-family: "Roboto Slab", "Roboto", sans-serif;
   text-align: "center";
 }
+<<<<<<< HEAD
 
 .main_header  {
     background-color:#57598d;
     padding: 2em;
     text-align: center;
 } 
+=======
+h2 {
+  font-family: "Roboto Slab", "Roboto", sans-serif;
+}
+>>>>>>> f63d4e41bd96cd667ec2e8bba3d0d9314c4f42b1
 
+/*=============== IMAGE SPECS ===============*/
 img {
   width: 3rem;
   height: 3rem;
 }
 
-.main_header {
-  background-color: grey;
+/*=============== CONTENT ===============*/
+header {
+  background-color: #57598d;
   padding: 2em;
   text-align: center;
+}
+
+header > img {
+  width: 15em;
+  height: 15em;
 }
 
 .profile {
@@ -30,10 +43,17 @@ img {
   padding: 2em;
 }
 
-.profile>img {
+.profile > img {
   border-radius: 200px;
   width: 15em;
   height: 15em;
+}
+
+section.non_list_content {
+  background-color: #57598d;
+  color: white;
+  text-align: center;
+  padding: 1em;
 }
 
 form {
@@ -42,12 +62,10 @@ form {
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
-  background-color: #57598d;
 }
 
 button {
   background-color: grey;
-  /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -57,134 +75,133 @@ button {
   font-size: 16px;
 }
 
-  * {
-    box-sizing: border-box;
-  }
-  
-  /* Remove margins and padding from the list */
-  ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-  
-  /* Style the list items */
-  ul li {
-    cursor: pointer; 
-    position: relative; 
-    padding: 12px 8px 12px 40px; 
-    background: #eee;
-    font-size: 1.25rem;
-    transition: 0.2s; 
-  
-  
-    /* make the list items unselectable */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-  /* Set all odd list items to a different color (zebra-stripes) */
-  ul li:nth-child(odd) {
-    background: #f9f9f9;
-  }
-  
-  /* Darker background-color on hover */
-  ul li:hover {
-    background: #ddd;
-  }
-  
-  /* When clicked on, add a background color and strike out text */
-  ul li.checked {
-    background: #888;
-    color: #fff;
-    text-decoration: line-through;
-  }
-  
-  /* Add a "checked" mark when clicked on */
-  ul li.checked::before {
-    content: '';
-    position: absolute;
-    border-color: #fff;
-    border-style: solid;
-    border-width: 0 2px 2px 0;
-    top: 10px;
-    left: 16px;
-    transform: rotate(45deg);
-    height: 15px;
-    width: 7px;
-  }
-  
-  /* Style the close button */
-  .close {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 12px 16px 12px 16px;
-  }
-  
-  .close:hover {
-    background-color: #888;
-    color: white;
-  }
-  
-  /* Style the header */
-  .header {
-    background-color: #57598d;
-    padding: 30px 40px;
-    color: white;
-    text-align: center;
-  }
-  
-  /* Clear floats after the header */
-  .header:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+* {
+  box-sizing: border-box;
+}
 
-  .habits-page-back-link {
-    height: 3rem;
-    width: 3rem;
-  }
-  
-  /* Style the input */
-  input {
-    margin: 0;
-    border: none;
-    border-radius: 0;
-    width: 75%;
-    padding: 10px;
-    float: left;
-    font-size: 16px;
-  }
-  
-  /* Style the "Add" button */
-  .addBtn {
-    padding: 10px;
-    width: 25%;
-    background: #d9d9d9;
-    color: #555;
-    float: left;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-    border-radius: 0;
-  }
-  
-  .addBtn:hover {
-    background-color: #bbb;
-  }
+/*=============== LIST ===============*/
+/* Remove margins and padding from the list */
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
 
+/* Style the list items */
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: #eee;
+  font-size: 1.25rem;
+  transition: 0.2s;
 
-body>div.container {
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+  background: #ddd;
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+/* Add a "checked" mark when clicked on */
+ul li.checked::before {
+  content: "";
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+/* Style the close button */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #888;
   color: white;
-  padding: .5rem;
-  margin: .5rem;
+}
+
+/* Style the header */
+.header {
+  background-color: #57598d;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.habits-page-back-link {
+  height: 3rem;
+  width: 3rem;
+}
+
+/* Style the input */
+input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+
+/* Style the "Add" button */
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+
+.addBtn:hover {
+  background-color: #bbb;
+}
+
+body > div.container {
+  color: white;
+  padding: 0.5rem;
+  margin: 0.5rem;
   background-color: #171952;
   border-radius: 5px;
   width: 97%;
@@ -192,13 +209,13 @@ body>div.container {
   height: 3rem;
 }
 
-body>div.container:hover {
+body > div.container:hover {
   color: #171952;
-  background-color:#f9da4d;
+  background-color: #f9da4d;
 }
 
-body>div.container>p {
-  margin: .5rem;
+body > div.container > p {
+  margin: 0.5rem;
 }
 
 .habits-page-back-div {
@@ -207,10 +224,10 @@ body>div.container>p {
   border-radius: 5px;
 }
 
-@media screen and (min-width: 798px) {
+@media (min-width: 798px) {
   /* Make back button change color. */
   .habits-page-back-div:hover {
-    background-color:#171952;
+    background-color: #171952;
   }
   /* Make icon invert colors. */
   img.habits-page-back-link:hover {

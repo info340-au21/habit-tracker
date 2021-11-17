@@ -1,58 +1,65 @@
-<!-- John Danielsson & Augene Pak -->
-
-<!-- ----------------------------------------------------------------------------------------------- -->
-<!-- Rename this file "settings.html". -->
-<!-- ----------------------------------------------------------------------------------------------- -->
-
-<!--
-JOHN:
-- [x] Complete metadata in head.
-- [x] Media queries.
-- [x] Make habits on action.html change color when hovered over w/ a mouse.
-
-AUGENE:
-- ARIA labels.
-- Favicon.
-- Flexbox.
--->
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="author" content="John Danielsson, Auguene Pak">
-        <title>Habit Settings</title>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <header>
-            <div class="habits-page-back-div">
-                <a href="index.html"><img src="img/home.png" alt="Home icon" class="habits-page-back-link"></a>
-            </div>
-            <h1>Habit Settings</h1>
-        </header>
-        <!-- Daily section -->
-        <h2>DAILY</h2>
-        <div class="container flexbox">
-            <p>Wake up</p>
-        </div>
-        <!-- Weekly section -->
-        <h2>WEEKLY</h2>
-        <div class="container flexbox">
-            <p>Do laundry</p>
-        </div>
-        <!-- Monthly section -->
-        <h2>MONTHLY</h2>
-        <div class="container flexbox">
-            <p>Call friend</p>
-        </div>
-        <div class="container flexbox">
-            <p>Get dinner with family</p>
-        </div>
-        <footer>
-            <p>&copy;</p>
-        </footer>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="John Danielsson, Auguene Pak" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habit Settings</title>
+    <link rel="icon" href="favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="habits-page-back-div" a>
+        <a href="index.html"
+          ><img
+            src="img/home.png"
+            alt="Home icon"
+            role="button"
+            class="habits-page-back-link"
+        /></a>
+      </div>
+      <h1>Habit Settings</h1>
+    </header>
+    <!-- Daily section -->
+    <h2>DAILY</h2>
+    <div class="container flexbox">
+      <p aria-label="Daily habit">Wake up at 6am</p>
+    </div>
+    <div class="container flexbox">
+      <p aria-label="Daily habit">Study at Odegaard</p>
+    </div>
+    <div class="container flexbox">
+      <p aria-label="Daily habit">Go to bed before midnight</p>
+    </div>
+
+    <!-- Weekly section -->
+    <h2>WEEKLY</h2>
+    <div class="container flexbox">
+      <p aria-label="Weekly habit">Do laundry (every Thursday)</p>
+    </div>
+    <!-- Monthly section -->
+    <h2>MONTHLY</h2>
+    <div class="container flexbox">
+      <p aria-label="Monthly habit">Call friend (every 2nd Friday)</p>
+    </div>
+    <div class="container flexbox">
+      <p aria-label="Monthly habit">
+        Get dinner with family (every 1st Thursday)
+      </p>
+    </div>
+    <footer>
+      <p aria-label="Monthly habit">
+        &copy;Augene Pak, John Danielsson, Andrew Frazier, Luka Marceta
+      </p>
+    </footer>
+  </body>
 </html>
