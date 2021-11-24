@@ -1,5 +1,5 @@
 import {CardList} from "HomePage";
-
+import {ProfileCard} from "Profile";
 
 export function App(props) {
 
@@ -8,7 +8,7 @@ export function App(props) {
         <div>
         <h1>Today's Habits</h1>
             <CardList />
-        
+            <ProfileCard />
           
         </div>
     )
