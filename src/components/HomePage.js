@@ -36,6 +36,21 @@ export function CardList(props) {
 
     return (
         <div>
+
+          <h1>Todays Habits</h1>
+            <div id="add-habit-form" class="d-flex justify-content-center">
+                <form class="align-items-center">
+                    <h1>Add Habit</h1>
+                    <div class="container row">
+                    
+                    <input type="text" placeholder="Enter Habit" name="uname" required></input>
+                    
+                    <input type="password" placeholder="Enter Details" name="psw" required></input>
+
+                    <button type="submit">Add Habit</button>
+                    </div>
+                </form>
+            </div>
             <div className="container">
                 <div className="row">
                     {body}
