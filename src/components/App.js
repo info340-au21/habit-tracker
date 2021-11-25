@@ -1,5 +1,5 @@
-import {CardList} from "HomePage";
-import {ProfileCard} from "Profile";
+import {CardList} from "./HomePage";
+import {ProfileCard} from "./Profile";
 
 export function App(props) {
 

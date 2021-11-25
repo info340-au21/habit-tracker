@@ -22,7 +22,7 @@ export function CardList(props) {
 export function Card(props) {
 
     // single JSON entry
-    let card = props.info;
+    let cardInfo = props.item;
     
     return ( 
     
@@ -32,12 +32,12 @@ export function Card(props) {
                 <div class="card-body">
                     <div class="row">
                         <div class="col-sm-auto col-xl-12">
-                            <img src={card.cardImage} alt="A person waking up" class="pb-3" />
+                            <img src="img/wake-up.jpg" alt="A person waking up" class="pb-3" />
                         </div>
                         <div class="col-sm">
-                            <h2 class="card-title">{card.cardTitle}</h2>
+                            <h2 class="card-title">{cardInfo.CardTitle} <strong>(+)</strong></h2>
                             <p class="card-text">
-                                {card.cardText}
+                                {cardInfo.CardText}
                             </p>
                         </div>
                     </div>
