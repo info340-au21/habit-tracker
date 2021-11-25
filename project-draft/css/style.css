@@ -339,6 +339,11 @@ button.collapsible {
     width: 80%;
 }
 
+#add-habit-form {
+   width: 91.5rem;
+}
+
+
 /* .collapsible-content {
     padding: 0 18px;
     display: none;
