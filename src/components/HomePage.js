@@ -19,6 +19,17 @@ export function NavBar(props) {
     );
 }
 
+export function Footer(props) {
+    return (
+        <footer class="text-center text-lg-start bg-light text-muted">
+            <div class="container">
+                <p>&copy;Augene Pak, John Danielsson, Andrew Frazier, Luka Marceta</p>
+                <p>Contact information: ajp824@uw.edu, frazia@uw.edu, lukamarc@uw.edu</p>
+            </div>
+        </footer>
+    );
+}
+
 
 export function CardList(props) {
     let body = CARD_DATA.map((item, index) => <Card key={index} info={item} />)

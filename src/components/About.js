@@ -3,42 +3,38 @@ export function About(props) {
     return (
         <div>
             <div className="container justify-content-center">
-            <button type="button" className="collapsible">The 4 Parts of a Habit</button>
-            <div className="row-about">
-                <p>The 4 parts of a Habit are the Cue, Craving, Response, and Reward.</p>
-                <ol>
-                    <li>Cue</li>
+            <div>
+                <h1>The 4 parts of a Habit are the Cue, Craving, Response, and Reward.</h1>
+                    <h2>Cue</h2>
                     <p>
                         The Cue is what makes you think of doing the Habit. It's a piece of information
                         that predicts a reward. For example, if your stomach rumbles, you may think
                         about eating food.
                     </p>
-                    <li>Craving</li>
+                    <h2>Craving</h2>
                     <p>
                         The Craving is what you fundamentally desire. It's not always obvious.
                         You don't want to go on Netflix, you want to be entertained. You don't want to brush and
                         floss your teeth, you want the feeling of a clean mouth. You don't want to exercise,
                         you want the feeling of more energy and attraction from the opposite sex.
                     </p>
-                    <li>Response</li>
+                    <h2>Response</h2>
                     <p>
                         The response is simply the physical action associated with the habit. brushing and flossing,
                         calling a friend every month, lifting weights, or reading 10 pages of a self-improvement book
                         every day.
                     </p>
-                    <li>Reward</li>
+                    <h2>Reward</h2>
                     <p>
                         The reward is the satiation of the desire (craving). When you brush and floss your teeth, you
                         are rewarded with the feeling of a clean mouth. Similarly, when you finish lifting weights,
                         you are rewarded with the feeling of more energy and the satisfaction of having a better looking body.
                     </p>
-                </ol>
             </div>
         
-            <button type="button" className="collapsible">How To Measure Habits</button>
-            <div className="row-about">
+            <div>
 
-                <p>We use 4 metrics when evaluating a Habit: Direction, Impact, Total Impact, and Frequency.</p>
+                <h1>We use 4 metrics when evaluating a Habit: Direction, Impact, Total Impact, and Frequency.</h1>
 
                 <h2>Direction</h2>
                 <p>
@@ -87,10 +83,9 @@ export function About(props) {
 
             </div>
 
-            <button type="button" className="collapsible">How To Use Habit Metrics</button>
-            <div className="row-about">
+            <div>
 
-                <h2>Data is Powerful</h2>
+                <h1>Data is Powerful</h1>
                 <p>
                     Keeping track of habits is a powerful tool for reinforcing them.
                     Each of the Metrics (Direction, Impact, Total Impact, and Frequency) are used to inform you of which
