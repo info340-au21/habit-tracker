@@ -11,13 +11,16 @@ export function App(props) {
                 <CardList />
             </div>
 
+
             <div>
-                <NavBar />
+                <hr/>
+                <h1>About the page</h1>
                 <About />
             </div>
 
             <div>
-                <NavBar />
+                <hr/>
+                <h1>Profile</h1>
                 <ProfileCard />
             </div>
         </div>
