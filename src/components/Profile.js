@@ -1,3 +1,5 @@
+import React from 'react';
+
 export function ProfileCard(props) {
     let remainingHabits = props.items;
 

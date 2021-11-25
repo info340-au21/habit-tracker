@@ -8,13 +8,13 @@
   {
     "cardTitle": "Don't eat after 6 PM",
     "cardText": "I will not eat after 6 pm.",
-    "cardImage": "Child trying not to eat",
-    "cardImageAlt": 
+    "cardImage": "/../../../public/img/no-eating.jpg",
+    "cardImageAlt": "Child not trying to eat"
   },
   {
     "cardTitle": "Call parents",
     "cardText": "Every third Thursday, I will call my parents.",
     "cardImage": "/../../../public/img/call-parents.jfif",
-    "cardImageAlt": 
+    "cardImageAlt": "Person calling"
   }
 ]
