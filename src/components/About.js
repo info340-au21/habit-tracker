@@ -1,6 +1,8 @@
+import React from 'react';
 export function About(props) {
     return (
-        <div className="container justify-content-center">
+        <div>
+            <div className="container justify-content-center">
             <button type="button" className="collapsible">The 4 Parts of a Habit</button>
             <div className="row-about">
                 <p>The 4 parts of a Habit are the Cue, Craving, Response, and Reward.</p>
@@ -20,7 +22,7 @@ export function About(props) {
                     </p>
                     <li>Response</li>
                     <p>
-                        The response is simply the physical action associated with the habit. Brushing and flossing,
+                        The response is simply the physical action associated with the habit. brushing and flossing,
                         calling a friend every month, lifting weights, or reading 10 pages of a self-improvement book
                         every day.
                     </p>
@@ -67,20 +69,20 @@ export function About(props) {
                 <h2>Examples</h2>
 
                 <p>
-                    Example 1:<br>
-                    Habit = "Lift weights every day."<br>
-                    Direction = 1<br>
-                    Impact = 10<br>
-                    Total Impact = 1 x 10 = 10<br>
-                    Frequency = y<br>
+                    Example 1:<br/>
+                    Habit = "Lift weights every day."<br/>
+                    Direction = 1<br/>
+                    Impact = 10<br/>
+                    Total Impact = 1 x 10 = 10<br/>
+                    Frequency = y<br/>
                 </p>
                 <p>
-                    Example 2:<br>
-                    Habit = "Eating to alleviate boredom."<br>
-                    Direction = -1<br>
-                    Impact = 7<br>
-                    Total Impact = 1 x -7 = -7<br>
-                    Frequency = s<br>
+                    Example 2:<br/>
+                    Habit = "Eating to alleviate boredom."<br/>
+                    Direction = -1<br/>
+                    Impact = 7<br/>
+                    Total Impact = 1 x -7 = -7<br/>
+                    Frequency = s<br/>
                 </p>
 
             </div>
@@ -97,28 +99,28 @@ export function About(props) {
 
                 <h2>Advanced Metrics</h2>
                 <p>
-                    Frequency-Adjusted Percentages of Habit Types<br>
-                    Habits that are good & done consistently<br>
-                    Habits that are good & done sometimes<br>
-                    Habits that are good & done infrequently or never<br>
-                    Habits that are bad & done consistently<br>
-                    Habits that are bad & done sometimes<br>
-                    Habits that are bad & done infrequently or never
+                    Frequency-Adjusted Percentages of Habit Types<br/>
+                    Habits that are good and done consistently<br/>
+                    Habits that are good and done sometimes<br/>
+                    Habits that are good and done infrequently or never<br/>
+                    Habits that are bad and done consistently<br/>
+                    Habits that are bad and done sometimes<br/>
+                    Habits that are bad and done infrequently or never
                 </p>
 
                 <p>
-                    Impact-Adjusted Percentages of Habit Types<br>
-                    Habits that are good & high impact<br>
-                    Habits that are good & medium impact<br>
-                    Habits that are good & low impact<br>
-                    Habits that are bad & high impact<br>
-                    Habits that are bad & medium impact<br>
-                    Habits that are bad & low impact<br>
+                    Impact-Adjusted Percentages of Habit Types<br/>
+                    Habits that are good and high impact<br/>
+                    Habits that are good and medium impact<br/>
+                    Habits that are good and low impact<br/>
+                    Habits that are bad and high impact<br/>
+                    Habits that are bad and medium impact<br/>
+                    Habits that are bad and low impact<br/>
                     <em>High Impact: 8 or higher, Medium Impact: between 4 and 7 (inclusive), Low Impact: less than 4</em>
                 </p>
 
             </div>
-
         </div>
+    </div>
     );
 }
