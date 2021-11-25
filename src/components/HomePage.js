@@ -51,7 +51,7 @@ export function CardList(props) {
                     
                     <input type="password" placeholder="Enter Details" name="psw" required></input>
 
-                    <button type="submit">Add Habit</button>
+                    <button type="submit">Add</button>
                     </div>
                 </form>
             </div>

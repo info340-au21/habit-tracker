@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavBar, CardList} from "./HomePage";
+import {NavBar, CardList, Footer} from "./HomePage";
 import {About} from "./About";
 import {ProfileCard} from "./Profile";
 
@@ -22,6 +22,7 @@ export function App(props) {
                 <hr/>
                 <h1>Profile</h1>
                 <ProfileCard />
+                <Footer />
             </div>
         </div>
        
