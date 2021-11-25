@@ -2,16 +2,19 @@
   {
     "cardTitle": "Wake up at 6am + 5 push-ups",
     "cardText": "I will wake up at 6 am. After waking up, I will do 5 pushups.",
-    "cardImage": "img/wake-up.jpg"
+    "cardImage": "/../../../public/img/wake-up.jpg",
+    "cardImageAlt": "A person waking up"
   },
   {
     "cardTitle": "Don't eat after 6 PM",
     "cardText": "I will not eat after 6 pm.",
-    "cardImage": "img/no-eating.jpg"
+    "cardImage": "Child trying not to eat",
+    "cardImageAlt": 
   },
   {
     "cardTitle": "Call parents",
     "cardText": "Every third Thursday, I will call my parents.",
-    "cardImage": "img/call-parents.jfif"
+    "cardImage": "/../../../public/img/call-parents.jfif",
+    "cardImageAlt": 
   }
 ]
