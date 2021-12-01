@@ -1,4 +1,5 @@
 import React from 'react';
+{/* Remove the <br>s. */}
 export function About(props) {
     return (
         <div>
@@ -64,22 +65,19 @@ export function About(props) {
 
                 <h2>Examples</h2>
 
-                <p>
-                    Example 1:<br/>
-                    Habit = "Lift weights every day."<br/>
-                    Direction = 1<br/>
-                    Impact = 10<br/>
-                    Total Impact = 1 x 10 = 10<br/>
-                    Frequency = y<br/>
-                </p>
-                <p>
-                    Example 2:<br/>
-                    Habit = "Eating to alleviate boredom."<br/>
-                    Direction = -1<br/>
-                    Impact = 7<br/>
-                    Total Impact = 1 x -7 = -7<br/>
-                    Frequency = s<br/>
-                </p>
+                <h3>Example 1:</h3>
+                <p>Habit = "Lift weights every day."</p>
+                <p>Direction = 1</p>
+                <p>Impact = 10</p>
+                <p>Total Impact = 1 x 10 = 10</p>
+                <p>Frequency = y</p>
+
+                <h3>Example 2:</h3>
+                <p>Habit = "Eating to alleviate boredom."</p>
+                <p>Direction = -1</p>
+                <p>Impact = 7</p>
+                <p>Total Impact = 1 x -7 = -7</p>
+                <p>Frequency = s</p>
 
             </div>
 
@@ -93,24 +91,23 @@ export function About(props) {
                 </p>
 
                 <h2>Advanced Metrics</h2>
-                <p>
-                    Frequency-Adjusted Percentages of Habit Types<br/>
-                    Habits that are good and done consistently<br/>
-                    Habits that are good and done sometimes<br/>
-                    Habits that are good and done infrequently or never<br/>
-                    Habits that are bad and done consistently<br/>
-                    Habits that are bad and done sometimes<br/>
-                    Habits that are bad and done infrequently or never
-                </p>
 
+                <h3>Frequency-Adjusted Percentages of Habit Types</h3>
+                <p>Habits that are good and done consistently</p>
+                <p>Habits that are good and done sometimes</p>
+                <p>Habits that are good and done infrequently or never</p>
+                <p>Habits that are bad and done consistently</p>
+                <p>Habits that are bad and done sometimes</p>
+                <p>Habits that are bad and done infrequently or never</p>
+
+                <h3>Impact-Adjusted Percentages of Habit Types</h3>
+                <p>Habits that are good and high impact</p>
+                <p>Habits that are good and medium impact</p>
+                <p>Habits that are good and low impact</p>
+                <p>Habits that are bad and high impact</p>
+                <p>Habits that are bad and medium impact</p>
+                <p>Habits that are bad and low impact</p>
                 <p>
-                    Impact-Adjusted Percentages of Habit Types<br/>
-                    Habits that are good and high impact<br/>
-                    Habits that are good and medium impact<br/>
-                    Habits that are good and low impact<br/>
-                    Habits that are bad and high impact<br/>
-                    Habits that are bad and medium impact<br/>
-                    Habits that are bad and low impact<br/>
                     <em>High Impact: 8 or higher, Medium Impact: between 4 and 7 (inclusive), Low Impact: less than 4</em>
                 </p>
 
