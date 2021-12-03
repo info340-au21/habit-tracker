@@ -70,6 +70,7 @@ export function AddCard(props) {
         console.log("submitting", titleValue);
         props.howToAddCard(titleValue, descriptionValue);
         setTitleValue('')
+        setDescriptionValue('')
     }
 
     return (
