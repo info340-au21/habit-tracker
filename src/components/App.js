@@ -9,10 +9,10 @@ export function App(props) {
 
     const [currentCards, setCurrentCards] = useState(CARD_DATA)
     
-    const addCard = (cardInfo) => {
+    const addCard = (cardTitle, cardDescription) => {
         const newCard = {
-            cardTitle: cardInfo,
-            cardText: "Blah",
+            cardTitle: cardTitle,
+            cardText: cardDescription,
             cardImage: "img/wake-up.jpg",
             cardImageAlt: "Person waking up"
         }

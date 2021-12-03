@@ -52,33 +52,71 @@ export function CardList(props) {
 
 export function AddCard(props) {
 
-    const [textValue, setTextValue] = useState('');
+    const [titleValue, setTitleValue] = useState('');
 
-    const handleUpdate = (event) => {
-        setTextValue(event.target.value);
+    const [descriptionValue, setDescriptionValue] = useState('');
+
+    const handleTitleUpdate = (event) => {
+        setTitleValue(event.target.value);
 
     }
 
+    const handleDescriptionUpdate = (event) => {
+        setDescriptionValue(event.target.value);
+        
+    }
+
     const handleClick = (event) => {
-        console.log("submitting", textValue);
-        props.howToAddCard(textValue);
+        console.log("submitting", titleValue);
+        props.howToAddCard(titleValue, descriptionValue);
+        setTitleValue('')
     }
 
     return (
 
         <div>
-             <div id="add-habit-form" className="d-flex">
-                <form>
-                    <h2>Add Habit</h2>
-                    <div className="container row">
-                    
-                    <input type="text" value={textValue} onChange={handleUpdate} placeholder="Enter Habit" name="uname" required></input>
-                    <input type="password" placeholder="Enter Details" name="psw" required></input>
 
-                    <button type="button" className="btn btn-secondary" onClick={handleClick} disabled={textValue == ""}>Add</button>
-                    </div>
-                </form>
+        <form>
+            <div class="form-group">
+                <label for="habit-title">Habit Title</label>
+                <input type="text" 
+                        value={titleValue} 
+                        onChange={handleTitleUpdate}
+                        class="form-control" 
+                        id="habit-title" 
+                        placeholder="Enter Title">
+                </input>
             </div>
+            <div class="form-group">
+                <label for="habit-text">Habit Description</label>
+                <input type="text" 
+                        value={descriptionValue} 
+                        onChange={handleDescriptionUpdate}
+                        class="form-control" 
+                        id="habit-text" 
+                        placeholder="Enter Description">
+
+                </input>
+            </div>
+            <div class="form-group">
+                <label for="select-occurence">Select Recurrence</label>
+                <select class="form-control" id="select-occurence">
+                    <option>Daily</option>
+                    <option>Weekly</option>
+                    <option>Monthly</option>
+                </select>
+            </div>
+            <div>
+                <button type="button" 
+                        className="btn btn-secondary" 
+                        onClick={handleClick} 
+                        disabled={titleValue == ""}>
+                        Add
+                </button>
+            </div>
+        </form>
+
+
         </div>
 
 
