@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import CARD_DATA from "../data/cards.json";
+
+
 // import { timeStamp } from "console";
 
 export function NavBar(props) {
@@ -31,34 +33,57 @@ export function Footer(props) {
 }
 
 export function CardList(props) {
-    let body = CARD_DATA.map((item, index) => <Card key={index} info={item} />)
+    let body = props.cardHistory.map((item, index) => <Card key={index} info={item} />)
+
 
     return (
         <div>
-
           <h1>Today's Habits</h1>
           <div className="container">
                 <div className="row">
                     {body}
                 </div>
-            </div>
-            <div id="add-habit-form" className="d-flex">
+            </div> 
+        </div>
+
+    );
+}
+
+
+export function AddCard(props) {
+
+    const [textValue, setTextValue] = useState('');
+
+    const handleUpdate = (event) => {
+        setTextValue(event.target.value);
+
+    }
+
+    const handleClick = (event) => {
+        console.log("submitting", textValue);
+        props.howToAddCard(textValue);
+    }
+
+    return (
+
+        <div>
+             <div id="add-habit-form" className="d-flex">
                 <form>
                     <h2>Add Habit</h2>
                     <div className="container row">
                     
-                    <input type="text" placeholder="Enter Habit" name="uname" required></input>
-                    
+                    <input type="text" value={textValue} onChange={handleUpdate} placeholder="Enter Habit" name="uname" required></input>
                     <input type="password" placeholder="Enter Details" name="psw" required></input>
 
-                    <button type="submit">Add</button>
+                    <button type="button" className="btn btn-secondary" onClick={handleClick} disabled={textValue == ""}>Add</button>
                     </div>
                 </form>
             </div>
-            
         </div>
 
+
     );
+
 }
 
 

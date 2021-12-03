@@ -1,28 +1,43 @@
-import React from 'react';
-import {NavBar, CardList, Footer} from "./HomePage";
+import React, {useState} from 'react';
+import {NavBar, CardList, AddCard} from "./HomePage";
 import {About} from "./About";
 import {ProfileCard} from "./Profile";
+import CARD_DATA from "../data/cards.json";
 
 export function App(props) {
+    
+
+    const [currentCards, setCurrentCards] = useState(CARD_DATA)
+    
+    const addCard = (cardInfo) => {
+        const newCard = {
+            cardTitle: cardInfo,
+            cardText: "Blah",
+            cardImage: "img/wake-up.jpg",
+            cardImageAlt: "Person waking up"
+        }
+
+        const updatedArray = [...currentCards, newCard];
+        setCurrentCards(updatedArray);
+    }
+    
     return (
+
         <div>
             <div>
                 <NavBar />
-                <CardList />
+                <CardList cardHistory={currentCards} />
+                <AddCard howToAddCard={addCard} />
             </div>
 
-
             <div>
-                <hr/>
-                <h1>About the page</h1>
+                <NavBar />
                 <About />
             </div>
 
             <div>
-                <hr/>
-                <h1>Profile</h1>
+                <NavBar />
                 <ProfileCard />
-                <Footer />
             </div>
         </div>
        
