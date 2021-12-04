@@ -4,6 +4,7 @@ import {About} from "./About";
 import {ProfileCard} from "./Profile";
 import CARD_DATA from "../data/cards.json";
 import {Table} from "./MaterialTable";
+import Basic from "./CheckCalendar";
 
 export function App(props) {
     
@@ -41,6 +42,7 @@ export function App(props) {
                 <ProfileCard />
                 
                 <Table></Table>
+                <Basic></Basic>
             </div>
         </div>
        
