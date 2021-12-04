@@ -3,10 +3,11 @@ import {NavBar, CardList, AddCard} from "./HomePage";
 import {About} from "./About";
 import {ProfileCard} from "./Profile";
 import CARD_DATA from "../data/cards.json";
+import {Table} from "./MaterialTable";
 
 export function App(props) {
     
-
+                
     const [currentCards, setCurrentCards] = useState(CARD_DATA)
     
     const addCard = (cardTitle, cardDescription) => {
@@ -38,6 +39,8 @@ export function App(props) {
             <div>
                 <NavBar />
                 <ProfileCard />
+                
+                <Table></Table>
             </div>
         </div>
        

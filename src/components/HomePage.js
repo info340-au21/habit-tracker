@@ -34,11 +34,8 @@ export function Footer(props) {
 
 export function CardList(props) {
     let body = props.cardHistory.map((item, index) => <Card key={index} info={item} />)
-
-
     return (
         <div>
-          <h1>Today's Habits</h1>
           <div className="container">
                 <div className="row">
                     {body}
