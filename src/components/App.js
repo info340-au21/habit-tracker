@@ -36,10 +36,7 @@ export function App(props) {
             }
         });
 
-        console.log(updatedArray);
-        console.log("here")
-        console.log(removalIndex);
-        console.log(updatedArray.splice(removalIndex, 1))
+     
         setCurrentCards(updatedArray);
     }
     
