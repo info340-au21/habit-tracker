@@ -33,7 +33,7 @@ export function Footer(props) {
 }
 
 export function CardList(props) {
-    let body = props.cardHistory.map((item, index) => <Card key={index} info={item} remove={props.howToRemove}/>)
+    let body = props.cardHistory.map((item, index) => <Card key={index} info={item} remove={props.howToRemove} expand={props.singleDisplay}/>)
     return (
         <div>
           <div className="container">
@@ -44,6 +44,11 @@ export function CardList(props) {
         </div>
 
     );
+}
+
+
+export function ExpandCard(props) {
+    
 }
 
 
@@ -137,6 +142,12 @@ export function Card(props) {
 
 
     }
+
+
+    const handleExpand = (event) => {
+        
+        props.expand(event.target.id);
+    }
    
     
     return ( 
@@ -162,8 +173,8 @@ export function Card(props) {
                     </div>
                     
                 </div>
-                <div className="d-flex justify-content-center mx-auto">
-                    <button className=" btn btn-primary" >Expand</button>
+                <div className="d-flex justify-content-center">
+                    <button className=" btn btn-primary" id={card.cardText} onClick={handleExpand} >Expand</button>
                     <button className=" btn btn-success" id={card.cardText} onClick={handleDelete}>Complete</button>
                 </div>
             </div>
