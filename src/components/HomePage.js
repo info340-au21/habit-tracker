@@ -211,10 +211,7 @@ export function Card(props) {
             <div className="card mb-4">
                 <div className="card-body">
                     <div className="row">
-                        <div className="col-sm-auto col-xl-12">
-                            
-                            
-                        </div>
+                       
                         
                         <div className="col-sm">
                             <h2 className="card-title">{card.cardTitle}</h2>

@@ -19,5 +19,33 @@
     "cardImage": "img/call-parents.jfif",
     "cardImageAlt": "Person calling",
     "impact": "="
+  },
+  {
+    "cardTitle": "Sing a little",
+    "cardText": "I will sing like Adele in the morning",
+    "cardImage": "img/wake-up.jpg",
+    "cardImageAlt": "A person waking up",
+    "impact": "+"
+  },
+  {
+    "cardTitle": "Try not to cry before noon",
+    "cardText": "I will not cry or get sad",
+    "cardImage": "img/no-eating.jpg",
+    "cardImageAlt": "Child not trying to eat",
+    "impact": "-"
+  },
+  {
+    "cardTitle": "Eat a salad at some point",
+    "cardText": "IDC what type of salad it is, just eat a salad",
+    "cardImage": "img/wake-up.jpg",
+    "cardImageAlt": "A person waking up",
+    "impact": "+"
+  },
+  {
+    "cardTitle": "Actually go to class",
+    "cardText": "You gotta start going to class",
+    "cardImage": "img/no-eating.jpg",
+    "cardImageAlt": "Child not trying to eat",
+    "impact": "-"
   }
 ]
