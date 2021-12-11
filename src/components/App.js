@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {NavBar, CardList, AddCard} from "./HomePage";
+import {NavBar, CardList, AddCard, ExpandCard} from "./HomePage";
 import {About} from "./About";
 import {ProfileCard} from "./Profile";
 import CARD_DATA from "../data/cards.json";
@@ -68,6 +68,10 @@ export function App(props) {
         setCardExpand(res);
     }
 
+    const revertToMainCardView = () => {
+        setCardExpand([]);
+    }
+
 
     // render homepage based on expansion
     let view;
@@ -76,7 +80,7 @@ export function App(props) {
                  <AddCard howToAddCard={addCard} key={2} />
         ] 
     } else {
-        view = [<CardList cardHistory={cardExpand} howToRemove={removeCard} singleDisplay={displaySingleCard} key={1} />]
+        view = [<ExpandCard card={cardExpand} howToRevert={revertToMainCardView}key={1} />]
     }
     
     return (

@@ -48,7 +48,61 @@ export function CardList(props) {
 
 
 export function ExpandCard(props) {
-    
+
+    let card = props.card[0];
+
+    console.log(card);
+
+
+
+    return (
+            <div className="d-flex">
+                <div className=" col-sm-2 col-md-2 col-lg-2"></div>
+                <div className="card col-sm-8 col-md-8 col-lg-8">
+                    <div className="card-body justify-content-center">
+                        <h2 className="card-title">
+                            {card.cardTitle}
+                        </h2>
+                        <p className="card-text">
+                            {card.cardText}
+                        </p>
+                        <p>Sanity check</p>
+
+                    </div>
+                    <div className="d-flex justify-content-center">
+                        <button className=" btn btn-primary" onClick={props.howToRevert} >Go back</button>
+                    </div>
+
+                </div>
+                <div className="col-sm-2 col-md-2 col-lg-2"></div>
+            </div>
+
+
+    )
+
+/*
+    <div className="d-flex col-md-6 col-xl-3">
+    <div className="card mb-4">
+        <div className="card-body">
+            <div className="row">
+                <div className="col-sm-auto col-xl-12">
+                    
+                    
+                </div>
+                
+                <div className="col-sm">
+                    <h2 className="card-title">{card.cardTitle}</h2>
+                    <p className="card-text">
+                        {card.cardText}
+                    </p>
+                    
+                </div>
+            </div>   
+        </div>
+    </div>
+</div>
+*/
+
 }
 
 
