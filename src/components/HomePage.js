@@ -33,7 +33,7 @@ export function Footer(props) {
 }
 
 export function CardList(props) {
-    let body = props.cardHistory.map((item, index) => <Card key={index} info={item} />)
+    let body = props.cardHistory.map((item, index) => <Card key={index} info={item} remove={props.howToRemove}/>)
     return (
         <div>
           <div className="container">
@@ -123,10 +123,21 @@ export function AddCard(props) {
 }
 
 
+
+
 export function Card(props) {
 
     // single JSON entry
     let card = props.info;
+
+
+    const handleDelete = (event) => {
+        console.log(event.target.id);
+        props.remove(event.target.id);
+
+
+    }
+   
     
     return ( 
     
@@ -136,8 +147,8 @@ export function Card(props) {
                 <div className="card-body">
                     <div className="row">
                         <div className="col-sm-auto col-xl-12">
-                            <img src={card.cardImage} alt={card.cardImageAlt} className="pb-3" />
-                            <button className="float-right btn btn-outline-primary">Complete</button>
+                            
+                            
                         </div>
                         
                         <div className="col-sm">
@@ -145,9 +156,13 @@ export function Card(props) {
                             <p className="card-text">
                                 {card.cardText}
                             </p>
+                            
                         </div>
+                        
                     </div>
+                    
                 </div>
+                <button className="float-right btn btn-outline-primary" id={card.cardText} onClick={handleDelete}>Complete</button>
             </div>
         </div>
 

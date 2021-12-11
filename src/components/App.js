@@ -22,13 +22,33 @@ export function App(props) {
         const updatedArray = [...currentCards, newCard];
         setCurrentCards(updatedArray);
     }
+
+
+    const removeCard = (cardDescription) => {
+        let removalIndex = -1
+
+        let updatedArray = currentCards.map((item, index) => {   
+            if (item.cardText != cardDescription) {
+                return item;
+            } else {
+                removalIndex = index;
+                return;
+            }
+        });
+
+        console.log(updatedArray);
+        console.log("here")
+        console.log(removalIndex);
+        console.log(updatedArray.splice(removalIndex, 1))
+        setCurrentCards(updatedArray);
+    }
     
     return (
 
         <div>
             <div>
                 <NavBar />
-                <CardList cardHistory={currentCards} />
+                <CardList cardHistory={currentCards} howToRemove={removeCard}/>
                 <AddCard howToAddCard={addCard} />
             </div>
 
