@@ -162,7 +162,10 @@ export function Card(props) {
                     </div>
                     
                 </div>
-                <button className="float-right btn btn-outline-primary" id={card.cardText} onClick={handleDelete}>Complete</button>
+                <div className="d-flex justify-content-center mx-auto">
+                    <button className=" btn btn-primary" >Expand</button>
+                    <button className=" btn btn-success" id={card.cardText} onClick={handleDelete}>Complete</button>
+                </div>
             </div>
         </div>
 

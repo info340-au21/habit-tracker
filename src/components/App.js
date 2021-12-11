@@ -36,7 +36,8 @@ export function App(props) {
             }
         });
 
-     
+  
+        updatedArray.splice(removalIndex, 1);
         setCurrentCards(updatedArray);
     }
     
