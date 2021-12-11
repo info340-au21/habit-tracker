@@ -137,7 +137,9 @@ export function Card(props) {
                     <div className="row">
                         <div className="col-sm-auto col-xl-12">
                             <img src={card.cardImage} alt={card.cardImageAlt} className="pb-3" />
+                            <button className="float-right btn btn-outline-primary">Complete</button>
                         </div>
+                        
                         <div className="col-sm">
                             <h2 className="card-title">{card.cardTitle}</h2>
                             <p className="card-text">
