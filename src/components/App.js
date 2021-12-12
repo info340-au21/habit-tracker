@@ -132,6 +132,7 @@ function App(props) {
       <ExpandCard
         card={cardExpand}
         howToRevert={revertToMainCardView}
+        howToRemove={removeCard}
         key={1}
       />,
     ];

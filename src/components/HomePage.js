@@ -55,12 +55,24 @@ export function ExpandCard(props) {
     console.log(card);
 
 
+    const handleDelete = (event) => {
+        console.log(event.target.id);
+        props.howToRemove(event.target.id);
+        props.howToRevert()
+
+
+    }
+
+
+    
+
+
 
     return (
-            <div className="d-flex">
-                <div className=" col-sm-2 col-md-2 col-lg-2"></div>
-                <div className="card col-sm-8 col-md-8 col-lg-8">
-                    <div className="card-body justify-content-center">
+            <div className="d-flex m-3 ">
+                <div className=" col-sm-2 col-md-2 col-lg-3"></div>
+                <div className="card col-sm-8 col-md-8 col-lg-6">
+                    <div className="card-body justify-content-center m-5">
                         <h2 className="card-title">
                             {card.cardTitle}
                         </h2>
@@ -71,38 +83,17 @@ export function ExpandCard(props) {
 
                     </div>
                     <div className="d-flex justify-content-center">
-                        <button className=" btn btn-primary" onClick={props.howToRevert} >Go back</button>
+                        <button className=" btn btn-primary m-3" onClick={props.howToRevert} >Go back</button>
+                        <button className=" btn btn-danger m-3" id={card.cardText} onClick={handleDelete}>Delete</button>
                     </div>
 
                 </div>
-                <div className="col-sm-2 col-md-2 col-lg-2"></div>
+                <div className="col-sm-2 col-md-2 col-lg-3"></div>
             </div>
 
 
     )
 
-/*
-    <div className="d-flex col-md-6 col-xl-3">
-    <div className="card mb-4">
-        <div className="card-body">
-            <div className="row">
-                <div className="col-sm-auto col-xl-12">
-                    
-                    
-                </div>
-                
-                <div className="col-sm">
-                    <h2 className="card-title">{card.cardTitle}</h2>
-                    <p className="card-text">
-                        {card.cardText}
-                    </p>
-                    
-                </div>
-            </div>   
-        </div>
-    </div>
-</div>
-*/
 
 }
 
@@ -202,7 +193,10 @@ export function Card(props) {
             <div className="card mb-4">
                 <div className="card-body">
                     <div className="row">
-                       
+                        <div className="col-sm-auto col-xl-12">
+                            
+                            
+                        </div>
                         
                         <div className="col-sm">
                             <h2 className="card-title">{card.cardTitle}</h2>
@@ -215,9 +209,9 @@ export function Card(props) {
                     </div>
                     
                 </div>
-                <div className="d-flex justify-content-center">
-                    <button className=" btn btn-primary" id={card.cardText} onClick={handleExpand} >Expand</button>
-                    <button className=" btn btn-success" id={card.cardText} onClick={handleDelete}>Complete</button>
+                <div className="d-flex justify-content-center m-2">
+                    <button className=" btn btn-primary m-2" id={card.cardText} onClick={handleExpand} >Expand</button>
+             
                 </div>
             </div>
         </div>
