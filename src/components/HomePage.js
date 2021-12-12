@@ -84,7 +84,7 @@ export function ExpandCard(props) {
                     </div>
                     <div className="d-flex justify-content-center">
                         <button className=" btn btn-primary m-3" onClick={props.howToRevert} >Go back</button>
-                        <button className=" btn btn-danger m-3" id={card.cardText} onClick={handleDelete}>Complete</button>
+                        <button className=" btn btn-danger m-3" id={card.cardText} onClick={handleDelete}>Delete</button>
                     </div>
 
                 </div>
