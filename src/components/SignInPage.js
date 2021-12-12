@@ -16,10 +16,12 @@ const firebaseUIConfig = {
     }
 };
 
-export default function SigninPage(props) {
+export default function SignInPage() {
     const auth = getAuth();
 
     return (
-        <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
+        <div>
+            <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
+        </div>
     );
  }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {NavBar, CardList, AddCard, ExpandCard} from "./HomePage";
-import SigninPage from './SignInPage';
+import SignInPage from './SignInPage';
 import {About} from "./About";
 import {ProfileCard} from "./Profile";
 import CARD_DATA from "../data/cards.json";
@@ -128,7 +128,7 @@ export function App(props) {
 
         <div>
             <div>
-                <SigninPage />
+                <SignInPage />
             </div>
             <div>
                 <NavBar />
