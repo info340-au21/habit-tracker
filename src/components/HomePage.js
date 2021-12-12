@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import CARD_DATA from "../data/cards.json";
+import {NavLink} from 'react-router-dom';
 
 
 // import { timeStamp } from "console";
@@ -12,9 +13,9 @@ export function NavBar(props) {
                     <a className="navbar-brand" href="#">habit-trackr.</a>
                 </div>
                 <ul className="nav navbar-nav">
-                    <li className="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Profile</a></li>
+                    <li><NavLink exact to="/" activeClassName="activeLink">Home</NavLink></li>
+                    <li><NavLink exact to="/about" activeClassName="activeLink">About</NavLink></li>
+                    <li><NavLink exact to="/profile" activeClassName="activeLink">Profile</NavLink></li>
                 </ul>
             </div>
         </nav>

@@ -3,13 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { App } from './components/App';
 import firebase from 'firebase/app';
+import {BrowserRouter} from 'react-router-dom';
 import 'firebase/auth';
 import 'firebase/database';
+//import firebase from 'firebase/app';
+//import 'firebase/auth';
+//import 'firebase/database';
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAnB89Uc7wNN_q2qRAVhmk5rIg2od2oYIg",
   authDomain: "habit-trackr-6e86d.firebaseapp.com",
+  databaseURL: "https://habit-trackr-6e86d-default-rtdb.firebaseio.com",
   projectId: "habit-trackr-6e86d",
   storageBucket: "habit-trackr-6e86d.appspot.com",
   messagingSenderId: "3176632655",
@@ -21,7 +26,9 @@ const app = initializeApp(firebaseConfig);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

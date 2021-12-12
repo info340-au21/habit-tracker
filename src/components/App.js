@@ -1,28 +1,70 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import {NavBar, CardList, AddCard, ExpandCard} from "./HomePage";
+import SigninPage from './SignInPage';
 import {About} from "./About";
 import {ProfileCard} from "./Profile";
 import CARD_DATA from "../data/cards.json";
 import {Table} from "./MaterialTable";
 import Basic from "./CheckCalendar";
+import {Route, Switch} from 'react-router-dom';
+import { getDatabase, ref, set as firebaseSet, push as firebasePush, onValue } from 'firebase/database';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export function App(props) {
-    
-                
     const [currentCards, setCurrentCards] = useState(CARD_DATA);
-
+    // const [newHabit, setNewHabit] = useState('');
     const [cardExpand, setCardExpand] = useState([]);
     
+    const db = getDatabase(); // not the data; "mailing address"
+
+    const auth = getAuth();
+    const user = auth.currentUser;
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            // User is signed in, see docs for a list of available properties
+            // https://firebase.google.com/docs/reference/js/firebase.User
+            
+            // ...
+        } else {
+            // User is signed out
+            // ...
+        }
+    });
+
+    useEffect(() => { // function when component first loads
+        const habitRef = ref(db, "allHabits");
+        onValue(habitRef, (snapshot) => {
+            const allHabits = snapshot.val(); // extract the value from snapshot
+        });
+
+        // instructions on how to leave
+        // will be called by React 
+        function cleanup() {
+            // turn off the listener
+            console.log("leaving");
+        }
+        return cleanup; // leave instructions behind
+    }, []); // when to re-run (never)
+    // addEventListener('databaseValueChange', () => {})
+    
+
     const addCard = (cardTitle, cardDescription) => {
-        const newCard = {
+        // update the database
+        const newHabit = {
             cardTitle: cardTitle,
             cardText: cardDescription,
-            cardImage: "img/wake-up.jpg",
-            cardImageAlt: "Person waking up"
-        }
+            timestamp: Date.now()
+            // cardImage: "img/wake-up.jpg",
+            // cardImageAlt: "Person waking up"
+        };
+        const habitRef = ref(db, "allHabits/" + user.uid);
+        
+        setCurrentCards([...currentCards, newHabit]);
+        firebaseSet(habitRef, currentCards);
+        
 
-        const updatedArray = [...currentCards, newCard];
-        setCurrentCards(updatedArray);
+        // const updatedArray = [...currentCards, newCard];
+        // setCurrentCards(updatedArray);
     }
 
 
@@ -30,7 +72,7 @@ export function App(props) {
         let removalIndex = -1
 
         let updatedArray = currentCards.map((item, index) => {   
-            if (item.cardText != cardDescription) {
+            if (item.cardText !== cardDescription) {
                 return item;
             } else {
                 removalIndex = index;
@@ -48,7 +90,7 @@ export function App(props) {
         let displayIndex = -1
 
         let updatedArray = currentCards.map((item, index) => {   
-            if (item.cardText != cardDescription) {
+            if (item.cardText !== cardDescription) {
                 return item;
             } else {
                 displayIndex = index;
@@ -75,7 +117,7 @@ export function App(props) {
 
     // render homepage based on expansion
     let view;
-    if (cardExpand.length == 0) {
+    if (cardExpand.length === 0) {
         view =  [<CardList cardHistory={currentCards} howToRemove={removeCard} singleDisplay={displaySingleCard} key={1}/>,
                  <AddCard howToAddCard={addCard} key={2} />
         ] 
@@ -87,23 +129,15 @@ export function App(props) {
 
         <div>
             <div>
-                <NavBar />
-                {view}
-                
-               
+                <SigninPage />
             </div>
-
             <div>
                 <NavBar />
-                <About />
-            </div>
-
-            <div>
-                <NavBar />
-                <ProfileCard />
-                
-                <Table></Table>
-                <Basic></Basic>
+                <Switch>
+                    <Route exact path="/"> {view} </Route>
+                    <Route path="/about"> <About /> </Route>
+                    <Route path="/profile"> <ProfileCard /> </Route>
+                </Switch>
             </div>
         </div>
        
