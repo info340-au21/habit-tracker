@@ -6,6 +6,7 @@ import {ProfileCard} from "./Profile";
 import CARD_DATA from "../data/cards.json";
 import {Table} from "./MaterialTable";
 import Basic from "./CheckCalendar";
+import {Route, Switch} from 'react-router-dom';
 import { getDatabase, ref, set as firebaseSet, push as firebasePush, onValue } from 'firebase/database';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
@@ -71,7 +72,7 @@ export function App(props) {
         let removalIndex = -1
 
         let updatedArray = currentCards.map((item, index) => {   
-            if (item.cardText != cardDescription) {
+            if (item.cardText !== cardDescription) {
                 return item;
             } else {
                 removalIndex = index;
@@ -89,7 +90,7 @@ export function App(props) {
         let displayIndex = -1
 
         let updatedArray = currentCards.map((item, index) => {   
-            if (item.cardText != cardDescription) {
+            if (item.cardText !== cardDescription) {
                 return item;
             } else {
                 displayIndex = index;
@@ -116,7 +117,7 @@ export function App(props) {
 
     // render homepage based on expansion
     let view;
-    if (cardExpand.length == 0) {
+    if (cardExpand.length === 0) {
         view =  [<CardList cardHistory={currentCards} howToRemove={removeCard} singleDisplay={displaySingleCard} key={1}/>,
                  <AddCard howToAddCard={addCard} key={2} />
         ] 
@@ -132,20 +133,11 @@ export function App(props) {
             </div>
             <div>
                 <NavBar />
-                {view}
-            </div>
-
-            <div>
-                <NavBar />
-                <About />
-            </div>
-
-            <div>
-                <NavBar />
-                <ProfileCard />
-                
-                <Table></Table>
-                <Basic></Basic>
+                <Switch>
+                    <Route exact path="/"> {view} </Route>
+                    <Route path="/about"> <About /> </Route>
+                    <Route path="/profile"> <ProfileCard /> </Route>
+                </Switch>
             </div>
         </div>
        
