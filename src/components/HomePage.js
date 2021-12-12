@@ -182,6 +182,12 @@ export function Card(props) {
     let card = props.info;
 
 
+    const [cardColor, setCardColor] = useState("card mb-4 bg-light");
+
+
+    const [buttonName, setButtonName] = useState("Complete");
+
+
     const handleDelete = (event) => {
         console.log(event.target.id);
         props.remove(event.target.id);
@@ -194,13 +200,27 @@ export function Card(props) {
         
         props.expand(event.target.id);
     }
+
+    const makeGreen = (event) => {
+        if (buttonName == "Complete") {
+            event.target.className = "btn btn-danger m-2"
+            setCardColor("card mb-4 bg-success")
+            setButtonName("Revert")
+
+        } else {
+            event.target.className = "btn btn-success m-2"
+            setCardColor("card mb-4 bg-light")
+            setButtonName("Complete")
+        }
+        
+    }
    
     
     return ( 
     
     
-        <div className="d-flex col-md-6 col-xl-3">
-            <div className="card mb-4">
+        <div className="d-flex col-md-6 col-xl-3" id={card.cardText}>
+            <div className={cardColor}>
                 <div className="card-body">
                     <div className="row">
                         <div className="col-sm-auto col-xl-12">
@@ -221,6 +241,7 @@ export function Card(props) {
                 </div>
                 <div className="d-flex justify-content-center m-2">
                     <button className=" btn btn-primary m-2" id={card.cardText} onClick={handleExpand} >Expand</button>
+                    <button className=" btn btn-success m-2" id={card.cardText} onClick={makeGreen} >{buttonName}</button>
              
                 </div>
             </div>
