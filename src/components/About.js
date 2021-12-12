@@ -81,7 +81,7 @@ export function About(props) {
 
             </div>
 
-            <div>
+            {/* <div>
 
                 <h1>Data is Powerful</h1>
                 <p>
@@ -111,7 +111,7 @@ export function About(props) {
                     <em>High Impact: 8 or higher, Medium Impact: between 4 and 7 (inclusive), Low Impact: less than 4</em>
                 </p>
 
-            </div>
+            </div> */}
         </div>
     </div>
     );
