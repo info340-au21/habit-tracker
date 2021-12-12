@@ -132,6 +132,7 @@ function App(props) {
       <ExpandCard
         card={cardExpand}
         howToRevert={revertToMainCardView}
+        howToRemove={removeCard}
         key={1}
       />,
     ];
@@ -141,17 +142,15 @@ function App(props) {
     <div>
       <NavBar />
 
-      <main className="container">
-        <Switch>
-          <Route exact path="/">
-            <CardList cardHistory={CARD_DATA} />
-          </Route>
-          <Route exact path="/about">
-            <About />
-          </Route>
-          <Redirect to="/" />
-        </Switch>
-      </main>
+      <Switch>
+        <Route exact path="/">
+          {view}
+        </Route>
+        <Route exact path="/about">
+          <About />
+        </Route>
+        <Redirect to="/" />
+      </Switch>
 
       <Footer />
     </div>
