@@ -131,53 +131,47 @@ export function AddCard(props) {
     }
 
     return (
-
         <div>
+            `<form>
+                <div class="form-group">
+                    <label for="habit-title">Habit Title</label>
+                    <input type="text" 
+                            value={titleValue} 
+                            onChange={handleTitleUpdate}
+                            class="form-control" 
+                            id="habit-title" 
+                            placeholder="Enter Title">
+                    </input>
+                </div>
+                <div class="form-group">
+                    <label for="habit-text">Habit Description</label>
+                    <input type="text" 
+                            value={descriptionValue} 
+                            onChange={handleDescriptionUpdate}
+                            class="form-control" 
+                            id="habit-text" 
+                            placeholder="Enter Description">
 
-        <form>
-            <div class="form-group">
-                <label for="habit-title">Habit Title</label>
-                <input type="text" 
-                        value={titleValue} 
-                        onChange={handleTitleUpdate}
-                        class="form-control" 
-                        id="habit-title" 
-                        placeholder="Enter Title">
-                </input>
-            </div>
-            <div class="form-group">
-                <label for="habit-text">Habit Description</label>
-                <input type="text" 
-                        value={descriptionValue} 
-                        onChange={handleDescriptionUpdate}
-                        class="form-control" 
-                        id="habit-text" 
-                        placeholder="Enter Description">
-
-                </input>
-            </div>
-            <div class="form-group">
-                <label for="select-occurence">Select Recurrence</label>
-                <select class="form-control" id="select-occurence">
-                    <option>Daily</option>
-                    <option>Weekly</option>
-                    <option>Monthly</option>
-                </select>
-            </div>
-            <div>
-                <button type="button" 
-                        className="btn btn-secondary" 
-                        onClick={handleClick} 
-                        disabled={titleValue == ""}>
-                        Add
-                </button>
-            </div>
-        </form>
-
-
+                    </input>
+                </div>
+                <div class="form-group">
+                    <label for="select-occurence">Select Recurrence</label>
+                    <select class="form-control" id="select-occurence">
+                        <option>Daily</option>
+                        <option>Weekly</option>
+                        <option>Monthly</option>
+                    </select>
+                </div>
+                <div>
+                    <button type="button" 
+                            className="btn btn-secondary" 
+                            onClick={handleClick} 
+                            disabled={titleValue == ""}>
+                            Add
+                    </button>
+                </div>
+            </form>`
         </div>
-
-
     );
 
 }
@@ -190,17 +184,13 @@ export function Card(props) {
     // single JSON entry
     let card = props.info;
 
-
     const handleDelete = (event) => {
         console.log(event.target.id);
         props.remove(event.target.id);
-
-
     }
 
 
     const handleExpand = (event) => {
-        
         props.expand(event.target.id);
     }
    
