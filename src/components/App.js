@@ -90,11 +90,6 @@ export function App(props) {
             <div>
                 <NavBar />
                 <Switch>
-                    {/* <Route path="/" element={view}/>
-                    
-                    <Route path="/about" element={<About />}/>
-                    <Route path="/profile" element={<ProfileCard />}/> */}
-                    
                     <Route exact path="/"> {view} </Route>
                     <Route path="/about"> <About /> </Route>
                     <Route path="/profile"> <ProfileCard /> </Route>
