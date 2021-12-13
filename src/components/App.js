@@ -22,15 +22,10 @@ function App(props) {
   const db = getDatabase(); // not the data; "mailing address"
 
   const auth = getAuth();
-  const user = auth.currentUser;
-  onAuthStateChanged(auth, (user) => {
+  const [currentUser, setCurrentUser] = useState(auth.currentUser);
+  const user = onAuthStateChanged(auth, (currentUser) => {
     if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
-      // ...
     } else {
-      // User is signed out
-      // ...
     }
   });
 
@@ -38,7 +33,7 @@ function App(props) {
     // function when component first loads
     const habitRef = ref(db, "allHabits");
     onValue(habitRef, (snapshot) => {
-      const allHabits = snapshot.val(); // extract the value from snapshot
+      setCurrentCards(snapshot.val()); // extract the value from snapshot
     });
 
     // instructions on how to leave
@@ -57,14 +52,13 @@ function App(props) {
       cardTitle: cardTitle,
       cardText: cardDescription,
       timestamp: Date.now(),
-      completeCount: 0
-      // cardImage: "img/wake-up.jpg",
-      // cardImageAlt: "Person waking up"
+      completeCount: 0,
     };
-    const habitRef = ref(db, "allHabits/" + user.uid);
+    const habitRef = ref(db, "allHabits/" + currentUser.uid);
 
-    setCurrentCards([...currentCards, newHabit]);
-    firebaseSet(habitRef, currentCards);
+    const updatedArray = [...currentCards, newHabit];
+    setCurrentCards(updatedArray);
+    firebaseSet(habitRef, updatedArray);
 
     // const updatedArray = [...currentCards, newCard];
     // setCurrentCards(updatedArray);
@@ -106,7 +100,7 @@ function App(props) {
         cardImage: focus.cardImage,
         cardImageAlt: focus.cardImageAlt,
         impact: focus.impact,
-        completeCount: focus.completeCount
+        completeCount: focus.completeCount,
       },
     ];
 
