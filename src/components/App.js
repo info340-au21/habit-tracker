@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavBar, CardList, AddCard, ExpandCard, Footer } from "./HomePage";
-import SignInPage from "./SignInPage";
+//import SignInPage from "./SignInPage";
 import About from "./About";
 import { ProfileCard } from "./Profile";
 import CARD_DATA from "../data/cards.json";
@@ -29,6 +29,7 @@ function App(props) {
     }
   });
 
+  /*
   useEffect(() => {
     // function when component first loads
     const habitRef = ref(db, "allHabits");
@@ -45,7 +46,7 @@ function App(props) {
     return cleanup; // leave instructions behind
   }, []); // when to re-run (never)
   // addEventListener('databaseValueChange', () => {})
-
+  */
   const addCard = (cardTitle, cardDescription) => {
     // update the database
     const newHabit = {
