@@ -2,8 +2,16 @@ import React, { useState } from "react";
 import { Card } from "./Card";
 
 export function CardList(props) {
-  let body = props.cardHistory.map((item, index) => (
-    <Card
+  
+  setTimeout(() => {
+    console.log()
+  }, 3000);
+  
+  let notDone = props.cardHistory.map((item, index) => {
+    
+  
+    if (!item.isGreen) {
+    return (<Card
       key={index}
       info={item}
       remove={props.howToRemove}
@@ -12,12 +20,37 @@ export function CardList(props) {
       makeCardGreen={props.makeCardGreen}
       removeGreen = {props.removeGreen}
 
-    />
-  ));
+    />)
+    }
+  }
+  );
+
+  let done = props.cardHistory.map((item, index) => {
+
+  
+    if (item.isGreen) {
+    return (<Card
+      key={index}
+      info={item}
+      remove={props.howToRemove}
+      expand={props.singleDisplay}
+      updateCount={props.updateCount}
+      makeCardGreen={props.makeCardGreen}
+      removeGreen = {props.removeGreen}
+
+    />)
+    }
+  }
+  );
+
+
   return (
     <div>
-      <div className="container mt-4">
-        <div className="row">{body}</div>
+      <div className="container ">
+        <h2 className="mt-4">Remaining Habits</h2>
+        <div className="row">{notDone}</div>
+        <h2> Completed Habits </h2>
+        <div className="row mb=4">{done}</div>
       </div>
     </div>
   );
