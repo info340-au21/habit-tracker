@@ -8,7 +8,8 @@ function About() {
           <h1>
             How It Works
           </h1>
-          <img src="img/atomichabits.jpg" alt="Front Cover of Atomic Habits by James Clear" style={{ width: "264px", height:"400px" }}/>
+          <img src="img/atomichabits.jpg" alt="Front Cover of Atomic Habits by James Clear"
+           style={{ width: "264px", height:"400px" }} className="text-align: center"/>
           <p>
 
           </p>
@@ -39,6 +40,10 @@ function About() {
             enough to get started because the next step has already been outlined and
             is simple and clear."
           </p>
+          <h2>Stick with it!</h2>
+          <img src="img/habit_line.jpg" alt="The Habit Line Chart"
+           style={{ width: "590px", height:"438px" }} className="text-align: center"/>
+          <p></p>
         </div>
       </div>
     </div>
