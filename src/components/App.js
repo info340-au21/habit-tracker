@@ -7,7 +7,7 @@ import About from "./About";
 import Stats from "./Stats";
 import Motivation from "./Motivation";
 import { Route, Switch, Redirect } from "react-router-dom";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 
 export default function App() {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -21,7 +21,6 @@ export default function App() {
       if (firebaseUser) {
         //have a user
         console.log("logging in", firebaseUser);
-        if (!firebaseUser.photoURL) firebaseUser.photoURL = "/img/null.png";
         setCurrentUser(firebaseUser);
       } else {
         console.log("logging out");
@@ -59,7 +58,7 @@ export default function App() {
     return (
       <div>
         <div>
-          <NavBar />
+          <NavBar setUser={setCurrentUser} />
         </div>
 
         <Switch>
