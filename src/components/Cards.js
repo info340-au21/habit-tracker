@@ -7,68 +7,15 @@ import CARD_DATA from "../data/cards.json";
 
 
 
-export function HomePage(props) {
-
-    const [currentCards, setCurrentCards] = useState(CARD_DATA);
-    
-    return (
-        <div id ="homepage-background">
-            <h1>Current Habits</h1>
-            <div className="d-flex justify-content-center">
-                <UserForm setCurrentCards={setCurrentCards} currentCards={currentCards}/>
-            </div>
-            <Cards setCurrentCards={setCurrentCards} currentCards={currentCards}/>
-     
-        </div>
-
-    )
-}
-
-
-export function UserForm(props) {
-
-    let setCurrentCards = props.setCurrentCards;
-    let currentCards = props.currentCards;
-
-
-    
-    
-    const addCard = (cardTitle, cardDescription) => {
-        // update the database
-        const newHabit = {
-          cardTitle: cardTitle,
-          cardText: cardDescription,
-          timestamp: Date.now(),
-          completeCount: 0,
-        };
-        //const habitRef = ref(db, "allHabits/" + currentUser.uid);
-    
-        const updatedArray = [...currentCards, newHabit];
-        //setCurrentCards(updatedArray);
-        //firebaseSet(habitRef, updatedArray);
-        setCurrentCards(updatedArray);
-    
-
-
-    };
-    
-    return <AddCard howToAddCard={addCard} key={2} />
-
-}
-
 
 export function Cards(props) {
 
-    
+    const [currentCards, setCurrentCards] = useState(CARD_DATA);
 
     const [cardExpand, setCardExpand] = useState([]);
 
-    let setCurrentCards = props.setCurrentCards;
-    let currentCards = props.currentCards;
 
     
-    
-
 
     const updateCompletion = (cardDescription) => {
         let updatedCards = currentCards.map((item, index) => {
@@ -103,6 +50,27 @@ export function Cards(props) {
         updatedArray.splice(removalIndex, 1);
         setCurrentCards(updatedArray);
     };
+
+    const addCard = (cardTitle, cardDescription) => {
+      console.log("GHFI:SH:SFLKJS")
+      // update the database
+      const newHabit = {
+        cardTitle: cardTitle,
+        cardText: cardDescription,
+        cardImage: "",
+        cardImageAlt: "",
+        impact: "=",
+        completeCount: 0,
+      };
+     
+  
+      const updatedArray = [...currentCards, newHabit];
+      //setCurrentCards(updatedArray);
+      //firebaseSet(habitRef, updatedArray);
+      setCurrentCards(updatedArray);
+
+    };
+
     const displaySingleCard = (cardDescription) => {
         let displayIndex = -1;
     
@@ -132,6 +100,8 @@ export function Cards(props) {
     const revertToMainCardView = () => {
         setCardExpand([]);
       };
+
+      let cardForm = <AddCard howToAddCard={addCard} key={2} />;
     
       // render homepage based on expansion
       let view;
@@ -158,5 +128,18 @@ export function Cards(props) {
       }
 
 
-      return (view);
+
+  return (
+    <div id ="homepage-background">
+      <h1>Current Habits</h1>
+        <div className="d-flex justify-content-center">
+          {cardForm}
+        </div>
+          {view}
+      
+          </div>
+
+      )
+
+      
 }

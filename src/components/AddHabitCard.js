@@ -23,14 +23,16 @@ export function AddCard(props) {
     }
 
     const handleClick = (event) => {
-        if (titleValue !== "" && descriptionValue !== "") {
-            console.log("submitting", titleValue);
-            props.howToAddCard(titleValue, descriptionValue);
-            setTitleValue('');
-            setDescriptionValue('');
-        } else {
+      
+        
+        props.howToAddCard(titleValue, descriptionValue);
+        setTitleValue('');
+        setDescriptionValue('');
+
+        return false;
+       
             
-        }
+        
     }
 
     return (

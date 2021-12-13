@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavBar } from "./NavBar";
 import { Footer } from "./Footer";
-import { HomePage } from "./Cards";
+import { Cards } from "./Cards";
 import SignInPage from "./SignInPage";
 import About from "./About";
 import { ProfileCard } from "./Profile";
@@ -10,16 +10,20 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 function App() {
+  console.log("here")
   const auth = getAuth();
   const [user, setUser] = useState(null);
-
+/*
   useEffect(() => {
     const observer = onAuthStateChanged(auth, (user) => {
       setUser(user);
     });
 
+
     return observer;
   });
+
+  */
 
   // const signout = () => {
   //   signOut
@@ -31,7 +35,7 @@ function App() {
   //     });
   // };
 
-  if (user) {
+ // if (user) {
     return (
       <div>
         <div>
@@ -40,7 +44,7 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-            <HomePage />
+            <Cards />
           </Route>
           <Route exact path="/about">
             <About />
@@ -53,9 +57,9 @@ function App() {
         <Footer />
       </div>
     );
-  } else {
-    return <SignInPage auth={auth} />;
-  }
+ // } else {
+ //   return <SignInPage auth={auth} />;
+ // }
 }
 
 export default App;
