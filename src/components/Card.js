@@ -32,7 +32,7 @@ export function Card(props) {
   };
 
   return (
-    <div className="d-flex col-md-6 col-xl-3" id={card.cardText}>
+    <div className="d-flex col-md-6 col-xl-3">
       <div id={cardColor} className="card mb-4">
         <div className="card-body">
           <div className="row">

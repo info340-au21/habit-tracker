@@ -54,11 +54,11 @@ export default function Cards(props) {
     });
     setCurrentCards(updatedCards);
   };
-  const removeCard = (cardDescription) => {
+  const removeCard = (cardTitle) => {
     let removalIndex = -1;
 
     let updatedArray = currentCards.map((item, index) => {
-      if (item.cardText !== cardDescription) {
+      if (item.cardTitle !== cardTitle) {
         return item;
       } else {
         removalIndex = index;
@@ -66,12 +66,14 @@ export default function Cards(props) {
       }
     });
 
+    const habitRef = ref(db, "habits/" + props.user.uid);
     updatedArray.splice(removalIndex, 1);
+    firebaseSet(habitRef, updatedArray) //change the database
+      .catch((err) => {});
     setCurrentCards(updatedArray);
   };
 
   const addCard = (cardTitle, cardDescription) => {
-    console.log("GHFI:SH:SFLKJS");
     // update the database
     const newHabit = {
       cardTitle: cardTitle,
