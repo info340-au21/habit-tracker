@@ -9,7 +9,56 @@ import {
   onValue,
 } from "firebase/database";
 
-export default function Motivation(props) {
+export function MotivationFeed(props) {
+
+  const [currentQuotes, setCurrentQuotes] = useState(MOTIVATION_DATA);
+
+
+
+
+  const addQuote = (quoteText) => {
+    const newQ = {
+      userID: "gaisjdgasglkslhgawklhawrh",
+      displayName: "Augene Pak",
+      quote: quoteText
+
+    }
+
+    const updatedArray = [newQ, ...currentQuotes];
+
+    setCurrentQuotes(updatedArray);
+
+  }
+
+  let feed = currentQuotes.map((item) => {
+
+    return (<div className="m-3">
+            {item.quote}
+           </div>)
+
+  });
+
+
+
+  let form = <QuoteForm addQuote={addQuote}/>
+
+  return (
+    <div>
+      <div>
+        {form}
+      </div>
+      <div>
+        {feed}
+      </div>
+    </div>
+  )
+
+
+}
+
+
+
+export function QuoteForm(props) {
   // const [motiv, setMotiv] = useState(null);
   // let user = props.user;
   // const db = getDatabase();
@@ -51,9 +100,17 @@ export default function Motivation(props) {
   //   setMotiv(updatedArray);
   // };
 
+  const [descriptionValue, setDescriptionValue] = useState("");
+
 
   const handleChange = (event) => {
-    console.log(event.target.value)
+    setDescriptionValue(event.target.value);
+  }
+
+  const addQuote = (event) => {
+    event.preventDefault();
+    props.addQuote(descriptionValue);
+
   }
 
   return (
@@ -65,7 +122,7 @@ export default function Motivation(props) {
           aria-describedby="basic-addon2"
           onChange={handleChange}
         />
-        <Button variant="outline-secondary" id="button-addon2">
+        <Button variant="outline-secondary" id="button-addon2" onClick={addQuote}>
           Submit
         </Button>
       </InputGroup>
