@@ -7,7 +7,7 @@ import {NavLink} from 'react-router-dom';
 
 export function NavBar(props) {
     return (
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
+        <nav id="navbar" className="navbar navbar-expand navbar-dark bg-dark">
             <div className="container-fluid">
                 <div className="navbar-header">
                     <a className="navbar-brand" href="#">habit-trackr.</a>
@@ -37,7 +37,7 @@ export function CardList(props) {
     let body = props.cardHistory.map((item, index) => <Card key={index} info={item} remove={props.howToRemove} expand={props.singleDisplay}/>)
     return (
         <div>
-          <div className="container">
+          <div className="container mt-4">
                 <div className="row">
                     {body}
                 </div>
@@ -187,7 +187,7 @@ export function Card(props) {
     let card = props.info;
 
 
-    const [cardColor, setCardColor] = useState("card mb-4 bg-light");
+    const [cardColor, setCardColor] = useState("card-basic-view");
 
 
     const [buttonName, setButtonName] = useState("Complete");
@@ -208,13 +208,13 @@ export function Card(props) {
 
     const makeGreen = (event) => {
         if (buttonName == "Complete") {
-            event.target.className = "btn btn-danger m-2"
-            setCardColor("card mb-4 bg-success")
-            setButtonName("Revert")
+            event.target.className = "btn btn-dark m-2"
+            setCardColor("card-complete-view")
+            setButtonName(" Revert ")
 
         } else {
             event.target.className = "btn btn-success m-2"
-            setCardColor("card mb-4 bg-light")
+            setCardColor("card-basic-view")
             setButtonName("Complete")
         }
         
@@ -225,7 +225,7 @@ export function Card(props) {
     
     
         <div className="d-flex col-md-6 col-xl-3" id={card.cardText}>
-            <div className={cardColor}>
+            <div id={cardColor} className="card mb-4" >
                 <div className="card-body">
                     <div className="row">
                         <div className="col-sm-auto col-xl-12">

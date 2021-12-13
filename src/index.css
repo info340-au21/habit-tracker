@@ -7,14 +7,23 @@ body {
     font-size: 35px;
 }
 
-#expand-card {
-    
-    
 
+#card-basic-view, #expand-card {
+    background-color: #DCE3EC ;
 }
 
+
+#card-complete-view {
+    background-color: #BEF6B2;
+}
+
+
+
+
+
+
 #expand-top {
-    background-color: #E8C6FB;
+    background-color: #C2D3EA;
     border-radius: 1rem;
 }
 
@@ -250,7 +259,7 @@ body {
     top: 0;
     width: 4px;
     height: 100%;
-    background-color: #E1BEE7;
+    background-color: #98A4AB;
     transform: scaleY(1);
     transition: all 0.5s;
     transform-origin: bottom
@@ -263,7 +272,7 @@ body {
     top: 0;
     width: 4px;
     height: 100%;
-    background-color: #8E24AA;
+    background-color: #4A5054;
     transform: scaleY(0);
     transition: all 0.5s;
     transform-origin: bottom
