@@ -10,20 +10,17 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 function App() {
-  console.log("here")
+  console.log("here");
   const auth = getAuth();
   const [user, setUser] = useState(null);
-/*
+
   useEffect(() => {
     const observer = onAuthStateChanged(auth, (user) => {
       setUser(user);
     });
 
-
     return observer;
   });
-
-  */
 
   // const signout = () => {
   //   signOut
@@ -35,7 +32,7 @@ function App() {
   //     });
   // };
 
- // if (user) {
+  if (user) {
     return (
       <div>
         <div>
@@ -57,9 +54,9 @@ function App() {
         <Footer />
       </div>
     );
- // } else {
- //   return <SignInPage auth={auth} />;
- // }
+  } else {
+    return <SignInPage auth={auth} />;
+  }
 }
 
 export default App;

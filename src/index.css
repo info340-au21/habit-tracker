@@ -1,356 +1,317 @@
 body {
-    font-family: "Roboto Slab", "Roboto", sans-serif;
-    color: black;
+  font-family: "Roboto Slab", "Roboto", sans-serif;
+  color: black;
 }
 
 .navbar-brand {
-    font-size: 35px;
+  font-size: 35px;
 }
 
-
-#card-basic-view, #expand-card {
-    background-color: #DCE3EC ;
+#card-basic-view,
+#expand-card {
+  background-color: #dce3ec;
 }
-
 
 #card-complete-view {
-    background-color: #BEF6B2;
+  background-color: #bef6b2;
 }
 
 #main-page-background {
-    color: #2C7399;
-    
+  color: #2c7399;
 }
 
 body {
-    background-color: #EEF2FF;
+  background-color: #eef2ff;
 }
-
 
 .complete-button {
-    background-color: #449A3B;
+  background-color: #449a3b;
 }
 
-
-
 #expand-button {
-    background-color: #596EA8;
+  background-color: #596ea8;
 }
 
 #add-task-button {
-    background-color: #2C7399 ;
+  background-color: #2c7399;
 }
 
-
-  #footer {
-    position:relative;
-    bottom:0;
-    width:100%;
-    height:80px;   /* Height of the footer */
- }
-
-#navbar, #footer {
-    background-color: #596EA8;
+#footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 80px; /* Height of the footer */
 }
 
+#navbar,
+#footer {
+  background-color: #596ea8;
+}
 
 #expand-top {
-    background-color: #C2D3EA;
-    border-radius: 1rem;
+  background-color: #c2d3ea;
+  border-radius: 1rem;
 }
 
 .navbar a {
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 h1 {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    text-align: center;
-    font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: bold;
 }
 
 h2 {
-    font-size: 20px;
-    font-weight: bold;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 /*=============== IMAGE SPECS ===============*/
 img {
-    width: 3rem;
-    height: 3rem;
+  width: 3rem;
+  height: 3rem;
 }
 
 /*=============== CONTENT ===============*/
 header {
-    position: fixed;
-    background-color: #57598d;
-    padding: 5rem;
-    text-align: center;
+  position: fixed;
+  background-color: #57598d;
+  padding: 5rem;
+  text-align: center;
 }
 
 footer {
-    /* position: fixed; */
-    height: 100px;
-    bottom: 0;
-    width: 100%;
-    color: white;
+  /* position: fixed; */
+  height: 100px;
+  bottom: 0;
+  width: 100%;
+  color: white;
 }
 
 footer p {
-    text-align: left;
-    font-size: 0.5rem;
+  text-align: left;
+  font-size: 0.5rem;
 }
 
 .profile {
-    text-align: center;
-    background-color: beige;
-    padding: 2em;
+  text-align: center;
+  background-color: beige;
+  padding: 2em;
 }
 
-.profile>img {
-    border-radius: 200px;
-    width: 15em;
-    height: 15em;
+.profile > img {
+  border-radius: 200px;
+  width: 15em;
+  height: 15em;
 }
 
 section.non_list_content {
-    background-color: #57598d;
-    color: white;
-    text-align: center;
-    padding: 1em;
+  background-color: #57598d;
+  color: white;
+  text-align: center;
+  padding: 1em;
 }
 
-form {
-    text-align: left;
-    width: 30%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-}
-
-button, .new-habit-button {
-    background-color: grey;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+.new-habit-button {
+  background-color: grey;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /*=============== LIST ===============*/
 /* Remove margins and padding from the list */
 ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-/* Style the list items */
-ul li {
-    cursor: pointer;
-    position: relative;
-    padding: 12px 8px 12px 40px;
-    background: #eee;
-    font-size: 1.25rem;
-    transition: 0.2s;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 /* Set all odd list items to a different color (zebra-stripes) */
-ul li:nth-child(odd) {
-    background: #f9f9f9;
-}
-
-ul li:hover {
-    background: #ddd;
-}
-
-ul li.checked {
-    background: #888;
-    color: #fff;
-    text-decoration: line-through;
-}
 
 .close {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 12px 16px 12px 16px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
 }
 
 .close:hover {
-    background-color: #888;
-    color: white;
+  background-color: #888;
+  color: white;
 }
 
 .header {
-    background-color: #57598d;
-    padding: 30px 40px;
-    color: white;
-    text-align: center;
+  background-color: #57598d;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
 }
 
 .header:after {
-    content: "";
-    display: table;
-    clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .habits-page-back-link {
-    height: 3rem;
-    width: 3rem;
+  height: 3rem;
+  width: 3rem;
 }
 
 input {
-    margin: 0;
-    border: none;
-    border-radius: 0;
-    width: 75%;
-    padding: 10px;
-    float: left;
-    font-size: 16px;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
 }
 
 .flexbox.container {
-    color: white;
-    padding: 0.5rem;
-    margin: 0.5rem;
-    background-color: #171952;
-    border-radius: 5px;
-    width: 97%;
-    text-align: left;
-    height: 3rem;
+  color: white;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  background-color: #171952;
+  border-radius: 5px;
+  width: 97%;
+  text-align: left;
+  height: 3rem;
 }
 
 .flexbox.container:hover {
-    color: #171952;
-    background-color: #f9da4d;
+  color: #171952;
+  background-color: #f9da4d;
 }
 
 .flexbox.container p {
-    margin: 0.5rem;
+  margin: 0.5rem;
 }
 
 .habits-page-back-div {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 5px;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 5px;
 }
 
 .flex-row {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 @media (min-width: 912px) {
+  /* Make back button change color. */
+  .habits-page-back-div:hover {
+    background-color: #171952;
+  }
 
-    /* Make back button change color. */
-    .habits-page-back-div:hover {
-        background-color: #171952;
-    }
+  /* Make icon invert colors. */
+  img.habits-page-back-link:hover {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+  }
 
-    /* Make icon invert colors. */
-    img.habits-page-back-link:hover {
-        -webkit-filter: invert(1);
-        filter: invert(1);
-    }
-
-    .flex-row {
-        flex: 60%;
-        flex-direction: column;
-    }
+  .flex-row {
+    flex: 60%;
+    flex-direction: column;
+  }
 }
 
-
 .card {
-    border: none;
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    cursor: pointer
+  border: none;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .card:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 4px;
-    height: 100%;
-    background-color: #98A4AB;
-    transform: scaleY(1);
-    transition: all 0.5s;
-    transform-origin: bottom
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #98a4ab;
+  transform: scaleY(1);
+  transition: all 0.5s;
+  transform-origin: bottom;
 }
 
 .card:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 4px;
-    height: 100%;
-    background-color: #4A5054;
-    transform: scaleY(0);
-    transition: all 0.5s;
-    transform-origin: bottom
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #4a5054;
+  transform: scaleY(0);
+  transition: all 0.5s;
+  transform-origin: bottom;
 }
 
 .card:hover::after {
-    transform: scaleY(1)
+  transform: scaleY(1);
 }
 
 .fonts {
-    font-size: 11px
+  font-size: 11px;
 }
 
 .social-list {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-    padding: 0
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  padding: 0;
 }
 
 .social-list li {
-    padding: 10px;
-    color: #8E24AA;
-    font-size: 19px
+  padding: 10px;
+  color: #8e24aa;
+  font-size: 19px;
 }
 
 .buttons button:nth-child(1) {
-    border: 1px solid #8E24AA !important;
-    color: #8E24AA;
-    height: 40px
+  border: 1px solid #8e24aa !important;
+  color: #8e24aa;
+  height: 40px;
 }
 
 .buttons button:nth-child(1):hover {
-    border: 1px solid #8E24AA !important;
-    color: #fff;
-    height: 40px;
-    background-color: #8E24AA
+  border: 1px solid #8e24aa !important;
+  color: #fff;
+  height: 40px;
+  background-color: #8e24aa;
 }
 
 .buttons button:nth-child(2) {
-    border: 1px solid #8E24AA !important;
-    background-color: #8E24AA;
-    color: #fff;
-    height: 40px
+  border: 1px solid #8e24aa !important;
+  background-color: #8e24aa;
+  color: #fff;
+  height: 40px;
 }
 
 .rounded_circle {
-    width: "500";
-    height: "600"
+  width: "500";
+  height: "600";
 }
 
 /* ABOUT page */
@@ -363,36 +324,36 @@ input {
 } */
 
 button.collapsible {
-    color: white;
-    background-color: silver;
-    padding: 18px;
-    width: 80%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    border-radius: 10px;
-    display: inline-block;
-    margin: 1rem auto 1rem auto;
+  color: white;
+  background-color: silver;
+  padding: 18px;
+  width: 80%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  border-radius: 10px;
+  display: inline-block;
+  margin: 1rem auto 1rem auto;
 }
 
-.active, button.collapsible:hover {
-    background-color: white;
-    color:silver;
+.active,
+button.collapsible:hover {
+  background-color: white;
+  color: silver;
 }
 
 .row-about {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    background-color: #eee;
-    width: 80%;
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #eee;
+  width: 80%;
 }
 
 #add-habit-form {
-   width: 91.5rem;
+  width: 91.5rem;
 }
-
 
 /* .collapsible-content {
     padding: 0 18px;
