@@ -7,38 +7,30 @@ import About from "./About";
 import { ProfileCard } from "./Profile";
 import CARD_DATA from "../data/cards.json";
 import { Route, Switch, Redirect } from "react-router-dom";
-import {
-  getDatabase,
-  ref,
-  set as firebaseSet,
-  push as firebasePush,
-  onValue,
-} from "firebase/database";
+
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 function App(props) {
-  const db = getDatabase(); // not the data; "mailing address"
-
   const auth = getAuth();
+  const [user, setUser] = useState(null);
 
-  /*
   useEffect(() => {
-    // function when component first loads
-    const habitRef = ref(db, "allHabits");
-    onValue(habitRef, (snapshot) => {
-      setCurrentCards(snapshot.val()); // extract the value from snapshot
+    const observer = onAuthStateChanged(auth, (user) => {
+      setUser(user);
     });
 
-    // instructions on how to leave
-    // will be called by React
-    function cleanup() {
-      // turn off the listener
-      console.log("leaving");
-    }
-    return cleanup; // leave instructions behind
-  }, []); // when to re-run (never)
-  // addEventListener('databaseValueChange', () => {})
-  */
+    return observer;
+  });
+
+  const signout = () => {
+    signOut
+      .then(function () {
+        console.log();
+      })
+      .catch(function () {
+        console.log();
+      });
+  };
 
   return (
     <div>
@@ -46,7 +38,7 @@ function App(props) {
 
       <Switch>
         <Route exact path="/">
-          <SignInPage />
+          <SignInPage user={user} />
         </Route>
         <Route exact path="/home">
           <HomePage />
