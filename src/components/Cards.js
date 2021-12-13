@@ -6,6 +6,7 @@ import CARD_DATA from "../data/cards.json";
 
 
 
+
 export function HomePage(props) {
 
     const [currentCards, setCurrentCards] = useState(CARD_DATA);
@@ -17,6 +18,7 @@ export function HomePage(props) {
                 <UserForm setCurrentCards={setCurrentCards} currentCards={currentCards}/>
             </div>
             <Cards setCurrentCards={setCurrentCards} currentCards={currentCards}/>
+     
         </div>
 
     )
@@ -156,5 +158,5 @@ export function Cards(props) {
       }
 
 
-      return view;
+      return (view);
 }

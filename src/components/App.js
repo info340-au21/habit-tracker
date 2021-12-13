@@ -41,14 +41,18 @@ function App(props) {
 
   return (
     <div>
-      <NavBar />
+        <div>
+            <NavBar />
+        </div>
 
       <Switch>
         <Route exact path="/">
           <SignInPage />
         </Route>
+        
         <Route exact path="/home">
           <HomePage />
+     
         </Route>
         <Route exact path="/about">
           <About />
@@ -58,9 +62,11 @@ function App(props) {
         </Route>
         <Redirect to="/" />
       </Switch>
-
       <Footer />
+
+      
     </div>
+
   );
 }
 
