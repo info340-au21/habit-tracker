@@ -1,7 +1,25 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { Button } from "react-bootstrap";
+import { signOut } from "firebase/auth";
 
 export default function NavBar(props) {
+  let setUser = props.setUser;
+
+  const signOutUser = () =>
+    signOut
+      .then(function () {
+        //Sign out
+      })
+      .catch(function (error) {
+        alert(error);
+      });
+
+  const handleClick = (event) => {
+    event.preventDefault();
+    setUser(null);
+  };
+
   return (
     <nav id="navbar" className="navbar">
       <div className="container-fluid">
@@ -30,6 +48,9 @@ export default function NavBar(props) {
             <NavLink exact to="/motivation" activeClassName="activeLink">
               Motivation
             </NavLink>
+          </li>
+          <li>
+            <Button onClick={handleClick}>Sign Out</Button>
           </li>
         </ul>
       </div>
