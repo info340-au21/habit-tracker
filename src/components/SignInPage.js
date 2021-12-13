@@ -33,24 +33,20 @@ const signout = () => {
     });
 };
 
-export default function SignInPage() {
-  const auth = getAuth();
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    const observer = onAuthStateChanged(auth, (user) => {
-      setUser(user);
-    });
-
-    return observer;
-  });
+export default function SignInPage(props) {
+  let user = props.user;
 
   if (user) {
+    console.log(user);
     return <Redirect to="/home" />;
   } else {
+    console.log(user);
     return (
       <div>
-        <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
+        <StyledFirebaseAuth
+          uiConfig={firebaseUIConfig}
+          firebaseAuth={getAuth}
+        />
       </div>
     );
   }

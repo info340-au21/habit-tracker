@@ -8,7 +8,7 @@ import {NavLink} from 'react-router-dom';
 
 export function NavBar(props) {
     return (
-        <nav id="navbar" className="navbar navbar-expand navbar-dark bg-dark">
+        <nav id="navbar" className="navbar navbar-expand navbar-dark ">
             <div className="container-fluid">
                 <div className="navbar-header">
                     <a className="navbar-brand" href="#">habit-trackr.</a>

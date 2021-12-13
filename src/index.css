@@ -22,14 +22,36 @@ body {
     
 }
 
-#add-task-button {
-    background-color: #2C7399 ;
+body {
+    background-color: #EEF2FF;
+}
 
+
+.complete-button {
+    background-color: #449A3B;
 }
 
 
 
+#expand-button {
+    background-color: #596EA8;
+}
 
+#add-task-button {
+    background-color: #2C7399 ;
+}
+
+
+  #footer {
+    position:relative;
+    bottom:0;
+    width:100%;
+    height:80px;   /* Height of the footer */
+ }
+
+#navbar, #footer {
+    background-color: #596EA8;
+}
 
 
 #expand-top {
@@ -250,9 +272,6 @@ input {
     }
 }
 
-body {
-    background: #eee
-}
 
 .card {
     border: none;
