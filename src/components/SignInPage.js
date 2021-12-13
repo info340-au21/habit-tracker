@@ -18,7 +18,7 @@ const firebaseUIConfig = {
 
 export default function SignInPage() {
   const auth = getAuth();
-  /*
+  
   onAuthStateChanged(auth, (user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
@@ -29,7 +29,6 @@ export default function SignInPage() {
       // ...
     }
   });
-  */
 
   return (
     <div>

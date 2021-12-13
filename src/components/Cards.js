@@ -1,14 +1,26 @@
 
 import React, {useState} from "react";
 import CARD_DATA from "../data/cards.json";
-import {CardList, AddCard, ExpandCard} from "./HomePage";
+import {CardList, AddCard, ExpandCard} from "./CardFunctions";
+
+
+export function HomePage(props) {
+    
+    return (
+        <div>
+            <h1>Your Habbits</h1>
+            <Cards />
+        </div>
+
+    )
+}
 
 
 
 export function Cards(props) {
 
     const [currentCards, setCurrentCards] = useState(CARD_DATA);
-    // const [newHabit, setNewHabit] = useState('');
+
     const [cardExpand, setCardExpand] = useState([]);
 
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {NavBar} from "./NavBar";
 import {Footer} from "./Footer";
-import {Cards} from "./Cards";
+import {HomePage} from "./Cards";
 //import SignInPage from "./SignInPage";
 import About from "./About";
 import { ProfileCard } from "./Profile";
@@ -18,11 +18,6 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 function App(props) {
   
-/*
-  const [currentCards, setCurrentCards] = useState(CARD_DATA);
-  // const [newHabit, setNewHabit] = useState('');
-  const [cardExpand, setCardExpand] = useState([]);
-  */
 
   const db = getDatabase(); // not the data; "mailing address"
 
@@ -59,7 +54,7 @@ function App(props) {
 
       <Switch>
         <Route exact path="/">
-          <Cards />
+          <HomePage />
         </Route>
         <Route exact path="/about">
           <About />
