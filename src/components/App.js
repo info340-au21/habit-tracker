@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavBar, CardList, AddCard, ExpandCard, Footer } from "./HomePage";
-import SignInPage from "./SignInPage";
+//import SignInPage from "./SignInPage";
 import About from "./About";
 import { ProfileCard } from "./Profile";
 import CARD_DATA from "../data/cards.json";
@@ -22,23 +22,19 @@ function App(props) {
   const db = getDatabase(); // not the data; "mailing address"
 
   const auth = getAuth();
-  const user = auth.currentUser;
-  onAuthStateChanged(auth, (user) => {
+  const [currentUser, setCurrentUser] = useState(auth.currentUser);
+  const user = onAuthStateChanged(auth, (currentUser) => {
     if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
-      // ...
     } else {
-      // User is signed out
-      // ...
     }
   });
 
+  /*
   useEffect(() => {
     // function when component first loads
     const habitRef = ref(db, "allHabits");
     onValue(habitRef, (snapshot) => {
-      const allHabits = snapshot.val(); // extract the value from snapshot
+      setCurrentCards(snapshot.val()); // extract the value from snapshot
     });
 
     // instructions on how to leave
@@ -50,20 +46,20 @@ function App(props) {
     return cleanup; // leave instructions behind
   }, []); // when to re-run (never)
   // addEventListener('databaseValueChange', () => {})
-
+  */
   const addCard = (cardTitle, cardDescription) => {
     // update the database
     const newHabit = {
       cardTitle: cardTitle,
       cardText: cardDescription,
       timestamp: Date.now(),
-      // cardImage: "img/wake-up.jpg",
-      // cardImageAlt: "Person waking up"
+      completeCount: 0,
     };
-    const habitRef = ref(db, "allHabits/" + user.uid);
+    const habitRef = ref(db, "allHabits/" + currentUser.uid);
 
-    setCurrentCards([...currentCards, newHabit]);
-    firebaseSet(habitRef, currentCards);
+    const updatedArray = [...currentCards, newHabit];
+    setCurrentCards(updatedArray);
+    firebaseSet(habitRef, updatedArray);
 
     // const updatedArray = [...currentCards, newCard];
     // setCurrentCards(updatedArray);
@@ -105,6 +101,7 @@ function App(props) {
         cardImage: focus.cardImage,
         cardImageAlt: focus.cardImageAlt,
         impact: focus.impact,
+        completeCount: focus.completeCount,
       },
     ];
 

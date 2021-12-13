@@ -4,48 +4,56 @@
     "cardText": "I will wake up at 6 am. After waking up, I will do 5 pushups.",
     "cardImage": "img/wake-up.jpg",
     "cardImageAlt": "A person waking up",
-    "impact": "+"
+    "impact": "+",
+    "completeCount": 7
   },
   {
     "cardTitle": "Don't eat after 6 PM",
     "cardText": "I will not eat after 6 pm.",
     "cardImage": "img/no-eating.jpg",
     "cardImageAlt": "Child not trying to eat",
-    "impact": "-"
+    "impact": "-",
+    "completeCount": 11
   },
   {
     "cardTitle": "Call parents",
     "cardText": "Every third Thursday, I will call my parents.",
     "cardImage": "img/call-parents.jfif",
     "cardImageAlt": "Person calling",
-    "impact": "="
+    "impact": "=",
+    "completeCount": 23
   },
   {
     "cardTitle": "Sing a little",
     "cardText": "I will sing like Adele in the morning",
     "cardImage": "img/wake-up.jpg",
     "cardImageAlt": "A person waking up",
-    "impact": "+"
+    "impact": "+",
+    "completeCount": 11
   },
   {
     "cardTitle": "Try not to cry before noon",
     "cardText": "I will not cry or get sad",
     "cardImage": "img/no-eating.jpg",
     "cardImageAlt": "Child not trying to eat",
-    "impact": "-"
+    "impact": "-",
+    "completeCount": 13
   },
   {
     "cardTitle": "Eat a salad at some point",
     "cardText": "IDC what type of salad it is, just eat a salad",
     "cardImage": "img/wake-up.jpg",
     "cardImageAlt": "A person waking up",
-    "impact": "+"
+    "impact": "+",
+    "completeCount": 11
   },
   {
     "cardTitle": "Actually go to class",
     "cardText": "You gotta start going to class",
     "cardImage": "img/no-eating.jpg",
     "cardImageAlt": "Child not trying to eat",
-    "impact": "-"
+    "impact": "-",
+    "completeCount": 24
   }
+  
 ]

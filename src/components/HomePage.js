@@ -8,7 +8,7 @@ import {Button, Collapse} from 'react-bootstrap';
 
 export function NavBar(props) {
     return (
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
+        <nav id="navbar" className="navbar navbar-expand navbar-dark bg-dark">
             <div className="container-fluid">
                 <div className="navbar-header">
                     <a className="navbar-brand" href="#">habit-trackr.</a>
@@ -38,7 +38,7 @@ export function CardList(props) {
     let body = props.cardHistory.map((item, index) => <Card key={index} info={item} remove={props.howToRemove} expand={props.singleDisplay}/>)
     return (
         <div>
-          <div className="container">
+          <div className="container mt-4">
                 <div className="row">
                     {body}
                 </div>
@@ -51,6 +51,8 @@ export function CardList(props) {
 
 export function ExpandCard(props) {
 
+   
+
     let card = props.card[0];
 
     console.log(card);
@@ -58,24 +60,31 @@ export function ExpandCard(props) {
 
     const handleDelete = (event) => {
         console.log(event.target.id);
-        props.howToRemove(event.target.id);
         props.howToRevert()
+        setTimeout(() => {props.howToRemove(event.target.id)}, 300)
+        
+        
 
 
     }
 
     return (
-            <div className="d-flex m-3 ">
-                <div className=" col-sm-2 col-md-2 col-lg-3"></div>
-                <div className="card col-sm-8 col-md-8 col-lg-6">
-                    <div className="card-body justify-content-center m-5">
-                        <h2 className="card-title">
-                            {card.cardTitle}
-                        </h2>
-                        <p className="card-text">
-                            {card.cardText}
+            <div className="d-flex m-5 ">
+                <div className=" col-sm-2 col-md-2 col-lg-4"></div>
+                <div id="expand-card" className="card col-sm-8 col-md-8 col-lg-4">
+                    <div className="card-body justify-content-center">
+                        <div id="expand-top">
+                            <h1 className="card-title p-3 mb-4">
+                                {card.cardTitle}
+                            </h1>
+                            <p className=" h5 card-text text-center m-3 pb-3">
+                                {card.cardText}
+                            </p>
+                        </div>
+                        <p className="h5 card-text text-center pt-4">
+                            You've completed this habit <b>{card.completeCount} </b> times!
                         </p>
-                        <p>Sanity check</p>
+                        
 
                     </div>
                     <div className="d-flex justify-content-center">
@@ -84,7 +93,7 @@ export function ExpandCard(props) {
                     </div>
 
                 </div>
-                <div className="col-sm-2 col-md-2 col-lg-3"></div>
+                <div className="col-sm-2 col-md-2 col-lg-4"></div>
             </div>
 
 
@@ -179,6 +188,13 @@ export function Card(props) {
     // single JSON entry
     let card = props.info;
 
+
+    const [cardColor, setCardColor] = useState("card-basic-view");
+
+
+    const [buttonName, setButtonName] = useState("Complete");
+
+
     const handleDelete = (event) => {
         console.log(event.target.id);
         props.remove(event.target.id);
@@ -188,13 +204,27 @@ export function Card(props) {
     const handleExpand = (event) => {
         props.expand(event.target.id);
     }
+
+    const makeGreen = (event) => {
+        if (buttonName == "Complete") {
+            event.target.className = "btn btn-dark m-2"
+            setCardColor("card-complete-view")
+            setButtonName(" Revert ")
+
+        } else {
+            event.target.className = "btn btn-success m-2"
+            setCardColor("card-basic-view")
+            setButtonName("Complete")
+        }
+        
+    }
    
     
     return ( 
     
     
-        <div className="d-flex col-md-6 col-xl-3">
-            <div className="card mb-4">
+        <div className="d-flex col-md-6 col-xl-3" id={card.cardText}>
+            <div id={cardColor} className="card mb-4" >
                 <div className="card-body">
                     <div className="row">
                         <div className="col-sm-auto col-xl-12">
@@ -215,6 +245,7 @@ export function Card(props) {
                 </div>
                 <div className="d-flex justify-content-center m-2">
                     <button className=" btn btn-primary m-2" id={card.cardText} onClick={handleExpand} >Expand</button>
+                    <button className=" btn btn-success m-2" id={card.cardText} onClick={makeGreen} >{buttonName}</button>
              
                 </div>
             </div>
