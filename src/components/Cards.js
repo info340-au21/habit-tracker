@@ -90,7 +90,7 @@ export default function Cards(props) {
             cardTitle: item.cardTitle,
             cardText: item.cardText,
             impact: item.impact,
-            completeCount: item.completeCount + 1,
+            completeCount: item.completeCount,
             isGreen: false
           };
         }
