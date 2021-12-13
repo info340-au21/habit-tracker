@@ -13,12 +13,11 @@ import {
 export default function Cards(props) {
   const [currentCards, setCurrentCards] = useState([]);
   const db = getDatabase();
+  const habitRef = ref(db, "habits/" + props.user.uid);
 
   // code from lecture demo
   useEffect(() => {
     //function when component first loads
-    const habitRef = ref(db, "habits/" + props.user.uid);
-
     //addEventListener('databaseValueChange', () => {})
     const offFunction = onValue(habitRef, (snapshot) => {
       const allHabits = snapshot.val(); //extract the value from the snapshot
@@ -38,7 +37,7 @@ export default function Cards(props) {
   const [cardExpand, setCardExpand] = useState([]);
 
   const updateCompletion = (cardDescription) => {
-    let updatedCards = currentCards.map((item, index) => {
+    const updatedArray = currentCards.map((item, index) => {
       if (item.cardText !== cardDescription) {
         return item;
       } else {
@@ -52,7 +51,9 @@ export default function Cards(props) {
         };
       }
     });
-    setCurrentCards(updatedCards);
+    firebaseSet(habitRef, updatedArray) //change the database
+      .catch((err) => {});
+    setCurrentCards(updatedArray);
   };
   const removeCard = (cardTitle) => {
     let removalIndex = -1;
@@ -66,7 +67,6 @@ export default function Cards(props) {
       }
     });
 
-    const habitRef = ref(db, "habits/" + props.user.uid);
     updatedArray.splice(removalIndex, 1);
     firebaseSet(habitRef, updatedArray) //change the database
       .catch((err) => {});
@@ -84,7 +84,6 @@ export default function Cards(props) {
       completeCount: 0,
     };
 
-    const habitRef = ref(db, "habits/" + props.user.uid);
     //handle errors in firebase
     const updatedArray = [...currentCards, newHabit];
     //setCurrentCards(updatedArray);
@@ -94,11 +93,11 @@ export default function Cards(props) {
     setCurrentCards(updatedArray);
   };
 
-  const displaySingleCard = (cardDescription) => {
+  const displaySingleCard = (cardTitle) => {
     let displayIndex = -1;
 
     let updatedArray = currentCards.map((item, index) => {
-      if (item.cardText !== cardDescription) {
+      if (item.cardTitle !== cardTitle) {
         return item;
       } else {
         displayIndex = index;
