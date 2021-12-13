@@ -34,7 +34,11 @@ export function Footer(props) {
 }
 
 export function CardList(props) {
-    let body = props.cardHistory.map((item, index) => <Card key={index} info={item} remove={props.howToRemove} expand={props.singleDisplay}/>)
+    let body = props.cardHistory.map((item, index) => <Card key={index} 
+                                                        info={item} 
+                                                        remove={props.howToRemove} 
+                                                        expand={props.singleDisplay} 
+                                                        updateCount={props.updateCount}/>)
     return (
         <div>
           <div className="container mt-4">
@@ -215,6 +219,7 @@ export function Card(props) {
             event.target.className = "btn btn-dark m-2"
             setCardColor("card-complete-view")
             setButtonName(" Revert ")
+            props.updateCount(event.target.id);
 
         } else {
             event.target.className = "btn btn-success m-2"

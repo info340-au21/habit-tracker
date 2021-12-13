@@ -65,6 +65,26 @@ function App(props) {
     // setCurrentCards(updatedArray);
   };
 
+  // update the card's completion count 
+  const updateCompletion = (cardDescription) => {
+    let updatedCards = currentCards.map((item, index) => {
+        if (item.cardText !== cardDescription) {
+            return item;
+        } else {
+            return {
+                cardTitle: item.cardTitle,
+                cardText: item.cardText,
+                cardImage: item.cardImage,
+                cardImageAlt: item.cardImageAlt,
+                impact: item.impact,
+                completeCount: item.completeCount + 1,
+
+            }
+        }
+    })
+    setCurrentCards(updatedCards);
+  };
+
   const removeCard = (cardDescription) => {
     let removalIndex = -1;
 
@@ -120,6 +140,7 @@ function App(props) {
         cardHistory={currentCards}
         howToRemove={removeCard}
         singleDisplay={displaySingleCard}
+        updateCount={updateCompletion}
         key={1}
       />,
       <AddCard howToAddCard={addCard} key={2} />,
