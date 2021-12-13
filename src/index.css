@@ -1,5 +1,5 @@
 body {
-  font-family: "Roboto Slab", "Roboto", sans-serif;
+  font-family: "Sora", sans-serif;
   color: black;
 }
 
@@ -21,7 +21,7 @@ body {
 }
 
 body {
-  background-color: #eef2ff;
+  background-color: white;
 }
 
 .complete-button {
@@ -238,38 +238,9 @@ input {
   border: none;
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
   cursor: pointer;
-}
-
-.card:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background-color: #98a4ab;
-  transform: scaleY(1);
-  transition: all 0.5s;
-  transform-origin: bottom;
-}
-
-.card:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background-color: #4a5054;
-  transform: scaleY(0);
-  transition: all 0.5s;
-  transform-origin: bottom;
-}
-
-.card:hover::after {
-  transform: scaleY(1);
+  text-align: center;
+  background-color: white;
 }
 
 .fonts {

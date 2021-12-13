@@ -3,7 +3,7 @@ import { CardList, ExpandCard } from "./CardFunctions";
 import { AddCard } from "./AddHabitCard";
 import CARD_DATA from "../data/cards.json";
 
-export function Cards(props) {
+export default function Cards(props) {
   const [currentCards, setCurrentCards] = useState(CARD_DATA);
 
   const [cardExpand, setCardExpand] = useState([]);

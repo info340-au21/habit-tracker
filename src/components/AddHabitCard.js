@@ -34,7 +34,12 @@ export function AddCard(props) {
         aria-expanded={open}
         aria-controls="add-habit-form-button"
       >
-        <b> Add New Habit </b>
+        <button
+          id="add-task-button2"
+          className="btn p-2 mt-2 justify-content-left"
+        >
+          Add New Habit
+        </button>
       </Button>
       <Collapse in={open}>
         <form>

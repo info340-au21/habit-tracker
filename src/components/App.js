@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { NavBar } from "./NavBar";
-import { Footer } from "./Footer";
-import { Cards } from "./Cards";
+import NavBar from "./NavBar";
+import Footer from "./Footer";
+import Cards from "./Cards";
 import SignInPage from "./SignInPage";
 import About from "./About";
-import { ProfileCard } from "./Profile";
+import Motivation from "./Motivation";
 import { Route, Switch, Redirect } from "react-router-dom";
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
@@ -46,8 +46,8 @@ function App() {
           <Route exact path="/about">
             <About />
           </Route>
-          <Route exact path="/profile">
-            <ProfileCard />
+          <Route exact path="/motivation">
+            <Motivation />
           </Route>
           <Redirect to="/" />
         </Switch>
