@@ -11,17 +11,17 @@ function About() {
           <h1>
             How It Works
           </h1>
-          <img src="img/atomic_habits.jpg" alt="Front Cover of Atomic Habits by James Clear" className="justify-content-center"/>
+          <img src="img/atomichabits.jpg" alt="Front Cover of Atomic Habits by James Clear" style={{ width: "264px", height:"400px" }} className="d-flex justify-content-center" />
           <p>
 
           </p>
           <iframe src="https://www.youtube.com/embed/U_nzqnXWvSo" title="YouTube video player" frameborder="0"
            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt="Front Cover of Atomic Habits by James Clear"
            className="d-flex justify-content-center"
-           width="1100" height="500">
+           width="1100" height="450">
            </iframe>
            <p>
-             
+
            </p>
           <h2>The Inspiration</h2>
           <p>
@@ -49,4 +49,5 @@ function About() {
 }
 
 export default About;
+
 
