@@ -10,7 +10,7 @@ export function AddCard(props) {
 
   const [displayAddHabit, setDisplayAddHabit] = useState(true);
 
-  const [addHabitButtonText, setAddHabitButtonText] = useState('Add New Habit');
+  const [addHabitButtonText, setAddHabitButtonText] = useState("Add New Habit");
 
   const handleTitleUpdate = (event) => {
     setTitleValue(event.target.value);
@@ -21,29 +21,29 @@ export function AddCard(props) {
   };
 
   const handleClick = (event) => {
-    if (titleValue !== '' && descriptionValue !== '') {
+    if (titleValue !== "" && descriptionValue !== "") {
       event.preventDefault();
       props.howToAddCard(titleValue, descriptionValue);
       setTitleValue("");
       setDescriptionValue("");
     } else {
-      alert("You need to fill in both fields.")
+      alert("You need to fill in both fields.");
     }
   };
 
   const habitButtonHandler = (event) => {
     setOpen(!open);
     if (displayAddHabit) {
-      setAddHabitButtonText('Cancel');
+      setAddHabitButtonText("Cancel");
       setDisplayAddHabit(false);
     } else {
-      setAddHabitButtonText('Add New Habit');
+      setAddHabitButtonText("Add New Habit");
       setDisplayAddHabit(true);
     }
   };
 
   return (
-    <>
+    <div>
       {/* Add Habit Form */}
       <Button
         variant="link"
@@ -57,13 +57,13 @@ export function AddCard(props) {
           id="add-task-button2"
           className="btn p-2 mt-2 justify-content-left"
         > */}
-          {addHabitButtonText}
+        {addHabitButtonText}
         {/* </button> */}
       </Button>
       <Collapse in={open}>
         <form>
-          <div class="form-group">
-            <label id="main-page-background" for="habit-title">
+          <div className="form-group">
+            <label id="main-page-background" htmlFor="habit-title">
               {" "}
               <b>Action</b>{" "}
             </label>
@@ -71,13 +71,17 @@ export function AddCard(props) {
               type="text"
               value={titleValue}
               onChange={handleTitleUpdate}
-              class="form-control"
+              className="form-control"
               id="habit-title"
-              placeholder="Enter Action">
-            </input>
+              placeholder="Enter Action"
+            ></input>
           </div>
-          <div class="form-group">
-            <label className="mt-2" id="main-page-background" for="habit-text">
+          <div className="form-group">
+            <label
+              className="mt-2"
+              id="main-page-background"
+              htmlFor="habit-text"
+            >
               {" "}
               <b> Implementation Intention </b>
             </label>
@@ -85,14 +89,17 @@ export function AddCard(props) {
               type="text"
               value={descriptionValue}
               onChange={handleDescriptionUpdate}
-              class="form-control"
+              className="form-control"
               id="habit-text"
-              placeholder="I will [x] at [time] in/at [location]">
-            </input>
+              placeholder="I will [x] at [time] in/at [location]"
+            ></input>
           </div>
-          {/* DONE */}{/* Make sure that the habit can't be added if either field is empty */}
-          {/* DONE */}{/* Check problem set 6. */}
-          {/* DONE */}{/* Give feedback to user if fields are empty. */}
+          {/* DONE */}
+          {/* Make sure that the habit can't be added if either field is empty */}
+          {/* DONE */}
+          {/* Check problem set 6. */}
+          {/* DONE */}
+          {/* Give feedback to user if fields are empty. */}
           {/* Center cards and their text on different screen sizes.*/}
           {/* Consistent card sizing.*/}
 
@@ -101,14 +108,13 @@ export function AddCard(props) {
             //className="add-habit-button"
             id="add-task-button"
             className="btn p-2 mt-2 justify-content-left"
-            onClick={handleClick}>
+            onClick={handleClick}
+          >
             Submit
           </Button>
-          <div className="d-none">
-            Both fields must be filled in.
-          </div>
+          <div className="d-none">Both fields must be filled in.</div>
         </form>
       </Collapse>
-    </>
+    </div>
   );
 }
