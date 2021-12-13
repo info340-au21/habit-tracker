@@ -8,7 +8,6 @@ import { ProfileCard } from "./Profile";
 import { Route, Switch, Redirect } from "react-router-dom";
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { ProfilePage } from "./ProfilePage";
 
 function App() {
   const auth = getAuth();

@@ -1,7 +1,4 @@
 import React from "react";
-{
-  /* Remove the <br>s. */
-}
 
 function About() {
   return (
@@ -11,7 +8,7 @@ function About() {
           <h1>
             How It Works
           </h1>
-          <img src="img/atomichabits.jpg" alt="Front Cover of Atomic Habits by James Clear" style={{ width: "264px", height:"400px" }} className="d-flex justify-content-center" />
+          <img src="img/atomichabits.jpg" alt="Front Cover of Atomic Habits by James Clear" style={{ width: "264px", height:"400px" }}/>
           <p>
 
           </p>
