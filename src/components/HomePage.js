@@ -69,17 +69,22 @@ export function ExpandCard(props) {
 
 
     return (
-            <div className="d-flex m-3 ">
-                <div className=" col-sm-2 col-md-2 col-lg-3"></div>
-                <div className="card col-sm-8 col-md-8 col-lg-6">
-                    <div className="card-body justify-content-center m-5">
-                        <h2 className="card-title">
-                            {card.cardTitle}
-                        </h2>
-                        <p className="card-text">
-                            {card.cardText}
+            <div className="d-flex m-5 ">
+                <div className=" col-sm-2 col-md-2 col-lg-4"></div>
+                <div id="expand-card" className="card col-sm-8 col-md-8 col-lg-4">
+                    <div className="card-body justify-content-center">
+                        <div id="expand-top">
+                            <h1 className="card-title p-3 mb-4">
+                                {card.cardTitle}
+                            </h1>
+                            <p className=" h5 card-text text-center m-3 pb-3">
+                                {card.cardText}
+                            </p>
+                        </div>
+                        <p className="h5 card-text text-center pt-4">
+                            You've completed this habit <b>{card.completeCount} </b> times!
                         </p>
-                        <p>Sanity check</p>
+                        
 
                     </div>
                     <div className="d-flex justify-content-center">
@@ -88,7 +93,7 @@ export function ExpandCard(props) {
                     </div>
 
                 </div>
-                <div className="col-sm-2 col-md-2 col-lg-3"></div>
+                <div className="col-sm-2 col-md-2 col-lg-4"></div>
             </div>
 
 

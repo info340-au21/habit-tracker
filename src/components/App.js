@@ -57,6 +57,7 @@ function App(props) {
       cardTitle: cardTitle,
       cardText: cardDescription,
       timestamp: Date.now(),
+      completeCount: 0
       // cardImage: "img/wake-up.jpg",
       // cardImageAlt: "Person waking up"
     };
@@ -105,6 +106,7 @@ function App(props) {
         cardImage: focus.cardImage,
         cardImageAlt: focus.cardImageAlt,
         impact: focus.impact,
+        completeCount: focus.completeCount
       },
     ];
 

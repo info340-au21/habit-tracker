@@ -7,6 +7,17 @@ body {
     font-size: 35px;
 }
 
+#expand-card {
+    
+    
+
+}
+
+#expand-top {
+    background-color: #E8C6FB;
+    border-radius: 1rem;
+}
+
 .navbar a {
     color: black;
     font-weight: bold;

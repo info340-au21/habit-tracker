@@ -5,7 +5,7 @@
     "cardImage": "img/wake-up.jpg",
     "cardImageAlt": "A person waking up",
     "impact": "+",
-    "completeCount": 0
+    "completeCount": 7
   },
   {
     "cardTitle": "Don't eat after 6 PM",
@@ -13,7 +13,7 @@
     "cardImage": "img/no-eating.jpg",
     "cardImageAlt": "Child not trying to eat",
     "impact": "-",
-    "completeCount": 0
+    "completeCount": 11
   },
   {
     "cardTitle": "Call parents",
@@ -21,7 +21,7 @@
     "cardImage": "img/call-parents.jfif",
     "cardImageAlt": "Person calling",
     "impact": "=",
-    "completeCount": 0
+    "completeCount": 23
   },
   {
     "cardTitle": "Sing a little",
@@ -29,7 +29,7 @@
     "cardImage": "img/wake-up.jpg",
     "cardImageAlt": "A person waking up",
     "impact": "+",
-    "completeCount": 0
+    "completeCount": 11
   },
   {
     "cardTitle": "Try not to cry before noon",
@@ -37,7 +37,7 @@
     "cardImage": "img/no-eating.jpg",
     "cardImageAlt": "Child not trying to eat",
     "impact": "-",
-    "completeCount": 0
+    "completeCount": 13
   },
   {
     "cardTitle": "Eat a salad at some point",
@@ -45,7 +45,7 @@
     "cardImage": "img/wake-up.jpg",
     "cardImageAlt": "A person waking up",
     "impact": "+",
-    "completeCount": 0
+    "completeCount": 11
   },
   {
     "cardTitle": "Actually go to class",
@@ -53,6 +53,7 @@
     "cardImage": "img/no-eating.jpg",
     "cardImageAlt": "Child not trying to eat",
     "impact": "-",
-    "completeCount": 0
+    "completeCount": 24
   }
+  
 ]
