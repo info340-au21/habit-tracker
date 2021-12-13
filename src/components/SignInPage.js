@@ -43,7 +43,10 @@ export default function SignInPage(props) {
     console.log(user);
     return (
       <div>
-        <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
+        <StyledFirebaseAuth
+          uiConfig={firebaseUIConfig}
+          firebaseAuth={getAuth}
+        />
       </div>
     );
   }

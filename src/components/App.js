@@ -21,32 +21,29 @@ function App(props) {
     return observer;
   });
 
-  const signout = () => {
-    signOut
-      .then(function () {
-        console.log();
-      })
-      .catch(function () {
-        console.log();
-      });
-  };
+  // const signout = () => {
+  //   signOut
+  //     .then(function () {
+  //       console.log();
+  //     })
+  //     .catch(function () {
+  //       console.log();
+  //     });
+  // };
 
   return (
     <div>
-        <div>
-            <NavBar />
-        </div>
-        
+      <div>
+        <NavBar />
+      </div>
+
       <Switch>
         <Route exact path="/">
           <SignInPage user={user} />
         </Route>
-        
-        <Route exact path="/home">
-          
-          <HomePage />
 
-     
+        <Route exact path="/home">
+          <HomePage />
         </Route>
         <Route exact path="/about">
           <About />
@@ -57,11 +54,7 @@ function App(props) {
         <Redirect to="/" />
       </Switch>
       <Footer />
-
-
-      
     </div>
-
   );
 }
 
