@@ -56,7 +56,7 @@ export default function App() {
 
   if (currentUser) {
     return (
-      <div>
+      <div className="d-flex flex-column min-vh-100">
         <div>
           <NavBar setUser={setCurrentUser} />
         </div>
