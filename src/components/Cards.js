@@ -40,21 +40,73 @@ export default function Cards(props) {
       if (item.cardText !== cardDescription) {
         return item;
       } else {
-        console.log(item.completeCount);
+        
         return {
           cardTitle: item.cardTitle,
           cardText: item.cardText,
           impact: item.impact,
           completeCount: item.completeCount + 1,
+          isGreen: item.isGreen
         };
       }
     });
-    console.log(cardDescription);
-    console.log(updatedArray);
+
+
+
     firebaseSet(habitRef, updatedArray) //change the database
       .catch((err) => {});
     setCurrentCards(updatedArray);
   };
+
+  const makeCardGreen = (cardDescription) => {
+    console.log("hhheerrree")
+    const updatedArray = currentCards.map((item) => {
+      if (item.cardText !== cardDescription) {
+        return item;
+      } else {
+        
+        return {
+          cardTitle: item.cardTitle,
+          cardText: item.cardText,
+          impact: item.impact,
+          completeCount: item.completeCount + 1,
+          isGreen: true
+        };
+      }
+      
+    });
+    firebaseSet(habitRef, updatedArray) //change the database
+      .catch((err) => {});
+    setCurrentCards(updatedArray);
+  };
+
+    const removeGreen = (cardDescription) => {
+      const updatedArray = currentCards.map((item) => {
+        if (item.cardText !== cardDescription) {
+          return item;
+        } else {
+          
+          return {
+            cardTitle: item.cardTitle,
+            cardText: item.cardText,
+            impact: item.impact,
+            completeCount: item.completeCount + 1,
+            isGreen: false
+          };
+        }
+      });
+      firebaseSet(habitRef, updatedArray) //change the database
+      .catch((err) => {});
+    setCurrentCards(updatedArray);
+  };
+
+
+
+    
+
+  
+
+
   const removeCard = (cardTitle) => {
     let removalIndex = -1;
 
@@ -80,6 +132,7 @@ export default function Cards(props) {
       cardText: cardDescription,
       impact: "=",
       completeCount: 0,
+      isGreen: false
     };
 
     //handle errors in firebase
@@ -133,6 +186,8 @@ export default function Cards(props) {
         howToRemove={removeCard}
         singleDisplay={displaySingleCard}
         updateCount={updateCompletion}
+        makeCardGreen={makeCardGreen}
+        removeGreen = {removeGreen}
         key={1}
       />,
     ];

@@ -9,6 +9,9 @@ export function CardList(props) {
       remove={props.howToRemove}
       expand={props.singleDisplay}
       updateCount={props.updateCount}
+      makeCardGreen={props.makeCardGreen}
+      removeGreen = {props.removeGreen}
+
     />
   ));
   return (
