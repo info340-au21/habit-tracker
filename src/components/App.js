@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavBar } from "./NavBar";
 import { Footer } from "./Footer";
 import { HomePage } from "./Cards";
-//import SignInPage from "./SignInPage";
+import SignInPage from "./SignInPage";
 import About from "./About";
 import { ProfileCard } from "./Profile";
 import { Route, Switch, Redirect } from "react-router-dom";
@@ -48,7 +48,7 @@ function App(props) {
           <SignInPage />
         </Route>
         <Route exact path="/home">
-          {view}
+          <HomePage />
         </Route>
         <Route exact path="/about">
           <About />
