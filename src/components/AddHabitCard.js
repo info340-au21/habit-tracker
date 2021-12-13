@@ -23,13 +23,14 @@ export function AddCard(props) {
     }
 
     const handleClick = (event) => {
+        event.preventDefault();
       
         
         props.howToAddCard(titleValue, descriptionValue);
         setTitleValue('');
         setDescriptionValue('');
 
-        return false;
+        
        
             
         

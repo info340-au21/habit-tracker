@@ -18,6 +18,7 @@ export function Card(props) {
   };
 
   const makeGreen = (event) => {
+    event.preventDefault();
     if (buttonName == "Complete") {
       event.target.className = "btn btn-dark m-2";
       setCardColor("card-complete-view");
