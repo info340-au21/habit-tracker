@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import CARD_DATA from "../data/cards.json";
 import {NavLink} from 'react-router-dom';
+import {Button, Collapse} from 'react-bootstrap';
 
 
 // import { timeStamp } from "console";
@@ -63,11 +64,6 @@ export function ExpandCard(props) {
 
     }
 
-
-    
-
-
-
     return (
             <div className="d-flex m-3 ">
                 <div className=" col-sm-2 col-md-2 col-lg-3"></div>
@@ -104,6 +100,8 @@ export function AddCard(props) {
 
     const [descriptionValue, setDescriptionValue] = useState('');
 
+    const [open, setOpen] = useState(false);//sets whether the 'add new habit' dropdown is open
+
     const handleTitleUpdate = (event) => {
         setTitleValue(event.target.value);
 
@@ -111,60 +109,62 @@ export function AddCard(props) {
 
     const handleDescriptionUpdate = (event) => {
         setDescriptionValue(event.target.value);
-        
     }
 
     const handleClick = (event) => {
         console.log("submitting", titleValue);
         props.howToAddCard(titleValue, descriptionValue);
-        setTitleValue('')
-        setDescriptionValue('')
+        setTitleValue('');
+        setDescriptionValue('');
     }
 
     return (
-        <div>
-            `<form>
-                <div class="form-group">
-                    <label for="habit-title">Habit Title</label>
-                    <input type="text" 
-                            value={titleValue} 
-                            onChange={handleTitleUpdate}
-                            class="form-control" 
-                            id="habit-title" 
-                            placeholder="Enter Title">
-                    </input>
-                </div>
-                <div class="form-group">
-                    <label for="habit-text">Habit Description</label>
-                    <input type="text" 
-                            value={descriptionValue} 
-                            onChange={handleDescriptionUpdate}
-                            class="form-control" 
-                            id="habit-text" 
-                            placeholder="Enter Description">
-
-                    </input>
-                </div>
-                <div class="form-group">
-                    <label for="select-occurence">Select Recurrence</label>
-                    <select class="form-control" id="select-occurence">
-                        <option>Daily</option>
-                        <option>Weekly</option>
-                        <option>Monthly</option>
-                    </select>
-                </div>
-                <div>
-                    <button type="button" 
-                            className="btn btn-secondary" 
-                            onClick={handleClick} 
-                            disabled={titleValue == ""}>
-                            Add
-                    </button>
-                </div>
-            </form>`
-        </div>
+        <>
+            {/* Add Habit Form */}
+            <Button
+                variant="link"
+                className="add-habit-form-button"
+                onClick={() => setOpen(!open)}
+                aria-expanded={open}
+                aria-controls="add-habit-form-button">
+                New Habit
+            </Button>
+            <Collapse in={open}>
+                <form>
+                    <div class="form-group">
+                        <label for="habit-title">Action</label>
+                        <input type="text" 
+                                value={titleValue} 
+                                onChange={handleTitleUpdate}
+                                class="form-control" 
+                                id="habit-title" 
+                                placeholder="Enter Action">
+                        </input>
+                    </div>
+                    <div class="form-group">
+                        <label for="habit-text">Implementation Intention</label>
+                        <input type="text" 
+                                value={descriptionValue} 
+                                onChange={handleDescriptionUpdate}
+                                class="form-control" 
+                                id="habit-text" 
+                                placeholder="I will [x] at [time] in/at [location]">
+                        </input>
+                    </div>
+                    {/* Make sure that the habit can't be added if either field is empty */}
+                    {/* Check problem set 7 */}
+                    
+                    <Button
+                        variant="button"
+                        className="add-habit-button"
+                        onClick={handleClick}
+                        aria-controls="habit-adder">
+                        Add New Habit
+                    </Button>
+                </form>
+            </Collapse>
+        </>
     );
-
 }
 
 
