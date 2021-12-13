@@ -32,10 +32,13 @@ export function MotivationFeed(props) {
 
   let feed = currentQuotes.map((item) => {
 
-    return (<div className="m-3">
-            {item.quote}
-           </div>)
-
+    return (
+      <div className=" position-relative mb-4">
+          <p>{item.displayName}</p>
+            <p>{item.quote}</p>
+      </div>
+    )
+          
   });
 
 
@@ -47,8 +50,10 @@ export function MotivationFeed(props) {
       <div>
         {form}
       </div>
-      <div>
-        {feed}
+      <div >
+        
+          {feed}
+        
       </div>
     </div>
   )
