@@ -112,10 +112,14 @@ export function AddCard(props) {
     }
 
     const handleClick = (event) => {
-        console.log("submitting", titleValue);
-        props.howToAddCard(titleValue, descriptionValue);
-        setTitleValue('');
-        setDescriptionValue('');
+        if (titleValue !== "" && descriptionValue !== "") {
+            console.log("submitting", titleValue);
+            props.howToAddCard(titleValue, descriptionValue);
+            setTitleValue('');
+            setDescriptionValue('');
+        } else {
+            
+        }
     }
 
     return (
@@ -153,7 +157,7 @@ export function AddCard(props) {
                     </div>
                     {/* Make sure that the habit can't be added if either field is empty */}
                     {/* Check problem set 7 */}
-                    
+
                     <Button
                         variant="button"
                         className="add-habit-button"
