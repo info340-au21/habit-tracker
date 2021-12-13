@@ -35,16 +35,14 @@ export default function Cards(props) {
   }, [db]); //when to re-run (never)
   const [cardExpand, setCardExpand] = useState([]);
 
-  const updateCompletion = (cardDescription) => {
-    const updatedArray = currentCards.map((item, index) => {
-      if (item.cardText !== cardDescription) {
+  const updateCompletion = (cardTitle) => {
+    const updatedArray = currentCards.map((item) => {
+      if (item.cardTitle !== cardTitle) {
         return item;
       } else {
         return {
           cardTitle: item.cardTitle,
           cardText: item.cardText,
-          cardImage: item.cardImage,
-          cardImageAlt: item.cardImageAlt,
           impact: item.impact,
           completeCount: item.completeCount + 1,
         };
@@ -90,25 +88,26 @@ export default function Cards(props) {
     setCurrentCards(updatedArray);
   };
 
-  const displaySingleCard = (cardTitle) => {
+  const displaySingleCard = (cardDescription) => {
     let displayIndex = -1;
 
     let updatedArray = currentCards.map((item, index) => {
-      if (item.cardTitle !== cardTitle) {
-        return item;
-      } else {
+      if (item.cardText === cardDescription) {
         displayIndex = index;
-        return;
       }
+      console.log(item.cardDescription);
+      return item;
     });
+    console.log(updatedArray);
+    console.log(cardDescription);
+    console.log(displayIndex);
 
-    let focus = currentCards[displayIndex];
+    let focus = updatedArray[displayIndex];
+    console.log(focus);
     let res = [
       {
         cardTitle: focus.cardTitle,
         cardText: focus.cardText,
-        cardImage: focus.cardImage,
-        cardImageAlt: focus.cardImageAlt,
         impact: focus.impact,
         completeCount: focus.completeCount,
       },
