@@ -17,9 +17,28 @@ body {
     background-color: #BEF6B2;
 }
 
+#main-page-background {
+    color: #2C7399;
+    
+}
 
+#add-task-button {
+    background-color: #2C7399 ;
+}
 
+.content {
+    min-height: calc(100vh - 70px);
+  }
+  #footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:80px;   /* Height of the footer */
+ }
 
+#navbar, #footer {
+    background-color: #596EA8;
+}
 
 
 #expand-top {

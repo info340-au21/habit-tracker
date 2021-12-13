@@ -38,18 +38,19 @@ export function AddCard(props) {
             {/* Add Habit Form */}
             <Button
                 variant="link"
-                className="add-habit-form-button"
-                
+                //className="add-habit-form-button"
+                id="main-page-background"
                 onClick={() => setOpen(!open)}
                 aria-expanded={open}
                 aria-controls="add-habit-form-button">
-                Add New Habit
+               <b> Add New Habit </b>
             </Button>
             <Collapse in={open}>
                 <form>
-                    <div class="form-group">
-                        <label for="habit-title">Action</label>
-                        <input type="text" 
+                    <div class="form-group" >
+                        <label id="main-page-background" for="habit-title"> <b>Action</b> </label>
+                        <input  type="text" 
+                                
                                 value={titleValue} 
                                 onChange={handleTitleUpdate}
                                 class="form-control" 
@@ -58,7 +59,7 @@ export function AddCard(props) {
                         </input>
                     </div>
                     <div class="form-group">
-                        <label for="habit-text">Implementation Intention</label>
+                        <label className="mt-2" id="main-page-background" for="habit-text"> <b> Implementation Intention </b></label>
                         <input type="text" 
                                 value={descriptionValue} 
                                 onChange={handleDescriptionUpdate}
@@ -70,13 +71,14 @@ export function AddCard(props) {
                     {/* Make sure that the habit can't be added if either field is empty */}
                     {/* Check problem set 7 */}
 
-                    <Button
-                        variant="button"
-                        className="add-habit-button"
-                        onClick={handleClick}
-                        aria-controls="habit-adder">
+                    <button
+                        //variant="button"
+                        //className="add-habit-button"
+                        id="add-task-button"
+                        className="btn p-2 mt-2 justify-content-left"
+                        onClick={handleClick}>
                         Add New Habit
-                    </Button>
+                    </button>
                 </form>
             </Collapse>
         </>

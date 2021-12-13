@@ -9,123 +9,41 @@ function About() {
       <div className="container justify-content-center">
         <div>
           <h1>
-            The 4 parts of a Habit are the Cue, Craving, Response, and Reward.
+            How It Works
           </h1>
-          <h2>Cue</h2>
+          <img src="img/atomic_habits.jpg" alt="Front Cover of Atomic Habits by James Clear" className="justify-content-center"/>
           <p>
-            The Cue is what makes you think of doing the Habit. It's a piece of
-            information that predicts a reward. For example, if your stomach
-            rumbles, you may think about eating food.
+
           </p>
-          <h2>Craving</h2>
+          <iframe src="https://www.youtube.com/embed/U_nzqnXWvSo" title="YouTube video player" frameborder="0"
+           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt="Front Cover of Atomic Habits by James Clear"
+           className="d-flex justify-content-center">
+             
+           </iframe>
+          <h2>The Inspiration</h2>
           <p>
-            The Craving is what you fundamentally desire. It's not always
-            obvious. You don't want to go on Netflix, you want to be
-            entertained. You don't want to brush and floss your teeth, you want
-            the feeling of a clean mouth. You don't want to exercise, you want
-            the feeling of more energy and attraction from the opposite sex.
+            In hoping to help people improve their lives, we looked to a popular novel by the name of Atomic Habits. 
+            Written by James Clear, this book features evidence-based research on how to implement habits in one's life. 
+            It has a New York Times #1 bestseller and has sold over 5 million copies worldwide.
           </p>
-          <h2>Response</h2>
+          
+          <h2>Implentation Intentions</h2>
           <p>
-            The response is simply the physical action associated with the
-            habit. brushing and flossing, calling a friend every month, lifting
-            weights, or reading 10 pages of a self-improvement book every day.
+            According to James Clear, people are two to three times more likely to follow through with an intended habit if they "make a specific
+            plan for when, where, and how they are going to implement it." He refers to said type of plan as an "implentation intention."
           </p>
-          <h2>Reward</h2>
-          <p>
-            The reward is the satiation of the desire (craving). When you brush
-            and floss your teeth, you are rewarded with the feeling of a clean
-            mouth. Similarly, when you finish lifting weights, you are rewarded
-            with the feeling of more energy and the satisfaction of having a
-            better looking body.
+          <p>As he writes in his book:
+            "By outlining a clear plan of action and clarifying exactly what you need to work on, you make the task simpler which
+            means it requires less motivation to do. So when you wake up the next
+            morning and find that your motivation has faded, you still might have
+            enough to get started because the next step has already been outlined and
+            is simple and clear."
           </p>
         </div>
-
-        <div>
-          <h1>
-            We use 4 metrics when evaluating a Habit: Direction, Impact, Total
-            Impact, and Frequency.
-          </h1>
-
-          <h2>Direction</h2>
-          <p>
-            Direction measures whether a habit is good (1), neutral (0), or bad
-            (-1).
-          </p>
-
-          <h2>Impact</h2>
-          <p>
-            Impact measures, on a scale of 0 to 10, how much of the day is
-            impacted by performing the habit. The scoring guidelines are as
-            follows: 0 = negligible impact or no impact, 5 = up to half the day
-            is impacted, 10 = the whole day is impacted. For any value X above
-            10, divide X by 10 to get the number of days impacted by the habit.
-          </p>
-
-          <h2>Total Impact</h2>
-          <p>
-            Total Impact measures the total effect of a Habit based on its
-            Impact score, whether that is negative, neutral, or positive.
-          </p>
-
-          <h2>Frequency</h2>
-          <p>
-            Frequency measures how often a Habit is being done. The values are:
-            y = yes (done 75% of the time it should be done), s = sometimes, and
-            n = no (done 25% or less than how often it should be done).
-          </p>
-
-          <h2>Examples</h2>
-
-          <h3>Example 1:</h3>
-          <p>Habit = "Lift weights every day."</p>
-          <p>Direction = 1</p>
-          <p>Impact = 10</p>
-          <p>Total Impact = 1 x 10 = 10</p>
-          <p>Frequency = y</p>
-
-          <h3>Example 2:</h3>
-          <p>Habit = "Eating to alleviate boredom."</p>
-          <p>Direction = -1</p>
-          <p>Impact = 7</p>
-          <p>Total Impact = 1 x -7 = -7</p>
-          <p>Frequency = s</p>
-        </div>
-
-        {/* <div>
-
-                <h1>Data is Powerful</h1>
-                <p>
-                    Keeping track of habits is a powerful tool for reinforcing them.
-                    Each of the Metrics (Direction, Impact, Total Impact, and Frequency) are used to inform you of which
-                    habits to focus on maintaining or cutting.
-                </p>
-
-                <h2>Advanced Metrics</h2>
-
-                <h3>Frequency-Adjusted Percentages of Habit Types</h3>
-                <p>Habits that are good and done consistently</p>
-                <p>Habits that are good and done sometimes</p>
-                <p>Habits that are good and done infrequently or never</p>
-                <p>Habits that are bad and done consistently</p>
-                <p>Habits that are bad and done sometimes</p>
-                <p>Habits that are bad and done infrequently or never</p>
-
-                <h3>Impact-Adjusted Percentages of Habit Types</h3>
-                <p>Habits that are good and high impact</p>
-                <p>Habits that are good and medium impact</p>
-                <p>Habits that are good and low impact</p>
-                <p>Habits that are bad and high impact</p>
-                <p>Habits that are bad and medium impact</p>
-                <p>Habits that are bad and low impact</p>
-                <p>
-                    <em>High Impact: 8 or higher, Medium Impact: between 4 and 7 (inclusive), Low Impact: less than 4</em>
-                </p>
-
-            </div> */}
       </div>
     </div>
   );
 }
 
 export default About;
+

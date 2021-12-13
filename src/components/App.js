@@ -5,7 +5,6 @@ import { HomePage } from "./Cards";
 import SignInPage from "./SignInPage";
 import About from "./About";
 import { ProfileCard } from "./Profile";
-import CARD_DATA from "../data/cards.json";
 import { Route, Switch, Redirect } from "react-router-dom";
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
@@ -34,14 +33,18 @@ function App(props) {
 
   return (
     <div>
-      <NavBar />
+        <div>
+            <NavBar />
+        </div>
 
       <Switch>
         <Route exact path="/">
           <SignInPage user={user} />
         </Route>
+        
         <Route exact path="/home">
           <HomePage />
+     
         </Route>
         <Route exact path="/about">
           <About />
@@ -51,9 +54,11 @@ function App(props) {
         </Route>
         <Redirect to="/" />
       </Switch>
-
       <Footer />
+
+      
     </div>
+
   );
 }
 
