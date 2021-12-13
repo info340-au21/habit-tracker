@@ -81,7 +81,7 @@ export function AddCard(props) {
             className="btn p-2 mt-2 justify-content-left"
             onClick={handleClick}
           >
-            Add New Habit
+            Submit
           </button>
         </form>
       </Collapse>

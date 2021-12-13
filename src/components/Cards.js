@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { CardList, ExpandCard } from "./CardFunctions";
 import { AddCard } from "./AddHabitCard";
-import CARD_DATA from "../data/cards.json";
 import {
   getDatabase,
   ref,
