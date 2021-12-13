@@ -5,7 +5,7 @@ import Cards from "./Cards";
 import SignInPage from "./SignInPage";
 import About from "./About";
 import Stats from "./Stats";
-import Motivation from "./Motivation";
+import {MotivationFeed} from "./Motivation";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 
@@ -72,7 +72,7 @@ export default function App() {
             <Stats />
           </Route>
           <Route exact path="/motivation">
-            <Motivation />
+            <MotivationFeed />
           </Route>
           <Redirect to="/" />
         </Switch>
