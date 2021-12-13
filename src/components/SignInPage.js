@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-import { getAuth, EmailAuthProvider, GoogleAuthProvider } from "firebase/auth";
+import {
+  getAuth,
+  EmailAuthProvider,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  signOut,
+} from "firebase/auth";
+import { Redirect } from "react-router-dom";
 
 const firebaseUIConfig = {
   signInOptions: [
@@ -16,23 +23,35 @@ const firebaseUIConfig = {
   },
 };
 
+const signout = () => {
+  signOut
+    .then(function () {
+      console.log();
+    })
+    .catch(function () {
+      console.log();
+    });
+};
+
 export default function SignInPage() {
   const auth = getAuth();
-  
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
-      // ...
-    } else {
-      // User is signed out
-      // ...
-    }
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const observer = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
+
+    return observer;
   });
 
-  return (
-    <div>
-      <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
-    </div>
-  );
+  if (user) {
+    return <Redirect to="/home" />;
+  } else {
+    return (
+      <div>
+        <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
+      </div>
+    );
+  }
 }

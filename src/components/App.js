@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import {NavBar} from "./NavBar";
-import {Footer} from "./Footer";
-import {HomePage} from "./Cards";
+import { NavBar } from "./NavBar";
+import { Footer } from "./Footer";
+import { HomePage } from "./Cards";
 //import SignInPage from "./SignInPage";
 import About from "./About";
 import { ProfileCard } from "./Profile";
@@ -17,17 +17,9 @@ import {
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 function App(props) {
-  
-
   const db = getDatabase(); // not the data; "mailing address"
 
   const auth = getAuth();
-  const [currentUser, setCurrentUser] = useState(auth.currentUser);
-  const user = onAuthStateChanged(auth, (currentUser) => {
-    if (user) {
-    } else {
-    }
-  });
 
   /*
   useEffect(() => {
@@ -47,14 +39,17 @@ function App(props) {
   }, []); // when to re-run (never)
   // addEventListener('databaseValueChange', () => {})
   */
- 
+
   return (
     <div>
       <NavBar />
 
       <Switch>
         <Route exact path="/">
-          <HomePage />
+          <SignInPage />
+        </Route>
+        <Route exact path="/home">
+          {view}
         </Route>
         <Route exact path="/about">
           <About />
