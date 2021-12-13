@@ -44,14 +44,16 @@ function App(props) {
         <div>
             <NavBar />
         </div>
-
+        
       <Switch>
         <Route exact path="/">
           <SignInPage />
         </Route>
         
         <Route exact path="/home">
+          
           <HomePage />
+
      
         </Route>
         <Route exact path="/about">
@@ -63,6 +65,7 @@ function App(props) {
         <Redirect to="/" />
       </Switch>
       <Footer />
+
 
       
     </div>

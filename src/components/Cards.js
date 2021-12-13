@@ -12,8 +12,8 @@ export function HomePage(props) {
     const [currentCards, setCurrentCards] = useState(CARD_DATA);
     
     return (
-        <div>
-            <h1>Your Habits</h1>
+        <div id ="homepage-background">
+            <h1>Current Habits</h1>
             <div className="d-flex justify-content-center">
                 <UserForm setCurrentCards={setCurrentCards} currentCards={currentCards}/>
             </div>
