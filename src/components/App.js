@@ -167,6 +167,9 @@ function App(props) {
         <Route exact path="/about">
           <About />
         </Route>
+        <Route exact path="/profile">
+          <ProfileCard />
+        </Route>
         <Redirect to="/" />
       </Switch>
 

@@ -99,7 +99,7 @@ form {
     box-sizing: border-box;
 }
 
-button {
+button, .new-habit-button {
     background-color: grey;
     border: none;
     color: white;
