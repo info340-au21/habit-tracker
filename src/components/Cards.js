@@ -1,29 +1,35 @@
 
 import React, {useState} from "react";
 import CARD_DATA from "../data/cards.json";
-import {CardList, AddCard, ExpandCard} from "./CardFunctions";
+import {CardList, ExpandCard} from "./CardFunctions";
+import {AddCard} from "./AddHabitCard"
 
 
 export function HomePage(props) {
+
+    const [currentCards, setCurrentCards] = useState(CARD_DATA);
     
     return (
         <div>
-            <h1>Your Habbits</h1>
-            <Cards />
+            <h1>Your Habits</h1>
+            <div className="d-flex justify-content-center">
+                <UserForm setCurrentCards={setCurrentCards} currentCards={currentCards}/>
+            </div>
+            <Cards setCurrentCards={setCurrentCards} currentCards={currentCards}/>
         </div>
 
     )
 }
 
 
+export function UserForm(props) {
 
-export function Cards(props) {
-
-    const [currentCards, setCurrentCards] = useState(CARD_DATA);
-
-    const [cardExpand, setCardExpand] = useState([]);
+    let setCurrentCards = props.setCurrentCards;
+    let currentCards = props.currentCards;
 
 
+    
+    
     const addCard = (cardTitle, cardDescription) => {
         // update the database
         const newHabit = {
@@ -42,6 +48,23 @@ export function Cards(props) {
 
 
     };
+    
+    return <AddCard howToAddCard={addCard} key={2} />
+
+}
+
+
+export function Cards(props) {
+
+    
+
+    const [cardExpand, setCardExpand] = useState([]);
+
+    let setCurrentCards = props.setCurrentCards;
+    let currentCards = props.currentCards;
+
+    
+    
 
 
     const updateCompletion = (cardDescription) => {
@@ -62,7 +85,6 @@ export function Cards(props) {
         })
         setCurrentCards(updatedCards);
     };
-
     const removeCard = (cardDescription) => {
         let removalIndex = -1;
     
@@ -78,8 +100,6 @@ export function Cards(props) {
         updatedArray.splice(removalIndex, 1);
         setCurrentCards(updatedArray);
     };
-
-
     const displaySingleCard = (cardDescription) => {
         let displayIndex = -1;
     
@@ -106,8 +126,6 @@ export function Cards(props) {
     
         setCardExpand(res);
     };
-
-
     const revertToMainCardView = () => {
         setCardExpand([]);
       };
@@ -123,7 +141,7 @@ export function Cards(props) {
             updateCount={updateCompletion}
             key={1}
           />,
-          <AddCard howToAddCard={addCard} key={2} />,
+         
         ];
       } else {
         view = [
