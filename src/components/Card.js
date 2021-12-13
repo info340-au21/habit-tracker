@@ -30,17 +30,21 @@ export function Card(props) {
       setButtonName("Complete");
     }
   };
-
+// CSS div.card-body
+// CSS div#card-basic-view.card.mb-4 IMPORTANT
+// columns are the same width
   return (
     <div className="d-flex col-md-6 col-xl-3">
       <div id={cardColor} className="card mb-4">
         <div className="card-body">
           <div className="row">
-            <div className="col-sm-auto col-xl-12"></div>
+            <div className="col-sm-auto col-xl-12">
 
-            <div className="col-sm">
-              <h2 className="card-title">{card.cardTitle}</h2>
-              <p className="card-text">{card.cardText}</p>
+              <div className="col-sm">
+                <h2 className="card-title">{card.cardTitle}</h2>
+                <p className="card-text">{card.cardText}</p>
+              </div>
+
             </div>
           </div>
         </div>
@@ -48,15 +52,13 @@ export function Card(props) {
           <button
             className=" btn btn-primary m-2"
             id={card.cardText}
-            onClick={handleExpand}
-          >
+            onClick={handleExpand}>
             Expand
           </button>
           <button
             className=" btn btn-success m-2"
             id={card.cardText}
-            onClick={makeGreen}
-          >
+            onClick={makeGreen}>
             {buttonName}
           </button>
         </div>

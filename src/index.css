@@ -1,6 +1,7 @@
 body {
   font-family: "Sora", sans-serif;
   color: black;
+  background-color: white;
 }
 
 .navbar-brand {
@@ -18,10 +19,6 @@ body {
 
 #main-page-background {
   color: #2c7399;
-}
-
-body {
-  background-color: white;
 }
 
 .complete-button {
@@ -176,13 +173,27 @@ ul {
 
 input {
   margin: 0;
-  border: none;
+  /* border: none; */
+  border: 2px solid black;
   border-radius: 0;
   width: 75%;
   padding: 10px;
   float: left;
   font-size: 16px;
 }
+
+p.alert-warning {
+  margin: 2px;
+  padding: 2px;
+}
+
+/* input:valid {
+  border: 2px solid black;
+}
+
+input#habit-title:invalid:required, input#habit-text:invalid:required {
+  border: 2px solid red;
+} */
 
 .flexbox.container {
   color: white;
@@ -241,6 +252,43 @@ input {
   cursor: pointer;
   text-align: center;
   background-color: white;
+}
+
+.card-body {
+  /* This makes the card text center-justified. Replacing it with
+  'width: auto' makes the text left-justified. */
+  /* padding: auto;
+  margin: 0 auto; */
+  width: auto;
+}
+
+/* #card-basic-view {
+  width: 90%;
+} */
+
+/* .d-flex.col-md-6.col-xl-3 {
+  width:100%;
+} */
+
+/* .col-sm-auto.col-xl-12 {
+  width:90%;
+} */
+
+/* .col-sm {
+  width:100%;
+} */
+
+.col-sm-auto.col-xl-12, #card-basic-view {
+  width:90%;
+}
+
+.col-sm, .d-flex.col-md-6.col-xl-3 {
+  width:100%;
+}
+
+
+.col-sm, .col-sm-auto.col-xl-12, #card-basic-view {
+  margin: auto;
 }
 
 .fonts {

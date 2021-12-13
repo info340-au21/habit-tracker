@@ -12,6 +12,8 @@ export function AddCard(props) {
 
   const [addHabitButtonText, setAddHabitButtonText] = useState('Add New Habit');
 
+  // const [hasBeenClicked, setHasBeenClicked] = useState(true);
+
   const handleTitleUpdate = (event) => {
     setTitleValue(event.target.value);
   };
@@ -27,7 +29,7 @@ export function AddCard(props) {
       setTitleValue("");
       setDescriptionValue("");
     } else {
-      alert("You need to fill in both fields.")
+      alert("You need to fill in BOTH fields.");//this is probably fine for the spec
     }
   };
 
@@ -73,7 +75,8 @@ export function AddCard(props) {
               onChange={handleTitleUpdate}
               class="form-control"
               id="habit-title"
-              placeholder="Enter Action">
+              placeholder="Enter Action"
+              required>
             </input>
           </div>
           <div class="form-group">
@@ -87,14 +90,22 @@ export function AddCard(props) {
               onChange={handleDescriptionUpdate}
               class="form-control"
               id="habit-text"
-              placeholder="I will [x] at [time] in/at [location]">
+              placeholder="I will [x] at [time] in/at [location]"
+              required>
             </input>
           </div>
+          
+          {/* {!hasBeenClicked && descriptionValue === '' && <p className="alert alert-warning">Must provide a value</p>} */}
+          {/* {descriptionValue === '' && <p className="alert alert-warning">Must provide a value</p>} */}
+
           {/* DONE */}{/* Make sure that the habit can't be added if either field is empty */}
           {/* DONE */}{/* Check problem set 6. */}
           {/* DONE */}{/* Give feedback to user if fields are empty. */}
-          {/* Center cards and their text on different screen sizes.*/}
-          {/* Consistent card sizing.*/}
+          {/* Maybe have best/worst habits */}
+          {/* fix footer by making it stick to the bottom */}
+          {/* DONE */}{/* Center cards and their text on different screen sizes.*/}
+          {/* DONE */}{/* Consistent card sizing.*/}
+          {/* DONE */}{/* Let Andrew know when you're done with the card sizing. */}
 
           <Button
             //variant="button"
