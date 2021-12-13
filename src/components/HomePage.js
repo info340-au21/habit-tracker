@@ -50,6 +50,8 @@ export function CardList(props) {
 
 export function ExpandCard(props) {
 
+   
+
     let card = props.card[0];
 
     console.log(card);
@@ -57,8 +59,10 @@ export function ExpandCard(props) {
 
     const handleDelete = (event) => {
         console.log(event.target.id);
-        props.howToRemove(event.target.id);
         props.howToRevert()
+        setTimeout(() => {props.howToRemove(event.target.id)}, 300)
+        
+        
 
 
     }
