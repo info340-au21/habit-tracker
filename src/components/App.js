@@ -9,7 +9,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
-function App(props) {
+function App() {
   const auth = getAuth();
   const [user, setUser] = useState(null);
 
@@ -31,31 +31,31 @@ function App(props) {
   //     });
   // };
 
-  return (
-    <div>
+  if (user) {
+    return (
       <div>
-        <NavBar />
+        <div>
+          <NavBar />
+        </div>
+
+        <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Route exact path="/profile">
+            <ProfileCard />
+          </Route>
+          <Redirect to="/" />
+        </Switch>
+        <Footer />
       </div>
-
-      <Switch>
-        <Route exact path="/">
-          <SignInPage user={user} />
-        </Route>
-
-        <Route exact path="/home">
-          <HomePage />
-        </Route>
-        <Route exact path="/about">
-          <About />
-        </Route>
-        <Route exact path="/profile">
-          <ProfileCard />
-        </Route>
-        <Redirect to="/" />
-      </Switch>
-      <Footer />
-    </div>
-  );
+    );
+  } else {
+    return <SignInPage auth={auth} />;
+  }
 }
 
 export default App;
