@@ -49,7 +49,6 @@ export function AddCard(props) {
         variant="link"
         //className="add-habit-form-button"
         id="main-page-background"
-        // onClick={() => setOpen(!open)}
         onClick={habitButtonHandler}
         aria-expanded={open}
         aria-controls="add-habit-form-button"
