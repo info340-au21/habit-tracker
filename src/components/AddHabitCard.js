@@ -10,7 +10,7 @@ export function AddCard(props) {
 
   const [displayAddHabit, setDisplayAddHabit] = useState(true);
 
-  const [addHabitButtonText, setAddHabitButtonText] = useState('Add New Habit');
+  const [addHabitButtonText, setAddHabitButtonText] = useState("Add New Habit");
 
   // const [hasBeenClicked, setHasBeenClicked] = useState(true);
 
@@ -23,7 +23,7 @@ export function AddCard(props) {
   };
 
   const handleClick = (event) => {
-    if (titleValue !== '' && descriptionValue !== '') {
+    if (titleValue !== "" && descriptionValue !== "") {
       event.preventDefault();
       props.howToAddCard(titleValue, descriptionValue);
       setTitleValue("");
@@ -36,16 +36,16 @@ export function AddCard(props) {
   const habitButtonHandler = (event) => {
     setOpen(!open);
     if (displayAddHabit) {
-      setAddHabitButtonText('Cancel');
+      setAddHabitButtonText("Cancel");
       setDisplayAddHabit(false);
     } else {
-      setAddHabitButtonText('Add New Habit');
+      setAddHabitButtonText("Add New Habit");
       setDisplayAddHabit(true);
     }
   };
 
   return (
-    <>
+    <div>
       {/* Add Habit Form */}
       <Button
         variant="link"
@@ -59,13 +59,13 @@ export function AddCard(props) {
           id="add-task-button2"
           className="btn p-2 mt-2 justify-content-left"
         > */}
-          {addHabitButtonText}
+        {addHabitButtonText}
         {/* </button> */}
       </Button>
       <Collapse in={open}>
         <form>
-          <div class="form-group">
-            <label id="main-page-background" for="habit-title">
+          <div className="form-group">
+            <label id="main-page-background" htmlFor="habit-title">
               {" "}
               <b>Action</b>{" "}
             </label>
@@ -73,14 +73,17 @@ export function AddCard(props) {
               type="text"
               value={titleValue}
               onChange={handleTitleUpdate}
-              class="form-control"
+              className="form-control"
               id="habit-title"
-              placeholder="Enter Action"
-              required>
+              placeholder="Enter Action">
             </input>
           </div>
-          <div class="form-group">
-            <label className="mt-2" id="main-page-background" for="habit-text">
+          <div className="form-group">
+            <label
+              className="mt-2"
+              id="main-page-background"
+              htmlFor="habit-text"
+            >
               {" "}
               <b> Implementation Intention </b>
             </label>
@@ -88,13 +91,13 @@ export function AddCard(props) {
               type="text"
               value={descriptionValue}
               onChange={handleDescriptionUpdate}
-              class="form-control"
+              className="form-control"
               id="habit-text"
               placeholder="I will [x] at [time] in/at [location]"
               required>
             </input>
           </div>
-          
+          {/* Keep the first 2 commented-out things below just in case. */}
           {/* {!hasBeenClicked && descriptionValue === '' && <p className="alert alert-warning">Must provide a value</p>} */}
           {/* {descriptionValue === '' && <p className="alert alert-warning">Must provide a value</p>} */}
 
@@ -102,7 +105,7 @@ export function AddCard(props) {
           {/* DONE */}{/* Check problem set 6. */}
           {/* DONE */}{/* Give feedback to user if fields are empty. */}
           {/* Maybe have best/worst habits */}
-          {/* fix footer by making it stick to the bottom */}
+          {/* DONE */}{/* fix footer by making it stick to the bottom */}
           {/* DONE */}{/* Center cards and their text on different screen sizes.*/}
           {/* DONE */}{/* Consistent card sizing.*/}
           {/* DONE */}{/* Let Andrew know when you're done with the card sizing. */}
@@ -112,14 +115,13 @@ export function AddCard(props) {
             //className="add-habit-button"
             id="add-task-button"
             className="btn p-2 mt-2 justify-content-left"
-            onClick={handleClick}>
+            onClick={handleClick}
+          >
             Submit
           </Button>
-          <div className="d-none">
-            Both fields must be filled in.
-          </div>
+          <div className="d-none">Both fields must be filled in.</div>
         </form>
       </Collapse>
-    </>
+    </div>
   );
 }

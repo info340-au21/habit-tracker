@@ -4,9 +4,9 @@ export function Card(props) {
   // single JSON entry
   let card = props.info;
 
-  const [cardColor, setCardColor] = useState("card-basic-view");
+  //const [cardColor, setCardColor] = useState("card-basic-view");
 
-  const [buttonName, setButtonName] = useState("Complete");
+  //const [buttonName, setButtonName] = useState("Complete");
 
   const handleDelete = (event) => {
     console.log(event.target.id);
@@ -14,9 +14,11 @@ export function Card(props) {
   };
 
   const handleExpand = (event) => {
+    event.preventDefault();
     props.expand(event.target.id);
   };
 
+  /*
   const makeGreen = (event) => {
     event.preventDefault();
     if (buttonName == "Complete") {
@@ -30,11 +32,43 @@ export function Card(props) {
       setButtonName("Complete");
     }
   };
-// CSS div.card-body
-// CSS div#card-basic-view.card.mb-4 IMPORTANT
-// columns are the same width
+  */
+
+  let cardColor;
+  let buttonName;
+  let buttonClass;
+  
+  if (!card.isGreen) {
+    cardColor="card-basic-view";
+    buttonName = "Complete";
+    buttonClass = "btn btn-success m-2"
+  } else {
+    cardColor="card-complete-view";
+    buttonName = "Revert";
+    buttonClass = "btn btn-dark m-2"
+  }
+
+
+
+  const makeGreen = (event) => {
+    event.preventDefault();
+    if (!card.isGreen) {
+    
+
+      props.updateCount(event.target.id);
+      props.makeCardGreen(event.target.id);
+
+    } else {
+
+      props.removeGreen(event.target.id);
+
+    }
+
+
+  }
+
   return (
-    <div className="d-flex col-md-6 col-xl-3">
+    <div className="d-flex col-md-6 col-xl-3" id={card.cardText}>
       <div id={cardColor} className="card mb-4">
         <div className="card-body">
           <div className="row">
@@ -56,7 +90,7 @@ export function Card(props) {
             Expand
           </button>
           <button
-            className=" btn btn-success m-2"
+            className={buttonClass}
             id={card.cardText}
             onClick={makeGreen}>
             {buttonName}
