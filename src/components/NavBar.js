@@ -6,7 +6,7 @@ export default function NavBar(props) {
     <nav id="navbar" className="navbar">
       <div className="container-fluid">
         <div className="navbar-header">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             habit-trackr.
           </a>
         </div>

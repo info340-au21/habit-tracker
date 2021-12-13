@@ -35,11 +35,12 @@ export default function Cards(props) {
   }, [db]); //when to re-run (never)
   const [cardExpand, setCardExpand] = useState([]);
 
-  const updateCompletion = (cardTitle) => {
+  const updateCompletion = (cardDescription) => {
     const updatedArray = currentCards.map((item) => {
-      if (item.cardTitle !== cardTitle) {
+      if (item.cardText !== cardDescription) {
         return item;
       } else {
+        console.log(item.completeCount);
         return {
           cardTitle: item.cardTitle,
           cardText: item.cardText,
@@ -48,6 +49,8 @@ export default function Cards(props) {
         };
       }
     });
+    console.log(cardDescription);
+    console.log(updatedArray);
     firebaseSet(habitRef, updatedArray) //change the database
       .catch((err) => {});
     setCurrentCards(updatedArray);

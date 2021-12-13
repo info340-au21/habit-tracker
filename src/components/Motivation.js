@@ -51,6 +51,11 @@ export default function Motivation(props) {
   //   setMotiv(updatedArray);
   // };
 
+
+  const handleChange = (event) => {
+    console.log(event.target.value)
+  }
+
   return (
     <div>
       <InputGroup className="mb-3">
@@ -58,6 +63,7 @@ export default function Motivation(props) {
           placeholder="Add motivational quote"
           aria-label="Text box for motivational quote"
           aria-describedby="basic-addon2"
+          onChange={handleChange}
         />
         <Button variant="outline-secondary" id="button-addon2">
           Submit
