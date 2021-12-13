@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, InputGroup, FormControl } from "react-bootstrap";
+import MOTIVATION_DATA from "../data/motivation.json";
 
 export default function Motivation() {
   return (

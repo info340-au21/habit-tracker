@@ -1,11 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { CardList, ExpandCard } from "./CardFunctions";
 import { AddCard } from "./AddHabitCard";
 import CARD_DATA from "../data/cards.json";
+import {
+  getDatabase,
+  ref,
+  set as firebaseSet,
+  push as firebasePush,
+  onValue,
+} from "firebase/database";
 
 export default function Cards(props) {
-  const [currentCards, setCurrentCards] = useState(CARD_DATA);
+  const [currentCards, setCurrentCards] = useState([]);
+  const db = getDatabase();
 
+  // code from lecture demo
+  useEffect(() => {
+    //function when component first loads
+    const habitRef = ref(db, "habits/" + props.user.uid);
+
+    //addEventListener('databaseValueChange', () => {})
+    const offFunction = onValue(habitRef, (snapshot) => {
+      const allHabits = snapshot.val(); //extract the value from the snapshot
+      if (allHabits == null) {
+        setCurrentCards([]);
+      } else {
+        setCurrentCards(allHabits);
+      }
+    });
+
+    //instructions on how to leave will be called by React when component unmounts
+    function cleanup() {
+      offFunction(); //turn the listener off
+    }
+    return cleanup; //leave the instructions behind
+  }, [db]); //when to re-run (never)
   const [cardExpand, setCardExpand] = useState([]);
 
   const updateCompletion = (cardDescription) => {
@@ -53,9 +82,13 @@ export default function Cards(props) {
       completeCount: 0,
     };
 
+    const habitRef = ref(db, "habits/" + props.user.uid);
+    //handle errors in firebase
     const updatedArray = [...currentCards, newHabit];
     //setCurrentCards(updatedArray);
     //firebaseSet(habitRef, updatedArray);
+    firebaseSet(habitRef, updatedArray) //change the database
+      .catch((err) => {});
     setCurrentCards(updatedArray);
   };
 

@@ -1,8 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-// import { timeStamp } from "console";
-
 export default function NavBar(props) {
   return (
     <nav id="navbar" className="navbar">
@@ -21,6 +19,11 @@ export default function NavBar(props) {
           <li>
             <NavLink exact to="/about" activeClassName="activeLink">
               About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink exact to="/stats" activeClassName="activeLink">
+              Statistics
             </NavLink>
           </li>
           <li>

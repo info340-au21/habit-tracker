@@ -4,23 +4,46 @@ import Footer from "./Footer";
 import Cards from "./Cards";
 import SignInPage from "./SignInPage";
 import About from "./About";
+import Stats from "./Stats";
 import Motivation from "./Motivation";
 import { Route, Switch, Redirect } from "react-router-dom";
-
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
-function App() {
-  console.log("here");
-  const auth = getAuth();
-  const [user, setUser] = useState(null);
+export default function App() {
+  const [currentUser, setCurrentUser] = useState(undefined);
 
   useEffect(() => {
-    const observer = onAuthStateChanged(auth, (user) => {
-      setUser(user);
+    // code from lecture demos
+    const auth = getAuth();
+
+    //addEventListener("loginEvent", () => {})
+    const unregisterAuthListener = onAuthStateChanged(auth, (firebaseUser) => {
+      if (firebaseUser) {
+        //have a user
+        console.log("logging in", firebaseUser);
+        if (!firebaseUser.photoURL) firebaseUser.photoURL = "/img/null.png";
+        setCurrentUser(firebaseUser);
+      } else {
+        console.log("logging out");
+        setCurrentUser(null);
+      }
     });
 
-    return observer;
-  });
+    return () => {
+      //cleanup
+      unregisterAuthListener();
+    };
+  }, []);
+
+  const loginUser = (userId, userName) => {
+    if (!userId) {
+      console.log("logging out");
+      setCurrentUser(null);
+    } else {
+      console.log("logging in", userName);
+      setCurrentUser({ uid: userId, userName: userName });
+    }
+  };
 
   // const signout = () => {
   //   signOut
@@ -32,7 +55,7 @@ function App() {
   //     });
   // };
 
-  if (user) {
+  if (currentUser) {
     return (
       <div>
         <div>
@@ -41,10 +64,13 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-            <Cards />
+            <Cards user={currentUser} />
           </Route>
           <Route exact path="/about">
             <About />
+          </Route>
+          <Route exact path="/stats">
+            <Stats />
           </Route>
           <Route exact path="/motivation">
             <Motivation />
@@ -55,8 +81,6 @@ function App() {
       </div>
     );
   } else {
-    return <SignInPage auth={auth} />;
+    return <SignInPage />;
   }
 }
-
-export default App;
