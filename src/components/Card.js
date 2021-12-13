@@ -53,8 +53,8 @@ export function Card(props) {
                         </div>
                         
                         <div className="col-sm">
-                            <h2 className="card-title">{card.cardTitle}</h2>
-                            <p className="card-text">
+                            <h2 className="card-title" id="main-page-background">{card.cardTitle}</h2>
+                            <p className="card-text" id="main-page-background">
                                 {card.cardText}
                             </p>
                             

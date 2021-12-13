@@ -11,8 +11,7 @@ export function CardList(props) {
                                                             info={item} 
                                                             remove={props.howToRemove} 
                                                             expand={props.singleDisplay} 
-                                                            updateCount={props.updateCount}
-                                                            />)
+                                                        updateCount={props.updateCount}/>)
     return (
         <div>
           <div className="container mt-4">

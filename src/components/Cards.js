@@ -1,8 +1,9 @@
 
 import React, {useState} from "react";
-import CARD_DATA from "../data/cards.json";
 import {CardList, ExpandCard} from "./CardFunctions";
 import {AddCard} from "./AddHabitCard"
+import CARD_DATA from "../data/cards.json";
+
 
 
 export function HomePage(props) {

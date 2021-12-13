@@ -5,7 +5,6 @@ import {HomePage} from "./Cards";
 //import SignInPage from "./SignInPage";
 import About from "./About";
 import { ProfileCard } from "./Profile";
-import CARD_DATA from "../data/cards.json";
 import { Route, Switch, Redirect } from "react-router-dom";
 import {
   getDatabase,
