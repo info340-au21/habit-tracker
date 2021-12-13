@@ -14,6 +14,7 @@ import {
   onValue,
 } from "firebase/database";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { ProfilePage } from "./ProfilePage";
 
 function App(props) {
   const db = getDatabase(); // not the data; "mailing address"
@@ -54,6 +55,7 @@ function App(props) {
           <About />
         </Route>
         <Route exact path="/profile">
+          <ProfilePage />
           <ProfileCard />
         </Route>
         <Redirect to="/" />
