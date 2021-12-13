@@ -77,8 +77,6 @@ export default function Cards(props) {
     const newHabit = {
       cardTitle: cardTitle,
       cardText: cardDescription,
-      cardImage: "",
-      cardImageAlt: "",
       impact: "=",
       completeCount: 0,
     };
