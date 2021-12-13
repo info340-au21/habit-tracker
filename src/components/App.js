@@ -8,6 +8,7 @@ import { ProfileCard } from "./Profile";
 import { Route, Switch, Redirect } from "react-router-dom";
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { ProfilePage } from "./ProfilePage";
 
 function App() {
   const auth = getAuth();
@@ -52,10 +53,34 @@ function App() {
         </Switch>
         <Footer />
       </div>
+<<<<<<< HEAD
     );
   } else {
     return <SignInPage auth={auth} />;
   }
+=======
+
+      <Switch>
+        <Route exact path="/">
+          <SignInPage user={user} />
+        </Route>
+
+        <Route exact path="/home">
+          <HomePage />
+        </Route>
+        <Route exact path="/about">
+          <About />
+        </Route>
+        <Route exact path="/profile">
+          <ProfilePage />
+          <ProfileCard />
+        </Route>
+        <Redirect to="/" />
+      </Switch>
+      <Footer />
+    </div>
+  );
+>>>>>>> e7a3d63fed6d3d2f4b7366140a7f4681490fe32c
 }
 
 export default App;

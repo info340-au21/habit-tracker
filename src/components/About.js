@@ -17,9 +17,12 @@ function About() {
           </p>
           <iframe src="https://www.youtube.com/embed/U_nzqnXWvSo" title="YouTube video player" frameborder="0"
            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt="Front Cover of Atomic Habits by James Clear"
-           className="d-flex justify-content-center">
-             
+           className="d-flex justify-content-center"
+           width="1100" height="500">
            </iframe>
+           <p>
+             
+           </p>
           <h2>The Inspiration</h2>
           <p>
             In hoping to help people improve their lives, we looked to a popular novel by the name of Atomic Habits. 
