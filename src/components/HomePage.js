@@ -4,35 +4,9 @@ import {NavLink} from 'react-router-dom';
 import {Button, Collapse} from 'react-bootstrap';
 
 
-// import { timeStamp } from "console";
 
-export function NavBar(props) {
-    return (
-        <nav id="navbar" className="navbar navbar-expand navbar-dark bg-dark">
-            <div className="container-fluid">
-                <div className="navbar-header">
-                    <a className="navbar-brand" href="#">habit-trackr.</a>
-                </div>
-                <ul className="nav navbar-nav">
-                    <li><NavLink exact to="/" activeClassName="activeLink">Home</NavLink></li>
-                    <li><NavLink exact to="/about" activeClassName="activeLink">About</NavLink></li>
-                    <li><NavLink exact to="/profile" activeClassName="activeLink">Profile</NavLink></li>
-                </ul>
-            </div>
-        </nav>
-    );
-}
 
-export function Footer(props) {
-    return (
-        <footer className="page-footer font-small bg-dark pt-4">
-            <div className="container">
-                <p>&copy;Augene Pak, John Danielsson, Andrew Frazier, Luka Marceta</p>
-                <p>Contact information: ajp824@uw.edu, frazia@uw.edu, lukamarc@uw.edu, johnaugustd@gmail.com</p>
-            </div>
-        </footer>
-    );
-}
+
 
 export function CardList(props) {
     let body = props.cardHistory.map((item, index) => <Card key={index} 

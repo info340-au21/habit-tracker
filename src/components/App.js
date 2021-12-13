@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { NavBar, CardList, AddCard, ExpandCard, Footer } from "./HomePage";
+import {CardList, AddCard, ExpandCard} from "./HomePage";
+import {NavBar} from "./NavBar";
+import {Footer} from "./Footer";
 //import SignInPage from "./SignInPage";
 import About from "./About";
 import { ProfileCard } from "./Profile";
