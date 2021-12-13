@@ -1,6 +1,4 @@
 import React, {useState} from 'react';
-import CARD_DATA from "../data/cards.json";
-import {NavLink} from 'react-router-dom';
 import {Button, Collapse} from 'react-bootstrap';
 
 
