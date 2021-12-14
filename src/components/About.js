@@ -1,16 +1,19 @@
 import React from "react";
 
+// 2. centering book img on about page
+// 3. making sure video doesn't break header
+
 export default function About() {
   return (
     <div role="about page">
       <div className="container justify-content-center">
-        <div>
+        <div class='about-page'>
           <h1 aria-label="how it works">How It Works</h1>
           <img
             src="img/atomichabits.jpg"
             alt="Front Cover of Atomic Habits by James Clear"
             style={{ width: "264px", height: "400px" }}
-            className="text-align: center"
+            className="text-align center"
           />
           <p></p>
           <iframe
@@ -20,7 +23,7 @@ export default function About() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
             alt="Front Cover of Atomic Habits by James Clear"
-            className="d-flex justify-content-center"
+            className="d-flex justify-content-center center"
             width="720"
             height="405"
             aria-label="you tube video"

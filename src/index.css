@@ -311,3 +311,42 @@ div#card-basic-view.card.mb-4 {
   width: "500";
   height: "600";
 }
+
+/*=============== SIGN-IN PAGE ===============*/
+.sign-in {
+  height: 25%;
+  width: 25%;
+  background-color: #596ea8;
+  /* margin-top:auto; */
+  /* margin-top:100px; */
+  /* padding-top:100px; */
+  margin: auto;
+}
+
+.sign-in p {
+  color: white;
+  text-align: center;
+  margin: auto;
+  padding: auto;
+}
+
+/*=============== ABOUT PAGE ===============*/
+div.about-page {
+  /* height: 25%;
+  width: 25%; */
+  /* background-color: #596ea8; */
+  /* margin-top:auto; */
+  /* margin-top:100px; */
+  /* padding-top:100px; */
+  margin: auto;
+  justify-content: center;
+}
+
+div.about-page img.center, iframe.center {
+  text-align: center;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+}
