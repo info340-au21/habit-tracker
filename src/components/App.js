@@ -50,9 +50,9 @@ export default function App() {
           <Route exact path="/stats">
             <Stats />
           </Route>
-          <Route exact path="/recommend">
+          {/* <Route exact path="/recommend">
             <Recommend />
-          </Route>
+          </Route> */}
           <Redirect to="/" />
         </Switch>
         <Footer />
