@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
   font-family: "Sora", sans-serif;
   color: black;
   background-color: white;
@@ -14,12 +13,11 @@ body {
   font-size: 1.25rem;
 }
 
-#card-basic-view,
-#expand-card {
+#card-basic-view, #expand-card {
   background-color: #dce3ec;
 }
 
-#card-complete-view {
+.card-complete-view {
   background-color: #bef6b2;
 }
 
@@ -253,9 +251,14 @@ p.alert-warning {
   width: auto;
 }
 
+<<<<<<< HEAD
 .col-sm-auto.col-xl-12,
 #card-basic-view {
   width: 90%;
+=======
+.col-sm-auto.col-xl-12, div.card-basic-view.mb-4 {
+  width:90%;
+>>>>>>> 69974b6ee2fc49d9cafa567c77f4c862f61e0881
 }
 
 .col-sm,
@@ -263,8 +266,13 @@ p.alert-warning {
   width: 100%;
 }
 
+<<<<<<< HEAD
 div#card-basic-view.card.mb-4 {
   height: 90%;
+=======
+div.card-basic-view.card.mb-4 {
+  height:90%;
+>>>>>>> 69974b6ee2fc49d9cafa567c77f4c862f61e0881
 }
 
 .col-sm,
@@ -321,9 +329,6 @@ div#card-basic-view.card.mb-4 {
   height: 25%;
   width: 25%;
   background-color: #596ea8;
-  /* margin-top:auto; */
-  /* margin-top:100px; */
-  /* padding-top:100px; */
   margin: auto;
 }
 
@@ -336,12 +341,6 @@ div#card-basic-view.card.mb-4 {
 
 /*=============== ABOUT PAGE ===============*/
 div.about-page {
-  /* height: 25%;
-  width: 25%; */
-  /* background-color: #596ea8; */
-  /* margin-top:auto; */
-  /* margin-top:100px; */
-  /* padding-top:100px; */
   margin: auto;
   justify-content: center;
 }

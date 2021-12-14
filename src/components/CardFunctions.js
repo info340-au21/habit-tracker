@@ -2,38 +2,6 @@ import React, { useState } from "react";
 import Card, { RecCard } from "./Card";
 
 export function CardList(props) {
-  // pseudocode below --------------------------------
-  // // const [currentStreak, setCurrentStreak] = useState(0);
-  // streak = completeCount (from JSON)
-  // // const [currentStreak, setCurrentStreak] = useState(0);
-
-  // streak = streak (from JSON)
-
-  // if (!habitIsDone && days > tempDays) {
-  //   streak = 0;
-  // } else {
-  //   streak++;
-  // }
-  // // If you complete a habit:
-  // // mark habit as complete
-  // // set tempDay to current day
-  // // update day (not tempDay)
-  // // if (day > tempDay and habit is NOT done)
-  // // reset completeCount to 0
-  // // reset streak to 0
-
-  // // for each habit
-  // function setStreak() {
-  //   habit.streak++;
-  // }
-  // function resetStreak() {
-  //   habit.streak = 0;
-  // }
-  // if (habit.streak >= 5) {//shows up on stats page
-  //   habitStreaks.add(habit);//this would be a set
-  // }
-  // -------------------------------------------------
-
   let notDone = props.cardHistory.map((item, index) => {
     if (!item.isComplete) {
       return (
