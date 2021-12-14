@@ -2,7 +2,6 @@ import React from "react";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import { EmailAuthProvider, getAuth, GoogleAuthProvider } from "firebase/auth";
 
-
 const firebaseUIConfig = {
   signInOptions: [
     { provider: EmailAuthProvider.PROVIDER_ID, requiredDisplayName: true },
@@ -21,9 +20,13 @@ export default function SignInPage() {
   let auth = getAuth();
   return (
     <>
-      <div class="sign-in">
+      <div className="sign-in">
         <p>Sign In!</p>
-        <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth}  aria-label="sign in"/>
+        <StyledFirebaseAuth
+          uiConfig={firebaseUIConfig}
+          firebaseAuth={auth}
+          aria-label="sign in"
+        />
       </div>
     </>
   );

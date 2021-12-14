@@ -7,7 +7,7 @@ export default function About() {
   return (
     <div role="about page">
       <div className="container justify-content-center">
-        <div class='about-page'>
+        <div className="about-page">
           <h1 aria-label="how it works">How It Works</h1>
           <img
             src="img/atomichabits.jpg"
@@ -19,9 +19,9 @@ export default function About() {
           <iframe
             src="https://www.youtube.com/embed/U_nzqnXWvSo"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
             alt="Front Cover of Atomic Habits by James Clear"
             className="d-flex justify-content-center center"
             width="720"
@@ -29,7 +29,9 @@ export default function About() {
             aria-label="you tube video"
           ></iframe>
           <p></p>
-          <h2 aria-label="the inspiration for this app" aria-describedby="p1">The Inspiration</h2>
+          <h2 aria-label="the inspiration for this app" aria-describedby="p1">
+            The Inspiration
+          </h2>
           <p id="p1">
             In hoping to help people improve their lives, we looked to a popular
             novel by the name of Atomic Habits. Written by James Clear, this
@@ -38,7 +40,9 @@ export default function About() {
             5 million copies worldwide.
           </p>
 
-          <h2 aria-label="implentation intentions" aria-describedby="p2">Implentation Intentions</h2>
+          <h2 aria-label="implentation intentions" aria-describedby="p2">
+            Implentation Intentions
+          </h2>
           <p id="p2">
             According to James Clear, people are two to three times more likely
             to follow through with an intended habit if they "make a specific

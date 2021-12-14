@@ -253,19 +253,23 @@ p.alert-warning {
   width: auto;
 }
 
-.col-sm-auto.col-xl-12, #card-basic-view {
-  width:90%;
+.col-sm-auto.col-xl-12,
+#card-basic-view {
+  width: 90%;
 }
 
-.col-sm, .d-flex.col-md-6.col-xl-3 {
-  width:100%;
+.col-sm,
+.d-flex.col-md-6.col-xl-3 {
+  width: 100%;
 }
 
 div#card-basic-view.card.mb-4 {
-  height:90%;
+  height: 90%;
 }
 
-.col-sm, .col-sm-auto.col-xl-12, #card-basic-view {
+.col-sm,
+.col-sm-auto.col-xl-12,
+#card-basic-view {
   margin: auto;
 }
 /*=============== END CARDS SECTION ===============*/
@@ -342,7 +346,8 @@ div.about-page {
   justify-content: center;
 }
 
-div.about-page img.center, iframe.center {
+div.about-page img.center,
+iframe.center {
   text-align: center;
   display: block;
   justify-content: center;

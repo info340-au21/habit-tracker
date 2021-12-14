@@ -64,7 +64,11 @@ export default function NavBar(props) {
               </NavLink>
             </li>
             <li activeClassName="linkElement">
-              <Button onClick={handleClick} aria-label="sign out">
+              <Button
+                className="signout"
+                onClick={handleClick}
+                aria-label="sign out"
+              >
                 Sign Out
               </Button>
             </li>

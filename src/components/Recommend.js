@@ -57,7 +57,6 @@ export default function Recommend(props) {
     const newHabit = {
       cardTitle: cardTitle,
       cardText: cardDescription,
-      impact: "=",
       streak: 0,
       isComplete: false,
     };

@@ -109,7 +109,6 @@ export default function Cards(props) {
         return {
           cardTitle: item.cardTitle,
           cardText: item.cardText,
-          impact: item.impact,
           streak: item.streak + 1,
           isComplete: item.isComplete,
         };
@@ -129,7 +128,6 @@ export default function Cards(props) {
         return {
           cardTitle: item.cardTitle,
           cardText: item.cardText,
-          impact: item.impact,
           streak: item.streak - 2,
           isComplete: item.isComplete,
         };
@@ -149,7 +147,7 @@ export default function Cards(props) {
         return {
           cardTitle: item.cardTitle,
           cardText: item.cardText,
-          impact: item.impact,
+
           streak: item.streak + 1,
           isComplete: true,
         };
@@ -168,7 +166,7 @@ export default function Cards(props) {
         return {
           cardTitle: item.cardTitle,
           cardText: item.cardText,
-          impact: item.impact,
+
           streak: item.streak - 1,
           isComplete: false,
         };
@@ -202,7 +200,6 @@ export default function Cards(props) {
     const newHabit = {
       cardTitle: cardTitle,
       cardText: cardDescription,
-      impact: "=",
       streak: 0,
       isComplete: false,
     };
@@ -231,7 +228,6 @@ export default function Cards(props) {
       {
         cardTitle: focus.cardTitle,
         cardText: focus.cardText,
-        impact: focus.impact,
         streak: focus.streak,
       },
     ];
@@ -259,7 +255,7 @@ export default function Cards(props) {
       return {
         cardTitle: item.cardTitle,
         cardText: item.cardText,
-        impact: item.impact,
+
         streak: newStreak,
         isComplete: false,
       };
