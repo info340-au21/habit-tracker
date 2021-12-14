@@ -2,7 +2,7 @@ import React from "react";
 
 export default function About() {
   return (
-    <div>
+    <div role="about">
       <div className="container justify-content-center">
         <div>
           <h1>How It Works</h1>

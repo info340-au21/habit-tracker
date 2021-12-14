@@ -2,6 +2,17 @@ import React, { useState } from "react";
 import { Card } from "./Card";
 
 export function CardList(props) {
+/*
+  const [currentStreak, setCurrentStreak] = useState(0);
+
+  if (!habitIsDone && days === tempDays + 1) {
+    streak = 0;
+  }
+
+  if (habit.streak => 5) {
+    habitStreaks.add(habit);//this would be a set
+  }
+  */
   
   setTimeout(() => {
     console.log()

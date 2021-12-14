@@ -2,17 +2,16 @@ import React, { useState } from "react";
 import { Button, Collapse } from "react-bootstrap";
 
 export function AddCard(props) {
+  // action
   const [titleValue, setTitleValue] = useState("");
-
+  // implementation intention
   const [descriptionValue, setDescriptionValue] = useState("");
-
-  const [open, setOpen] = useState(false); //sets whether the 'add new habit' dropdown is open
-
+  //sets whether the 'add new habit' dropdown is open
+  const [open, setOpen] = useState(false); 
+  //sets whether to have the 'add habit' button say 'Add New Habit' or 'Cancel'
   const [displayAddHabit, setDisplayAddHabit] = useState(true);
-
+  //sets add button text
   const [addHabitButtonText, setAddHabitButtonText] = useState("Add New Habit");
-
-  // const [hasBeenClicked, setHasBeenClicked] = useState(true);
 
   const handleTitleUpdate = (event) => {
     setTitleValue(event.target.value);
@@ -29,11 +28,13 @@ export function AddCard(props) {
       setTitleValue("");
       setDescriptionValue("");
     } else {
-      alert("You need to fill in BOTH fields.");//this is probably fine for the spec
+      // this is a pop-up to give the user feedback that his/her input was invalid
+      alert("You need to fill in BOTH fields.");
     }
   };
 
-  const habitButtonHandler = (event) => {
+  // changes the 'add habit' button's text depending on whether a new habit IS being added or not
+  const habitButtonHandler = () => {
     setOpen(!open);
     if (displayAddHabit) {
       setAddHabitButtonText("Cancel");
@@ -49,18 +50,11 @@ export function AddCard(props) {
       {/* Add Habit Form */}
       <Button
         variant="link"
-        //className="add-habit-form-button"
         id="main-page-background"
         onClick={habitButtonHandler}
         aria-expanded={open}
-        aria-controls="add-habit-form-button"
-      >
-        {/* <button
-          id="add-task-button2"
-          className="btn p-2 mt-2 justify-content-left"
-        > */}
+        aria-controls="add-habit-form-button">
         {addHabitButtonText}
-        {/* </button> */}
       </Button>
       <Collapse in={open}>
         <form>
@@ -101,22 +95,11 @@ export function AddCard(props) {
           {/* {!hasBeenClicked && descriptionValue === '' && <p className="alert alert-warning">Must provide a value</p>} */}
           {/* {descriptionValue === '' && <p className="alert alert-warning">Must provide a value</p>} */}
 
-          {/* DONE */}{/* Make sure that the habit can't be added if either field is empty */}
-          {/* DONE */}{/* Check problem set 6. */}
-          {/* DONE */}{/* Give feedback to user if fields are empty. */}
-          {/* Maybe have best/worst habits */}
-          {/* DONE */}{/* fix footer by making it stick to the bottom */}
-          {/* DONE */}{/* Center cards and their text on different screen sizes.*/}
-          {/* DONE */}{/* Consistent card sizing.*/}
-          {/* DONE */}{/* Let Andrew know when you're done with the card sizing. */}
-
           <Button
             //variant="button"
-            //className="add-habit-button"
             id="add-task-button"
             className="btn p-2 mt-2 justify-content-left"
-            onClick={handleClick}
-          >
+            onClick={handleClick}>
             Submit
           </Button>
           <div className="d-none">Both fields must be filled in.</div>

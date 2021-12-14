@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
   font-family: "Sora", sans-serif;
   color: black;
   background-color: white;
@@ -10,8 +9,7 @@ body {
   font-size: 35px;
 }
 
-#card-basic-view,
-#expand-card {
+#card-basic-view, #expand-card {
   background-color: #dce3ec;
 }
 
