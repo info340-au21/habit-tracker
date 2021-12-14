@@ -69,7 +69,6 @@ export default function Cards(props) {
     return cleanup;
   }, [db]);
 
-  // code from lecture demo
   useEffect(() => {
     //function when component first loads
     //addEventListener('databaseValueChange', () => {})
@@ -85,7 +84,6 @@ export default function Cards(props) {
     return cleanup; //leave the instructions behind
   }, [db]); //when to re-run (never)
 
-  // code from lecture demo
   useEffect(() => {
     //function when component first loads
     //addEventListener('databaseValueChange', () => {})

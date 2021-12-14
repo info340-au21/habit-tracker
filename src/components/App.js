@@ -13,7 +13,6 @@ export default function App() {
   const [currentUser, setCurrentUser] = useState(undefined);
 
   useEffect(() => {
-    // code from lecture demos
     const auth = getAuth();
 
     //addEventListener("loginEvent", () => {})

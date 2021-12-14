@@ -90,20 +90,9 @@ export function AddCard(props) {
     setDescriptionValue(event.target.value);
   };
 
-  // const handleClick = (event) => {
-  //   if (titleValue !== "" && descriptionValue !== "") {
-  //     console.log("submitting", titleValue);
-  //     props.howToAddCard(titleValue, descriptionValue);
-  //     setTitleValue("");
-  //     setDescriptionValue("");
-  //   } else {
-  //     alert("You need to fill in BOTH fields.");
-  //   }
-  // };
-
   return (
+    // Add Habit Form
     <>
-      {/* Add Habit Form */}
       <Button
         variant="link"
         className="add-habit-form-button"
@@ -187,11 +176,6 @@ export function Card(props) {
     }
   };
 
-  // let text = card.cardText;
-  // let length = text.length;
-  // if (length > 10) {
-  //   text = text.substring(0, text.length - 3) + "...";
-  // }
   return (
     <div className="d-flex col-md-6 col-xl-3" id={card.cardText} aria-label="card list">
       <div id={cardColor} className="card mb-4">
