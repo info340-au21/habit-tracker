@@ -28,7 +28,6 @@ export function AddCard(props) {
       setTitleValue("");
       setDescriptionValue("");
     } else {
-      // this is a pop-up to give the user feedback that his/her input was invalid
       alert("You need to fill in BOTH fields.");
     }
   };
@@ -50,16 +49,17 @@ export function AddCard(props) {
       {/* Add Habit Form */}
       <Button
         variant="link"
-        id="main-page-background"
+        className="main-page-background"
         onClick={habitButtonHandler}
         aria-expanded={open}
-        aria-controls="add-habit-form-button">
+        aria-controls="add-habit-form-button"
+        aria-label="add habit form button">
         {addHabitButtonText}
       </Button>
       <Collapse in={open}>
         <form>
           <div className="form-group">
-            <label id="main-page-background" htmlFor="habit-title">
+            <label className="main-page-background" htmlFor="habit-title">
               {" "}
               <b>Action</b>{" "}
             </label>
@@ -74,8 +74,7 @@ export function AddCard(props) {
           </div>
           <div className="form-group">
             <label
-              className="mt-2"
-              id="main-page-background"
+              className="mt-2 main-page-background"
               htmlFor="habit-text"
             >
               {" "}
@@ -99,7 +98,8 @@ export function AddCard(props) {
             //variant="button"
             id="add-task-button"
             className="btn p-2 mt-2 justify-content-left"
-            onClick={handleClick}>
+            onClick={handleClick}
+            aria-label="submit habit button">
             Submit
           </Button>
           <div className="d-none">Both fields must be filled in.</div>

@@ -42,10 +42,10 @@ export default function App() {
         </div>
 
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/" role="link">
             <Cards user={currentUser} />
           </Route>
-          <Route exact path="/about">
+          <Route exact path="/about" role="link">
             <About />
           </Route>
           <Route exact path="/stats">

@@ -56,6 +56,7 @@ export default function Card(props) {
             className=" btn btn-primary m-2"
             id={card.cardText}
             onClick={handleExpand}
+            aria-label="expand habit"
           >
             Expand
           </button>
