@@ -11,8 +11,12 @@ import {
 
 export default function Cards(props) {
   const [currentCards, setCurrentCards] = useState([]);
+  const [currentMax, setMax] = useState(null);
+  const [currentMin, setMin] = useState(null);
   const db = getDatabase();
-  const habitRef = ref(db, "habits/" + props.user.uid);
+  const habitRef = ref(db, props.user.uid + "/habits");
+  const maxRef = ref(db, props.user.uid + "/maxStreak");
+  const minRef = ref(db, props.user.uid + "/minStreak");
 
   // code from lecture demo
   useEffect(() => {
@@ -33,6 +37,39 @@ export default function Cards(props) {
     }
     return cleanup; //leave the instructions behind
   }, [db]); //when to re-run (never)
+
+  // code from lecture demo
+  useEffect(() => {
+    //function when component first loads
+    //addEventListener('databaseValueChange', () => {})
+    const offFunction = onValue(maxRef, (snapshot) => {
+      const max = snapshot.val(); //extract the value from the snapshot
+      setMax(max);
+    });
+
+    //instructions on how to leave will be called by React when component unmounts
+    function cleanup() {
+      offFunction(); //turn the listener off
+    }
+    return cleanup; //leave the instructions behind
+  }, [db]); //when to re-run (never)
+
+  // code from lecture demo
+  useEffect(() => {
+    //function when component first loads
+    //addEventListener('databaseValueChange', () => {})
+    const offFunction = onValue(minRef, (snapshot) => {
+      const min = snapshot.val(); //extract the value from the snapshot
+      setMin(min);
+    });
+
+    //instructions on how to leave will be called by React when component unmounts
+    function cleanup() {
+      offFunction(); //turn the listener off
+    }
+    return cleanup; //leave the instructions behind
+  }, [db]); //when to re-run (never)
+
   const [cardExpand, setCardExpand] = useState([]);
 
   const updateCompletion = (cardDescription) => {
@@ -190,7 +227,6 @@ export default function Cards(props) {
       } else {
         newStreak = item.streak;
       }
-
       return {
         cardTitle: item.cardTitle,
         cardText: item.cardText,
@@ -199,6 +235,41 @@ export default function Cards(props) {
         isGreen: false,
       };
     });
+
+    const max = updatedArray.reduce((item, max) =>
+      max.streak > item.streak ? max : item
+    );
+    const min = updatedArray.reduce((item, max) =>
+      max.streak < item.streak ? max : item
+    );
+
+    firebaseSet(maxRef, max) //change the database
+      .catch((err) => {});
+    firebaseSet(minRef, min) //change the database
+      .catch((err) => {});
+    setMax(max);
+    setMin(min);
+
+    // let maxStreak = -Infinity;
+    // let minStreak = Infinity;
+    // let maxStreakHabit = [];
+    // let minStreakHabit = [];
+    // const topStreaks = updatedArray.map((item) => {
+    //   if (item.streak >= maxStreak) {
+    //     maxStreakHabit.push(item);
+    //     maxStreak = item.streak;
+
+    //     // for-each loop through maxStreakHabit
+    //     // if each streak is lower than maxStreak, we remove em
+    //   } else if (item.streak <= minStreak) {
+    //     minStreakHabit.push(item);
+    //     minStreak = item.streak;
+
+    //     // for-each loop through maxStreakHabit
+    //     // if each streak is lower than maxStreak, we remove em
+    //   }
+    // });
+
     firebaseSet(habitRef, updatedArray) //change the database
       .catch((err) => {});
     setCurrentCards(updatedArray);
