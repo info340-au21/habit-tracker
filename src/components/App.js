@@ -33,26 +33,6 @@ export default function App() {
     };
   }, []);
 
-  // const loginUser = (userId, userName) => {
-  //   if (!userId) {
-  //     console.log("logging out");
-  //     setCurrentUser(null);
-  //   } else {
-  //     console.log("logging in", userName);
-  //     setCurrentUser({ uid: userId, userName: userName });
-  //   }
-  // };
-
-  // const signout = () => {
-  //   signOut
-  //     .then(function () {
-  //       console.log();
-  //     })
-  //     .catch(function () {
-  //       console.log();
-  //     });
-  // };
-
   if (currentUser) {
     return (
       <div className="d-flex flex-column min-vh-100">
@@ -70,6 +50,9 @@ export default function App() {
           <Route exact path="/stats">
             <Stats />
           </Route>
+          {/* <Route exact path="/recommend">
+            <Recommend />
+          </Route> */}
           <Redirect to="/" />
         </Switch>
         <Footer />
