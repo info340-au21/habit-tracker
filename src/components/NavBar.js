@@ -2,6 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { signOut } from "firebase/auth";
+import { Nav, Navbar } from "react-bootstrap";
+
 /* signout user w/ firebase */
 
 export default function NavBar(props) {
@@ -14,39 +16,44 @@ export default function NavBar(props) {
   };
 
   return (
-    <nav id="navbar" className="navbar" role="navigation">
-      <div className="container-fluid" role="banner">
+    <Navbar collapseOnSelect expand="lg" className="navbar" class="navbar" id="navbar">
+      <NavLink exact to="/" activeClassName="activeLink">
         <div className="navbar-header">
           <a className="navbar-brand" href="/">
             habit-trackr.
           </a>
         </div>
-        <ul className="nav navbar-nav">
-          <li>
-            <NavLink exact to="/" activeClassName="activeLink">
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink exact to="/about" activeClassName="activeLink">
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink exact to="/stats" activeClassName="activeLink">
-              Statistics
-            </NavLink>
-          </li>
-          <li>
-            <NavLink exact to="/motivation" activeClassName="activeLink">
-              Motivation
-            </NavLink>
-          </li>
-          <li>
-            <Button onClick={handleClick}>Sign Out</Button>
-          </li>
-        </ul>
-      </div>
-    </nav>
+      </NavLink>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="ml-auto">
+          <ul className="nav navbar-nav" id="NavContainer">
+            <li activeClassName="linkElement">
+              <NavLink exact to="/" activeClassName="activeLink">
+                Home
+              </NavLink>
+            </li>
+            <li activeClassName="linkElement">
+              <NavLink exact to="/about" activeClassName="activeLink linkElement">
+                About
+              </NavLink>
+            </li>
+            <li activeClassName="linkElement">
+              <NavLink exact to="/stats" activeClassName="activeLink linkElement">
+                Statistics
+              </NavLink>
+            </li>
+            <li activeClassName="linkElement">
+              <NavLink exact to="/motivation" activeClassName="activeLink linkElement">
+                Motivation
+              </NavLink>
+            </li>
+            <li activeClassName="linkElement">
+              <Button onClick={handleClick}>Sign Out</Button>
+            </li>
+          </ul>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
