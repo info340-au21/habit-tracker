@@ -16,7 +16,13 @@ export default function NavBar(props) {
   };
 
   return (
-    <Navbar collapseOnSelect expand="lg" className="navbar" class="navbar" id="navbar">
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      className="navbar"
+      class="navbar"
+      id="navbar"
+    >
       <NavLink exact to="/" activeClassName="activeLink">
         <div className="navbar-header">
           <a className="navbar-brand" href="/">
@@ -34,17 +40,29 @@ export default function NavBar(props) {
               </NavLink>
             </li>
             <li activeClassName="linkElement">
-              <NavLink exact to="/about" activeClassName="activeLink linkElement">
+              <NavLink
+                exact
+                to="/about"
+                activeClassName="activeLink linkElement"
+              >
                 About
               </NavLink>
             </li>
             <li activeClassName="linkElement">
-              <NavLink exact to="/stats" activeClassName="activeLink linkElement">
+              <NavLink
+                exact
+                to="/stats"
+                activeClassName="activeLink linkElement"
+              >
                 Statistics
               </NavLink>
             </li>
             <li activeClassName="linkElement">
-              <NavLink exact to="/motivation" activeClassName="activeLink linkElement">
+              <NavLink
+                exact
+                to="/recommend"
+                activeClassName="activeLink linkElement"
+              >
                 Motivation
               </NavLink>
             </li>

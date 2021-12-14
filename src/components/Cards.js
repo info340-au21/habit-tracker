@@ -5,7 +5,6 @@ import {
   getDatabase,
   ref,
   set as firebaseSet,
-  push as firebasePush,
   onValue,
 } from "firebase/database";
 
@@ -82,7 +81,7 @@ export default function Cards(props) {
           cardText: item.cardText,
           impact: item.impact,
           streak: item.streak + 1,
-          isGreen: item.isGreen,
+          isComplete: item.isComplete,
         };
       }
     });
@@ -104,7 +103,7 @@ export default function Cards(props) {
           cardText: item.cardText,
           impact: item.impact,
           streak: item.streak - 2,
-          isGreen: item.isGreen,
+          isComplete: item.isComplete,
         };
       }
     });
@@ -114,7 +113,7 @@ export default function Cards(props) {
     setCurrentCards(updatedArray);
   };
 
-  const makeCardGreen = (cardDescription) => {
+  const makeCardComplete = (cardDescription) => {
     const updatedArray = currentCards.map((item) => {
       if (item.cardText !== cardDescription) {
         return item;
@@ -124,7 +123,7 @@ export default function Cards(props) {
           cardText: item.cardText,
           impact: item.impact,
           streak: item.streak + 1,
-          isGreen: true,
+          isComplete: true,
         };
       }
     });
@@ -133,7 +132,7 @@ export default function Cards(props) {
     setCurrentCards(updatedArray);
   };
 
-  const removeGreen = (cardDescription) => {
+  const removeComplete = (cardDescription) => {
     const updatedArray = currentCards.map((item) => {
       if (item.cardText !== cardDescription) {
         return item;
@@ -143,7 +142,7 @@ export default function Cards(props) {
           cardText: item.cardText,
           impact: item.impact,
           streak: item.streak - 1,
-          isGreen: false,
+          isComplete: false,
         };
       }
     });
@@ -177,7 +176,7 @@ export default function Cards(props) {
       cardText: cardDescription,
       impact: "=",
       streak: 0,
-      isGreen: false,
+      isComplete: false,
     };
 
     //handle errors in firebase
@@ -222,7 +221,7 @@ export default function Cards(props) {
   const cardReset = () => {
     const updatedArray = currentCards.map((item) => {
       let newStreak = item.streak;
-      if (!item.isGreen) {
+      if (!item.isComplete) {
         newStreak = 0;
       } else {
         newStreak = item.streak;
@@ -232,7 +231,7 @@ export default function Cards(props) {
         cardText: item.cardText,
         impact: item.impact,
         streak: newStreak,
-        isGreen: false,
+        isComplete: false,
       };
     });
 
@@ -285,8 +284,8 @@ export default function Cards(props) {
         howToRemove={removeCard}
         singleDisplay={displaySingleCard}
         updateCount={updateCompletion}
-        makeCardGreen={makeCardGreen}
-        removeGreen={removeGreen}
+        makeCardComplete={makeCardComplete}
+        removeComplete={removeComplete}
         key={1}
       />,
     ];

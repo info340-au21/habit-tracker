@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Card } from "./Card";
+import Card, { RecCard } from "./Card";
 
 export function CardList(props) {
   let notDone = props.cardHistory.map((item, index) => {
-    if (!item.isGreen) {
+    if (!item.isComplete) {
       return (
         <Card
           key={index}
@@ -11,8 +11,8 @@ export function CardList(props) {
           remove={props.howToRemove}
           expand={props.singleDisplay}
           updateCount={props.updateCount}
-          makeCardGreen={props.makeCardGreen}
-          removeGreen={props.removeGreen}
+          makeCardComplete={props.makeCardComplete}
+          removeComplete={props.removeComplete}
           decCount={props.decCount}
         />
       );
@@ -20,7 +20,7 @@ export function CardList(props) {
   });
 
   let done = props.cardHistory.map((item, index) => {
-    if (item.isGreen) {
+    if (item.isComplete) {
       return (
         <Card
           key={index}
@@ -28,8 +28,8 @@ export function CardList(props) {
           remove={props.howToRemove}
           expand={props.singleDisplay}
           updateCount={props.updateCount}
-          makeCardGreen={props.makeCardGreen}
-          removeGreen={props.removeGreen}
+          makeCardComplete={props.makeCardComplete}
+          removeComplete={props.removeComplete}
           decCount={props.decCount}
         />
       );
@@ -43,6 +43,20 @@ export function CardList(props) {
         <div className="row">{notDone}</div>
         <h2 className="mt-4"> Completed Habits: </h2>
         <div className="row mb=4">{done}</div>
+      </div>
+    </div>
+  );
+}
+
+export function RecCardList(props) {
+  let recHabits = props.recHabits.map((item, index) => {
+    return <RecCard info={props.recHabits} handleEvent={props.handleEvent} />;
+  });
+
+  return (
+    <div>
+      <div className="container ">
+        <div className="row">{}</div>
       </div>
     </div>
   );
