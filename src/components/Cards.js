@@ -248,7 +248,6 @@ export default function Cards(props) {
     let recs = new Array();
     firebaseSet(recRef, recs) //reset recs
       .catch((err) => {});
-    console.log(typeof recs);
 
     const updatedArray = currentCards.map((item) => {
       let newStreak = item.streak;
@@ -282,13 +281,10 @@ export default function Cards(props) {
 
     for (let user in currentAllHabits) {
       const userData = currentAllHabits[user];
-      console.log(userData);
       if (userData.hasOwnProperty("maxStreak")) {
         recs.push(userData.maxStreak);
-        console.log(userData.maxStreak);
       }
     }
-    console.log(recs);
 
     firebaseSet(recRef, recs) //change the database
       .catch((err) => {});

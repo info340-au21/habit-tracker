@@ -18,11 +18,8 @@ export default function App() {
     //addEventListener("loginEvent", () => {})
     const unregisterAuthListener = onAuthStateChanged(auth, (firebaseUser) => {
       if (firebaseUser) {
-        //have a user
-        console.log("logging in", firebaseUser);
         setCurrentUser(firebaseUser);
       } else {
-        console.log("logging out");
         setCurrentUser(null);
       }
     });

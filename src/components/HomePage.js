@@ -30,10 +30,7 @@ export function CardList(props) {
 export function ExpandCard(props) {
   let card = props.card[0];
 
-  console.log(card);
-
   const handleDelete = (event) => {
-    console.log(event.target.id);
     props.howToRevert();
     setTimeout(() => {
       props.howToRemove(event.target.id);
@@ -57,7 +54,11 @@ export function ExpandCard(props) {
           </p>
         </div>
         <div className="d-flex justify-content-center">
-          <button className=" btn btn-primary m-3" onClick={props.howToRevert} aria-label="go back">
+          <button
+            className=" btn btn-primary m-3"
+            onClick={props.howToRevert}
+            aria-label="go back"
+          >
             Go back
           </button>
           <button
@@ -155,7 +156,6 @@ export function Card(props) {
   const [buttonName, setButtonName] = useState("Complete");
 
   const handleDelete = (event) => {
-    console.log(event.target.id);
     props.remove(event.target.id);
   };
 
@@ -177,7 +177,11 @@ export function Card(props) {
   };
 
   return (
-    <div className="d-flex col-md-6 col-xl-3" id={card.cardText} aria-label="card list">
+    <div
+      className="d-flex col-md-6 col-xl-3"
+      id={card.cardText}
+      aria-label="card list"
+    >
       <div id={cardColor} className="card mb-4">
         <div className="card-body" aria-label="card">
           <div className="row">

@@ -4,7 +4,6 @@ export default function Card(props) {
   // single JSON entry
   let card = props.info;
   const handleDelete = (event) => {
-    console.log(event.target.id);
     props.remove(event.target.id);
   };
 
@@ -51,8 +50,12 @@ export default function Card(props) {
           <div className="row">
             <div className="col-sm-auto col-xl-12">
               <div className="col-sm" role="habit card">
-                <h2 className="card-title" aria-label={card.cardTitle}>{card.cardTitle}</h2>
-                <p className="card-text" aria-label={card.cardText}>{text}</p>
+                <h2 className="card-title" aria-label={card.cardTitle}>
+                  {card.cardTitle}
+                </h2>
+                <p className="card-text" aria-label={card.cardText}>
+                  {text}
+                </p>
               </div>
             </div>
           </div>
@@ -85,9 +88,6 @@ export function RecCard(props) {
   let card = props.info;
   const handleAdd = (event) => {
     event.preventDefault();
-    console.log(event.target);
-    console.log(event.target.id);
-    console.log(event.target.title);
     props.handleEvent(event.target.id, event.target.title);
   };
   return (

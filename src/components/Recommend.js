@@ -20,7 +20,6 @@ export default function Recommend(props) {
     //addEventListener('databaseValueChange', () => {})
     const offFunction = onValue(recommendRef, (snapshot) => {
       const recommendations = snapshot.val(); //extract the value from the snapshot
-      console.log(recommendations);
       if (recommendations == null) {
         setRecs([]);
       } else {
@@ -64,7 +63,6 @@ export default function Recommend(props) {
     };
 
     let removalIndex = -1;
-    console.log(recs);
     const updatedRecs = recs.map((item, index) => {
       if (item.cardText !== cardDescription) {
         return item;
@@ -73,7 +71,6 @@ export default function Recommend(props) {
         return;
       }
     });
-    console.log(removalIndex);
 
     updatedRecs.splice(removalIndex, 1);
     setRecs(updatedRecs);
