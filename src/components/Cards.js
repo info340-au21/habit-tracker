@@ -44,7 +44,7 @@ export default function Cards(props) {
           cardTitle: item.cardTitle,
           cardText: item.cardText,
           impact: item.impact,
-          completeCount: item.completeCount + 1,
+          streak: item.streak + 1,
           isGreen: item.isGreen,
         };
       }
@@ -56,7 +56,7 @@ export default function Cards(props) {
   };
 
   const decCount = (cardDescription) => {
-    console.log(cardDescription)
+    console.log(cardDescription);
 
     const updatedArray = currentCards.map((item) => {
       if (item.cardText !== cardDescription) {
@@ -66,7 +66,7 @@ export default function Cards(props) {
           cardTitle: item.cardTitle,
           cardText: item.cardText,
           impact: item.impact,
-          completeCount: item.completeCount  - 2,
+          streak: item.streak - 2,
           isGreen: item.isGreen,
         };
       }
@@ -78,7 +78,6 @@ export default function Cards(props) {
   };
 
   const makeCardGreen = (cardDescription) => {
-
     const updatedArray = currentCards.map((item) => {
       if (item.cardText !== cardDescription) {
         return item;
@@ -87,7 +86,7 @@ export default function Cards(props) {
           cardTitle: item.cardTitle,
           cardText: item.cardText,
           impact: item.impact,
-          completeCount: item.completeCount + 1,
+          streak: item.streak + 1,
           isGreen: true,
         };
       }
@@ -106,7 +105,7 @@ export default function Cards(props) {
           cardTitle: item.cardTitle,
           cardText: item.cardText,
           impact: item.impact,
-          completeCount: item.completeCount - 1,
+          streak: item.streak - 1,
           isGreen: false,
         };
       }
@@ -140,7 +139,7 @@ export default function Cards(props) {
       cardTitle: cardTitle,
       cardText: cardDescription,
       impact: "=",
-      completeCount: 0,
+      streak: 0,
       isGreen: false,
     };
 
@@ -164,7 +163,6 @@ export default function Cards(props) {
       return item;
     });
 
-
     let focus = updatedArray[displayIndex];
     console.log(focus);
     let res = [
@@ -172,7 +170,7 @@ export default function Cards(props) {
         cardTitle: focus.cardTitle,
         cardText: focus.cardText,
         impact: focus.impact,
-        completeCount: focus.completeCount,
+        streak: focus.streak,
       },
     ];
 
@@ -186,22 +184,25 @@ export default function Cards(props) {
 
   const cardReset = () => {
     const updatedArray = currentCards.map((item) => {
-      
-        return {
-          cardTitle: item.cardTitle,
-          cardText: item.cardText,
-          impact: item.impact,
-          completeCount: item.completeCount,
-          isGreen: false
-        };
-      
+      let newStreak = item.streak;
+      if (!item.isGreen) {
+        newStreak = 0;
+      } else {
+        newStreak = item.streak;
+      }
+
+      return {
+        cardTitle: item.cardTitle,
+        cardText: item.cardText,
+        impact: item.impact,
+        streak: newStreak,
+        isGreen: false,
+      };
     });
     firebaseSet(habitRef, updatedArray) //change the database
-    .catch((err) => {});
+      .catch((err) => {});
     setCurrentCards(updatedArray);
   };
-
-  
 
   // render homepage based on expansion
   let view;
@@ -233,12 +234,11 @@ export default function Cards(props) {
     <div id="homepage-background">
       <h1>Daily Habits</h1>
       <div className="d-flex justify-content-center">
-        <button className="btn" onClick={cardReset}>Reset Day</button>
+        <button className="btn" onClick={cardReset}>
+          Reset Day
+        </button>
       </div>
-      <div className="d-flex justify-content-center">
-     
-        {cardForm}
-      </div>
+      <div className="d-flex justify-content-center">{cardForm}</div>
       {view}
     </div>
   );
