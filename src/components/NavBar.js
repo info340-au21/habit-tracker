@@ -14,8 +14,8 @@ export default function NavBar(props) {
   };
 
   return (
-    <nav id="navbar" className="navbar">
-      <div className="container-fluid">
+    <nav id="navbar" className="navbar" role="navigation">
+      <div className="container-fluid" role="banner">
         <div className="navbar-header">
           <a className="navbar-brand" href="/">
             habit-trackr.

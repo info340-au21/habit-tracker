@@ -53,18 +53,11 @@ export function Card(props) {
   const makeGreen = (event) => {
     event.preventDefault();
     if (!card.isGreen) {
-    
-
       props.updateCount(event.target.id);
       props.makeCardGreen(event.target.id);
-
     } else {
-
       props.removeGreen(event.target.id);
-
     }
-
-
   }
 
   return (
@@ -74,7 +67,7 @@ export function Card(props) {
           <div className="row">
             <div className="col-sm-auto col-xl-12">
 
-              <div className="col-sm">
+              <div className="col-sm" role="habit card">
                 <h2 className="card-title">{card.cardTitle}</h2>
                 <p className="card-text">{card.cardText}</p>
               </div>
