@@ -2,22 +2,15 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { signOut } from "firebase/auth";
+/* signout user w/ firebase */
 
 export default function NavBar(props) {
-  let setUser = props.setUser;
-
-  const signOutUser = () =>
-    signOut
-      .then(function () {
-        //Sign out
-      })
-      .catch(function (error) {
-        alert(error);
-      });
-
+  let auth = props.auth;
   const handleClick = (event) => {
     event.preventDefault();
-    setUser(null);
+    signOut(auth)
+      .then(() => {})
+      .catch((error) => {});
   };
 
   return (
