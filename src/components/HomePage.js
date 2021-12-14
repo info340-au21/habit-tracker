@@ -46,7 +46,7 @@ export function ExpandCard(props) {
       <div className=" col-sm-2 col-md-2 col-lg-4"></div>
       <div id="expand-card" className="card col-sm-8 col-md-8 col-lg-4">
         <div className="card-body justify-content-center">
-          <div id="expand-top">
+          <div className="expand-top">
             <h1 className="card-title p-3 mb-4">{card.cardTitle}</h1>
             <p className=" h5 card-text text-center m-3 pb-3">
               {card.cardText}

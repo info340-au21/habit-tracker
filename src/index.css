@@ -1,15 +1,21 @@
-html, body {
+html,
+body {
   font-family: "Sora", sans-serif;
   color: black;
   background-color: white;
   height: 100%;
 }
 
-.navbar-brand {
-  font-size: 35px;
+.navbar a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 2rem;
+  font-size: 1.25rem;
 }
 
-#card-basic-view, #expand-card {
+#card-basic-view,
+#expand-card {
   background-color: #dce3ec;
 }
 
@@ -17,7 +23,7 @@ html, body {
   background-color: #bef6b2;
 }
 
-#main-page-background {
+.main-page-background {
   color: #2c7399;
 }
 
@@ -40,29 +46,23 @@ body {
 }
 
 .page-footer {
-  position: fixed;
-  left: 0;
+  position: relative;
   bottom: 0;
   width: 100%;
   background-color: red;
   color: white;
   text-align: center;
+  margin-top: 190px;
 }
 
-#navbar,
-#footer {
+.navbarHeader,
+.page-footer {
   background-color: #596ea8;
 }
 
-#expand-top {
+.expand-top {
   background-color: #c2d3ea;
   border-radius: 1rem;
-}
-
-.navbar a {
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
 }
 
 h1 {
@@ -379,7 +379,7 @@ button.collapsible:hover {
   width: 80%;
 }
 
-#add-habit-form {
+.add-habit-form {
   width: 91.5rem;
 }
 
@@ -402,3 +402,4 @@ button.collapsible:hover {
     background-color: white;
     color:silver;
 } */
+

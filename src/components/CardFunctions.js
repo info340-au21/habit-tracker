@@ -6,6 +6,10 @@ export function CardList(props) {
   // pseudocode below --------------------------------
   // // const [currentStreak, setCurrentStreak] = useState(0);
   // streak = completeCount (from JSON)
+  // // const [currentStreak, setCurrentStreak] = useState(0);
+
+  // streak = streak (from JSON)
+
   // if (!habitIsDone && days > tempDays) {
   //   streak = 0;
   // } else {
@@ -17,6 +21,8 @@ export function CardList(props) {
   // // update day (not tempDay)
   // // if (day > tempDay and habit is NOT done)
   // // reset completeCount to 0
+  // // reset streak to 0
+
   // // for each habit
   // function setStreak() {
   //   habit.streak++;
@@ -31,43 +37,40 @@ export function CardList(props) {
   
  
   
+
   let notDone = props.cardHistory.map((item, index) => {
-    
-  
     if (!item.isGreen) {
-      return (<Card
-        key={index}
-        info={item}
-        remove={props.howToRemove}
-        expand={props.singleDisplay}
-        updateCount={props.updateCount}
-        makeCardGreen={props.makeCardGreen}
-        removeGreen = {props.removeGreen}
-        decCount = {props.decCount}
-      />)
+      return (
+        <Card
+          key={index}
+          info={item}
+          remove={props.howToRemove}
+          expand={props.singleDisplay}
+          updateCount={props.updateCount}
+          makeCardGreen={props.makeCardGreen}
+          removeGreen={props.removeGreen}
+          decCount={props.decCount}
+        />
+      );
     }
-  }
-  );
+  });
 
   let done = props.cardHistory.map((item, index) => {
-
-  
     if (item.isGreen) {
-      return (<Card
-        key={index}
-        info={item}
-        remove={props.howToRemove}
-        expand={props.singleDisplay}
-        updateCount={props.updateCount}
-        makeCardGreen={props.makeCardGreen}
-        removeGreen = {props.removeGreen}
-        decCount = {props.decCount}
-
-      />)
+      return (
+        <Card
+          key={index}
+          info={item}
+          remove={props.howToRemove}
+          expand={props.singleDisplay}
+          updateCount={props.updateCount}
+          makeCardGreen={props.makeCardGreen}
+          removeGreen={props.removeGreen}
+          decCount={props.decCount}
+        />
+      );
     }
-  }
-  );
-
+  });
 
   return (
     <div>
@@ -94,6 +97,8 @@ export function ExpandCard(props) {
     }, 300);
   };
   let s = "you have completed this habit " + card.completeCount + " times";
+
+  console.log(card.streak);
   return (
     <div className="d-flex m-5 ">
       <div className=" col-sm-2 col-md-2 col-lg-4"></div>
