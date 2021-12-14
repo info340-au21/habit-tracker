@@ -17,6 +17,7 @@ export function CardList(props) {
       updateCount={props.updateCount}
       makeCardGreen={props.makeCardGreen}
       removeGreen = {props.removeGreen}
+      decCount = {props.decCount}
 
     />)
     }
@@ -35,6 +36,7 @@ export function CardList(props) {
       updateCount={props.updateCount}
       makeCardGreen={props.makeCardGreen}
       removeGreen = {props.removeGreen}
+      decCount = {props.decCount}
 
     />)
     }

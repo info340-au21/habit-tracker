@@ -55,8 +55,30 @@ export default function Cards(props) {
     setCurrentCards(updatedArray);
   };
 
+  const decCount = (cardDescription) => {
+    console.log(cardDescription)
+
+    const updatedArray = currentCards.map((item) => {
+      if (item.cardText !== cardDescription) {
+        return item;
+      } else {
+        return {
+          cardTitle: item.cardTitle,
+          cardText: item.cardText,
+          impact: item.impact,
+          completeCount: item.completeCount  - 2,
+          isGreen: item.isGreen,
+        };
+      }
+    });
+
+    firebaseSet(habitRef, updatedArray) //change the database
+      .catch((err) => {});
+    setCurrentCards(updatedArray);
+  };
+
   const makeCardGreen = (cardDescription) => {
-    console.log("hhheerrree");
+
     const updatedArray = currentCards.map((item) => {
       if (item.cardText !== cardDescription) {
         return item;
@@ -84,7 +106,7 @@ export default function Cards(props) {
           cardTitle: item.cardTitle,
           cardText: item.cardText,
           impact: item.impact,
-          completeCount: item.completeCount,
+          completeCount: item.completeCount - 1,
           isGreen: false,
         };
       }
@@ -187,6 +209,7 @@ export default function Cards(props) {
     view = [
       <CardList
         cardHistory={currentCards}
+        decCount={decCount}
         howToRemove={removeCard}
         singleDisplay={displaySingleCard}
         updateCount={updateCompletion}
