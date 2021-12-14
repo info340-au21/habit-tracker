@@ -1,15 +1,21 @@
-html, body {
+html,
+body {
   font-family: "Sora", sans-serif;
   color: black;
   background-color: white;
   height: 100%;
 }
 
-.navbar-brand {
-  font-size: 35px;
+.navbar a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 2rem;
+  font-size: 1.25rem;
 }
 
-#card-basic-view, #expand-card {
+#card-basic-view,
+#expand-card {
   background-color: #dce3ec;
 }
 
@@ -57,12 +63,6 @@ body {
 #expand-top {
   background-color: #c2d3ea;
   border-radius: 1rem;
-}
-
-.navbar a {
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
 }
 
 h1 {
@@ -402,3 +402,4 @@ button.collapsible:hover {
     background-color: white;
     color:silver;
 } */
+
