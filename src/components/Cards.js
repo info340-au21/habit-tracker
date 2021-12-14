@@ -5,14 +5,17 @@ import {
   getDatabase,
   ref,
   set as firebaseSet,
-  push as firebasePush,
   onValue,
 } from "firebase/database";
 
 export default function Cards(props) {
   const [currentCards, setCurrentCards] = useState([]);
+  const [currentMax, setMax] = useState(null);
+  const [currentMin, setMin] = useState(null);
   const db = getDatabase();
-  const habitRef = ref(db, "habits/" + props.user.uid);
+  const habitRef = ref(db, props.user.uid + "/habits");
+  const maxRef = ref(db, props.user.uid + "/maxStreak");
+  const minRef = ref(db, props.user.uid + "/minStreak");
 
   // code from lecture demo
   useEffect(() => {
@@ -33,6 +36,39 @@ export default function Cards(props) {
     }
     return cleanup; //leave the instructions behind
   }, [db]); //when to re-run (never)
+
+  // code from lecture demo
+  useEffect(() => {
+    //function when component first loads
+    //addEventListener('databaseValueChange', () => {})
+    const offFunction = onValue(maxRef, (snapshot) => {
+      const max = snapshot.val(); //extract the value from the snapshot
+      setMax(max);
+    });
+
+    //instructions on how to leave will be called by React when component unmounts
+    function cleanup() {
+      offFunction(); //turn the listener off
+    }
+    return cleanup; //leave the instructions behind
+  }, [db]); //when to re-run (never)
+
+  // code from lecture demo
+  useEffect(() => {
+    //function when component first loads
+    //addEventListener('databaseValueChange', () => {})
+    const offFunction = onValue(minRef, (snapshot) => {
+      const min = snapshot.val(); //extract the value from the snapshot
+      setMin(min);
+    });
+
+    //instructions on how to leave will be called by React when component unmounts
+    function cleanup() {
+      offFunction(); //turn the listener off
+    }
+    return cleanup; //leave the instructions behind
+  }, [db]); //when to re-run (never)
+
   const [cardExpand, setCardExpand] = useState([]);
 
   const updateCompletion = (cardDescription) => {
@@ -45,7 +81,7 @@ export default function Cards(props) {
           cardText: item.cardText,
           impact: item.impact,
           streak: item.streak + 1,
-          isGreen: item.isGreen,
+          isComplete: item.isComplete,
         };
       }
     });
@@ -67,7 +103,7 @@ export default function Cards(props) {
           cardText: item.cardText,
           impact: item.impact,
           streak: item.streak - 2,
-          isGreen: item.isGreen,
+          isComplete: item.isComplete,
         };
       }
     });
@@ -77,7 +113,7 @@ export default function Cards(props) {
     setCurrentCards(updatedArray);
   };
 
-  const makeCardGreen = (cardDescription) => {
+  const makeCardComplete = (cardDescription) => {
     const updatedArray = currentCards.map((item) => {
       if (item.cardText !== cardDescription) {
         return item;
@@ -87,7 +123,7 @@ export default function Cards(props) {
           cardText: item.cardText,
           impact: item.impact,
           streak: item.streak + 1,
-          isGreen: true,
+          isComplete: true,
         };
       }
     });
@@ -96,7 +132,7 @@ export default function Cards(props) {
     setCurrentCards(updatedArray);
   };
 
-  const removeGreen = (cardDescription) => {
+  const removeComplete = (cardDescription) => {
     const updatedArray = currentCards.map((item) => {
       if (item.cardText !== cardDescription) {
         return item;
@@ -106,7 +142,7 @@ export default function Cards(props) {
           cardText: item.cardText,
           impact: item.impact,
           streak: item.streak - 1,
-          isGreen: false,
+          isComplete: false,
         };
       }
     });
@@ -140,7 +176,7 @@ export default function Cards(props) {
       cardText: cardDescription,
       impact: "=",
       streak: 0,
-      isGreen: false,
+      isComplete: false,
     };
 
     //handle errors in firebase
@@ -185,20 +221,54 @@ export default function Cards(props) {
   const cardReset = () => {
     const updatedArray = currentCards.map((item) => {
       let newStreak = item.streak;
-      if (!item.isGreen) {
+      if (!item.isComplete) {
         newStreak = 0;
       } else {
         newStreak = item.streak;
       }
-
       return {
         cardTitle: item.cardTitle,
         cardText: item.cardText,
         impact: item.impact,
         streak: newStreak,
-        isGreen: false,
+        isComplete: false,
       };
     });
+
+    const max = updatedArray.reduce((item, max) =>
+      max.streak > item.streak ? max : item
+    );
+    const min = updatedArray.reduce((item, max) =>
+      max.streak < item.streak ? max : item
+    );
+
+    firebaseSet(maxRef, max) //change the database
+      .catch((err) => {});
+    firebaseSet(minRef, min) //change the database
+      .catch((err) => {});
+    setMax(max);
+    setMin(min);
+
+    // let maxStreak = -Infinity;
+    // let minStreak = Infinity;
+    // let maxStreakHabit = [];
+    // let minStreakHabit = [];
+    // const topStreaks = updatedArray.map((item) => {
+    //   if (item.streak >= maxStreak) {
+    //     maxStreakHabit.push(item);
+    //     maxStreak = item.streak;
+
+    //     // for-each loop through maxStreakHabit
+    //     // if each streak is lower than maxStreak, we remove em
+    //   } else if (item.streak <= minStreak) {
+    //     minStreakHabit.push(item);
+    //     minStreak = item.streak;
+
+    //     // for-each loop through maxStreakHabit
+    //     // if each streak is lower than maxStreak, we remove em
+    //   }
+    // });
+
     firebaseSet(habitRef, updatedArray) //change the database
       .catch((err) => {});
     setCurrentCards(updatedArray);
@@ -214,8 +284,8 @@ export default function Cards(props) {
         howToRemove={removeCard}
         singleDisplay={displaySingleCard}
         updateCount={updateCompletion}
-        makeCardGreen={makeCardGreen}
-        removeGreen={removeGreen}
+        makeCardComplete={makeCardComplete}
+        removeComplete={removeComplete}
         key={1}
       />,
     ];
@@ -234,7 +304,7 @@ export default function Cards(props) {
     <div id="homepage-background">
       <h1>Daily Habits</h1>
       <div className="d-flex justify-content-center">
-        <button className="btn" onClick={cardReset}>
+        <button className="btn" onClick={cardReset} aria-label="reset day">
           Reset Day
         </button>
       </div>

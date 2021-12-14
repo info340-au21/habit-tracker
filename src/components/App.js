@@ -5,6 +5,7 @@ import Cards from "./Cards";
 import SignInPage from "./SignInPage";
 import About from "./About";
 import Stats from "./Stats";
+import Recommend from "./Recommend";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
@@ -41,18 +42,18 @@ export default function App() {
         </div>
 
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/" role="link">
             <Cards user={currentUser} />
           </Route>
-          <Route exact path="/about">
+          <Route exact path="/about" role="link">
             <About />
           </Route>
           <Route exact path="/stats">
-            <Stats />
+            <Stats user={currentUser} />
           </Route>
-          {/* <Route exact path="/recommend">
-            <Recommend />
-          </Route> */}
+          <Route exact path="/recommend">
+            <Recommend user={currentUser} />
+          </Route>
           <Redirect to="/" />
         </Switch>
         <Footer />

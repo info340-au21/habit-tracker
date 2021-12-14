@@ -5,8 +5,8 @@ export default function Stats() {
     <div>
       <div className="container justify-content-center">
         <div>
-          <h1>Habits that need work</h1>
-          <h1>Habits that are going well</h1>
+          <h1 aria-label="habits to improve">Habits that need work</h1>
+          <h1 aria-label="habits being kept">Habits that are going well</h1>
         </div>
       </div>
     </div>

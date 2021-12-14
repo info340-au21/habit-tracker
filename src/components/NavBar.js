@@ -16,8 +16,13 @@ export default function NavBar(props) {
   };
 
   return (
-    <Navbar collapseOnSelect expand="lg" className="navbarHeader">
-      <NavLink exact to="/" activeClassName="activeLink">
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      className="navbarHeader"
+      role="navigation"
+    >
+      <NavLink exact to="/" activeClassName="activeLink" aria-label="home page">
         <div className="navbar-header">
           <a className="navbar-brand" href="/">
             habit-trackr.
@@ -29,27 +34,49 @@ export default function NavBar(props) {
         <Nav className="ml-auto">
           <ul className="nav navbar-nav" id="NavContainer">
             <li activeClassName="linkElement">
-              <NavLink exact to="/" activeClassName="activeLink">
+              <NavLink
+                exact
+                to="/"
+                activeClassName="activeLink"
+                aria-label="home page"
+              >
                 Home
               </NavLink>
             </li>
             <li activeClassName="linkElement">
-              <NavLink exact to="/about" activeClassName="activeLink linkElement">
+              <NavLink
+                exact
+                to="/about"
+                activeClassName="activeLink linkElement"
+                aria-label="about page"
+              >
                 About
               </NavLink>
             </li>
             <li activeClassName="linkElement">
-              <NavLink exact to="/stats" activeClassName="activeLink linkElement">
+              <NavLink
+                exact
+                to="/stats"
+                activeClassName="activeLink linkElement"
+                aria-label="statistics page"
+              >
                 Statistics
               </NavLink>
             </li>
             <li activeClassName="linkElement">
-              <NavLink exact to="/motivation" activeClassName="activeLink linkElement">
+              <NavLink
+                exact
+                to="/motivation"
+                activeClassName="activeLink linkElement"
+                aria-label="motivation page"
+              >
                 Motivation
               </NavLink>
             </li>
             <li activeClassName="linkElement">
-              <Button onClick={handleClick}>Sign Out</Button>
+              <Button onClick={handleClick} aria-label="sign out">
+                Sign Out
+              </Button>
             </li>
           </ul>
         </Nav>
