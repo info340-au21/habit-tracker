@@ -86,7 +86,8 @@ export function Card(props) {
           <button
             className=" btn btn-primary m-2"
             id={card.cardText}
-            onClick={handleExpand}>
+            onClick={handleExpand}
+            aria-label="expand habit">
             Expand
           </button>
           

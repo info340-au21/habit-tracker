@@ -233,7 +233,7 @@ export default function Cards(props) {
     <div id="homepage-background">
       <h1>Daily Habits</h1>
       <div className="d-flex justify-content-center">
-        <button className="btn" onClick={cardReset}>Reset Day</button>
+        <button className="btn" onClick={cardReset} aria-label="reset day">Reset Day</button>
       </div>
       <div className="d-flex justify-content-center">
      

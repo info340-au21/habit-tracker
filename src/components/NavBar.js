@@ -15,7 +15,7 @@ export default function NavBar(props) {
 
   return (
     <nav id="navbar" className="navbar" role="navigation">
-      <div className="container-fluid" role="banner">
+      <div className="container-fluid">
         <div className="navbar-header">
           <a className="navbar-brand" href="/">
             habit-trackr.
@@ -23,27 +23,27 @@ export default function NavBar(props) {
         </div>
         <ul className="nav navbar-nav">
           <li>
-            <NavLink exact to="/" activeClassName="activeLink">
+            <NavLink exact to="/" activeClassName="activeLink" aria-label="home page">
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink exact to="/about" activeClassName="activeLink">
+            <NavLink exact to="/about" activeClassName="activeLink" aria-label="about page">
               About
             </NavLink>
           </li>
           <li>
-            <NavLink exact to="/stats" activeClassName="activeLink">
+            <NavLink exact to="/stats" activeClassName="activeLink" aria-label="statistics page">
               Statistics
             </NavLink>
           </li>
           <li>
-            <NavLink exact to="/motivation" activeClassName="activeLink">
+            <NavLink exact to="/motivation" activeClassName="activeLink" aria-label="motivation page">
               Motivation
             </NavLink>
           </li>
           <li>
-            <Button onClick={handleClick}>Sign Out</Button>
+            <Button onClick={handleClick} aria-label="sign out button">Sign Out</Button>
           </li>
         </ul>
       </div>
