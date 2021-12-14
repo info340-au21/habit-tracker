@@ -39,9 +39,14 @@ export function CardList(props) {
   return (
     <div>
       <div className="container ">
-        <h2 className="mt-4" aria-label="remaining habits">Remaining Habits:</h2>
+        <h2 className="mt-4" aria-label="remaining habits">
+          Remaining Habits:
+        </h2>
         <div className="row">{notDone}</div>
-        <h2 className="mt-4" aria-label="completed habits"> Completed Habits: </h2>
+        <h2 className="mt-4" aria-label="completed habits">
+          {" "}
+          Completed Habits:{" "}
+        </h2>
         <div className="row mb=4">{done}</div>
       </div>
     </div>
@@ -50,13 +55,15 @@ export function CardList(props) {
 
 export function RecCardList(props) {
   let recHabits = props.recHabits.map((item, index) => {
-    return <RecCard info={item} handleEvent={props.handleEvent} key={index}/>;
+    return <RecCard info={item} handleEvent={props.handleEvent} key={index} />;
   });
 
   return (
     <div>
       <div className="container">
-        <div className="row" aria-label="recommended habits">{recHabits}</div>
+        <div className="row" aria-label="recommended habits">
+          {recHabits}
+        </div>
       </div>
     </div>
   );
@@ -65,17 +72,13 @@ export function RecCardList(props) {
 export function ExpandCard(props) {
   let card = props.card[0];
 
-  console.log(card);
-
   const handleDelete = (event) => {
-    console.log(event.target.id);
     props.howToRevert();
     setTimeout(() => {
       props.howToRemove(event.target.id);
     }, 300);
   };
   let s = "you have completed this habit " + card.streak + " times";
-  console.log(card.streak);
   return (
     <div className="d-flex m-5 ">
       <div className=" col-sm-2 col-md-2 col-lg-4"></div>
