@@ -44,6 +44,7 @@ export default function Card(props) {
     text = text.substring(0, 37) + "...";
   }
 // If there are 0 habits and you click "reset", you get an error. Handle this event!
+// div#card-basic-view.card.mb-4
   return (
     <div className="d-flex col-md-6 col-xl-3" id={card.cardText}>
       <div id={cardColor} className="card mb-4">

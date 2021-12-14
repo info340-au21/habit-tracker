@@ -187,11 +187,11 @@ export function Card(props) {
     }
   };
 
-  let text = card.cardText;
-  let length = text.length;
-  if (length > 10) {
-    text = text.substring(0, text.length - 3) + "...";
-  }
+  // let text = card.cardText;
+  // let length = text.length;
+  // if (length > 10) {
+  //   text = text.substring(0, text.length - 3) + "...";
+  // }
   return (
     <div className="d-flex col-md-6 col-xl-3" id={card.cardText} aria-label="card list">
       <div id={cardColor} className="card mb-4">
@@ -200,8 +200,8 @@ export function Card(props) {
             <div className="col-sm-auto col-xl-12"></div>
 
             <div className="col-sm">
-              <h2 className="card-title">{card.cardTitle}</h2>
-              {/* <p className="card-text">{card.cardText}</p> */}
+              {/* <h2 className="card-title">{card.cardTitle}</h2> */}
+              <p className="card-text">{card.cardText}</p>
               <p className="card-text">{text}</p>
             </div>
           </div>
