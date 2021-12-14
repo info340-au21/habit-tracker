@@ -2,6 +2,7 @@ import React from "react";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import { EmailAuthProvider, getAuth, GoogleAuthProvider } from "firebase/auth";
 
+
 const firebaseUIConfig = {
   signInOptions: [
     { provider: EmailAuthProvider.PROVIDER_ID, requiredDisplayName: true },

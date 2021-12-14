@@ -248,9 +248,10 @@ p.alert-warning {
   background-color: white;
 }
 
+/*=============== BEGIN CARDS SECTION ===============*/
 .card-body {
   width: auto;
-}s
+}
 
 .col-sm-auto.col-xl-12, #card-basic-view {
   width:90%;
@@ -267,6 +268,7 @@ div#card-basic-view.card.mb-4 {
 .col-sm, .col-sm-auto.col-xl-12, #card-basic-view {
   margin: auto;
 }
+/*=============== END CARDS SECTION ===============*/
 
 .fonts {
   font-size: 11px;
