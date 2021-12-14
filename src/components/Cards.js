@@ -10,32 +10,64 @@ import {
 
 export default function Cards(props) {
   const [currentCards, setCurrentCards] = useState([]);
+  const [currentAllHabits, setCurrentAllHabits] = useState([]);
+  const [recs, setRecs] = useState([]);
   const [currentMax, setMax] = useState(null);
   const [currentMin, setMin] = useState(null);
   const db = getDatabase();
-  const habitRef = ref(db, "habits/" + props.user.uid);
+  const allHabitsRef = ref(db, "habits");
+  const recRef = ref(db, "recommend");
+  const habitRef = ref(db, "habits/" + props.user.uid + "/habits");
   const maxRef = ref(db, "habits/" + props.user.uid + "/maxStreak");
   const minRef = ref(db, "habits/" + props.user.uid + "/minStreak");
 
-  // code from lecture demo
   useEffect(() => {
-    //function when component first loads
-    //addEventListener('databaseValueChange', () => {})
-    const offFunction = onValue(habitRef, (snapshot) => {
-      const allHabits = snapshot.val(); //extract the value from the snapshot
+    const offFunction = onValue(allHabitsRef, (snapshot) => {
+      const allHabits = snapshot.val();
       if (allHabits == null) {
-        setCurrentCards([]);
+        setCurrentAllHabits([]);
       } else {
-        setCurrentCards(allHabits);
+        setCurrentAllHabits(allHabits);
       }
     });
 
-    //instructions on how to leave will be called by React when component unmounts
     function cleanup() {
-      offFunction(); //turn the listener off
+      offFunction();
     }
-    return cleanup; //leave the instructions behind
-  }, [db]); //when to re-run (never)
+    return cleanup;
+  }, [db]);
+
+  useEffect(() => {
+    const offFunction = onValue(habitRef, (snapshot) => {
+      const habits = snapshot.val();
+      if (habits == null) {
+        setCurrentCards([]);
+      } else {
+        setCurrentCards(habits);
+      }
+    });
+
+    function cleanup() {
+      offFunction();
+    }
+    return cleanup;
+  }, [db]);
+
+  useEffect(() => {
+    const offFunction = onValue(recRef, (snapshot) => {
+      const recs = snapshot.val();
+      if (recs == null) {
+        setRecs([]);
+      } else {
+        setRecs(recs);
+      }
+    });
+
+    function cleanup() {
+      offFunction();
+    }
+    return cleanup;
+  }, [db]);
 
   // code from lecture demo
   useEffect(() => {
@@ -92,8 +124,6 @@ export default function Cards(props) {
   };
 
   const decCount = (cardDescription) => {
-    console.log(cardDescription);
-
     const updatedArray = currentCards.map((item) => {
       if (item.cardText !== cardDescription) {
         return item;
@@ -195,12 +225,10 @@ export default function Cards(props) {
       if (item.cardText === cardDescription) {
         displayIndex = index;
       }
-      console.log(item.cardDescription);
       return item;
     });
 
     let focus = updatedArray[displayIndex];
-    console.log(focus);
     let res = [
       {
         cardTitle: focus.cardTitle,
@@ -249,25 +277,15 @@ export default function Cards(props) {
     setMax(max);
     setMin(min);
 
-    // let maxStreak = -Infinity;
-    // let minStreak = Infinity;
-    // let maxStreakHabit = [];
-    // let minStreakHabit = [];
-    // const topStreaks = updatedArray.map((item) => {
-    //   if (item.streak >= maxStreak) {
-    //     maxStreakHabit.push(item);
-    //     maxStreak = item.streak;
+    for (let user in currentAllHabits) {
+      const userData = currentAllHabits[user];
+      if (userData.hasOwnProperty("maxStreak")) {
+        setRecs(recs.push(userData.maxStreak));
+      }
+    }
 
-    //     // for-each loop through maxStreakHabit
-    //     // if each streak is lower than maxStreak, we remove em
-    //   } else if (item.streak <= minStreak) {
-    //     minStreakHabit.push(item);
-    //     minStreak = item.streak;
-
-    //     // for-each loop through maxStreakHabit
-    //     // if each streak is lower than maxStreak, we remove em
-    //   }
-    // });
+    firebaseSet(recRef, recs) //change the database
+      .catch((err) => {});
 
     firebaseSet(habitRef, updatedArray) //change the database
       .catch((err) => {});

@@ -13,13 +13,14 @@ export default function Recommend(props) {
   const [habits, setHabits] = useState([]);
   const db = getDatabase();
   const recommendRef = ref(db, "recommend");
-  const habitRef = ref(db, "habits/" + props.user.uid);
+  const habitRef = ref(db, "habits/" + props.user.uid + "/habits");
 
   useEffect(() => {
     //function when component first loads
     //addEventListener('databaseValueChange', () => {})
     const offFunction = onValue(recommendRef, (snapshot) => {
       const recommendations = snapshot.val(); //extract the value from the snapshot
+      console.log(recommendations);
       if (recommendations == null) {
         setRecs([]);
       } else {

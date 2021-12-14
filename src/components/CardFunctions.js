@@ -82,13 +82,13 @@ export function CardList(props) {
 
 export function RecCardList(props) {
   let recHabits = props.recHabits.map((item, index) => {
-    return <RecCard info={props.recHabits} handleEvent={props.handleEvent} />;
+    return <RecCard info={item} handleEvent={props.handleEvent} key={index} />;
   });
 
   return (
     <div>
       <div className="container ">
-        <div className="row">{}</div>
+        <div className="row">{recHabits}</div>
       </div>
     </div>
   );

@@ -80,6 +80,8 @@ export function RecCard(props) {
     event.preventDefault();
     props.handleEvent(event.target.id);
   };
+  console.log(card.cardTitle);
+  console.log(card.cardText);
   return (
     <div className="d-flex col-md-6 col-xl-3" id={card.cardText}>
       <div className="card mb-4">
