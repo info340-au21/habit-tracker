@@ -40,18 +40,15 @@ export default function Cards(props) {
       if (item.cardText !== cardDescription) {
         return item;
       } else {
-        
         return {
           cardTitle: item.cardTitle,
           cardText: item.cardText,
           impact: item.impact,
           completeCount: item.completeCount + 1,
-          isGreen: item.isGreen
+          isGreen: item.isGreen,
         };
       }
     });
-
-
 
     firebaseSet(habitRef, updatedArray) //change the database
       .catch((err) => {});
@@ -59,53 +56,43 @@ export default function Cards(props) {
   };
 
   const makeCardGreen = (cardDescription) => {
-    console.log("hhheerrree")
+    console.log("hhheerrree");
     const updatedArray = currentCards.map((item) => {
       if (item.cardText !== cardDescription) {
         return item;
       } else {
-        
         return {
           cardTitle: item.cardTitle,
           cardText: item.cardText,
           impact: item.impact,
           completeCount: item.completeCount + 1,
-          isGreen: true
+          isGreen: true,
         };
       }
-      
     });
     firebaseSet(habitRef, updatedArray) //change the database
       .catch((err) => {});
     setCurrentCards(updatedArray);
   };
 
-    const removeGreen = (cardDescription) => {
-      const updatedArray = currentCards.map((item) => {
-        if (item.cardText !== cardDescription) {
-          return item;
-        } else {
-          
-          return {
-            cardTitle: item.cardTitle,
-            cardText: item.cardText,
-            impact: item.impact,
-            completeCount: item.completeCount,
-            isGreen: false
-          };
-        }
-      });
-      firebaseSet(habitRef, updatedArray) //change the database
+  const removeGreen = (cardDescription) => {
+    const updatedArray = currentCards.map((item) => {
+      if (item.cardText !== cardDescription) {
+        return item;
+      } else {
+        return {
+          cardTitle: item.cardTitle,
+          cardText: item.cardText,
+          impact: item.impact,
+          completeCount: item.completeCount,
+          isGreen: false,
+        };
+      }
+    });
+    firebaseSet(habitRef, updatedArray) //change the database
       .catch((err) => {});
     setCurrentCards(updatedArray);
   };
-
-
-
-    
-
-  
-
 
   const removeCard = (cardTitle) => {
     let removalIndex = -1;
@@ -132,7 +119,7 @@ export default function Cards(props) {
       cardText: cardDescription,
       impact: "=",
       completeCount: 0,
-      isGreen: false
+      isGreen: false,
     };
 
     //handle errors in firebase
@@ -204,7 +191,7 @@ export default function Cards(props) {
         singleDisplay={displaySingleCard}
         updateCount={updateCompletion}
         makeCardGreen={makeCardGreen}
-        removeGreen = {removeGreen}
+        removeGreen={removeGreen}
         key={1}
       />,
     ];

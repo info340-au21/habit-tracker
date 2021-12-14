@@ -1,11 +1,6 @@
 import React from "react";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-import {
-  EmailAuthProvider,
-  getAdditionalUserInfo,
-  getAuth,
-  GoogleAuthProvider,
-} from "firebase/auth";
+import { EmailAuthProvider, getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseUIConfig = {
   signInOptions: [
@@ -21,23 +16,12 @@ const firebaseUIConfig = {
   },
 };
 
-// const signout = () => {
-//   signOut
-//     .then(function () {
-//       console.log();
-//     })
-//     .catch(function () {
-//       console.log();
-//     });
-// };
-
-export default function SignInPage(props) {
+export default function SignInPage() {
+  let auth = getAuth();
   return (
     <div>
-      <StyledFirebaseAuth
-        uiConfig={firebaseUIConfig}
-        firebaseAuth={getAuth()}
-      />
+      <p>Sign in</p>
+      <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
     </div>
   );
 }
