@@ -20,8 +20,10 @@ export default function SignInPage() {
   let auth = getAuth();
   return (
     <div>
-      <p>Sign in</p>
-      <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth}  aria-label="sign in"/>
+      <div>
+        <p>Sign in</p>
+        <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth}  aria-label="sign in"/>
+      </div>
     </div>
   );
 }

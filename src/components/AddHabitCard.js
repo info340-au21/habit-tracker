@@ -57,7 +57,7 @@ export function AddCard(props) {
         {addHabitButtonText}
       </Button>
       <Collapse in={open}>
-        <form>
+        <form role="form">
           <div className="form-group">
             <label className="main-page-background" htmlFor="habit-title">
               {" "}
@@ -69,7 +69,8 @@ export function AddCard(props) {
               onChange={handleTitleUpdate}
               className="form-control"
               id="habit-title"
-              placeholder="Enter Action">
+              placeholder="Enter Action"
+              aria-label="implementation intention entry">
             </input>
           </div>
           <div className="form-group">
@@ -87,6 +88,7 @@ export function AddCard(props) {
               className="form-control"
               id="habit-text"
               placeholder="I will [x] at [time] in/at [location]"
+              aria-label="implementation intention entry"
               required>
             </input>
           </div>
@@ -97,7 +99,7 @@ export function AddCard(props) {
             aria-label="submit habit button">
             Submit
           </Button>
-          <div className="d-none">Both fields must be filled in.</div>
+          <div className="d-none" aria-label="both fields must be filled in">Both fields must be filled in.</div>
         </form>
       </Collapse>
     </div>

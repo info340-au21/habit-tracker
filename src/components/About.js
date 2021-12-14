@@ -2,10 +2,10 @@ import React from "react";
 
 export default function About() {
   return (
-    <div role="about">
+    <div role="about page">
       <div className="container justify-content-center">
         <div>
-          <h1>How It Works</h1>
+          <h1 aria-label="how it works">How It Works</h1>
           <img
             src="img/atomichabits.jpg"
             alt="Front Cover of Atomic Habits by James Clear"
@@ -23,10 +23,11 @@ export default function About() {
             className="d-flex justify-content-center"
             width="720"
             height="405"
+            aria-label="you tube video"
           ></iframe>
           <p></p>
-          <h2>The Inspiration</h2>
-          <p>
+          <h2 aria-label="the inspiration for this app" aria-describedby="p1">The Inspiration</h2>
+          <p id="p1">
             In hoping to help people improve their lives, we looked to a popular
             novel by the name of Atomic Habits. Written by James Clear, this
             book features evidence-based research on how to implement habits in
@@ -34,14 +35,14 @@ export default function About() {
             5 million copies worldwide.
           </p>
 
-          <h2>Implentation Intentions</h2>
-          <p>
+          <h2 aria-label="implentation intentions" aria-describedby="p2">Implentation Intentions</h2>
+          <p id="p2">
             According to James Clear, people are two to three times more likely
             to follow through with an intended habit if they "make a specific
             plan for when, where, and how they are going to implement it." He
             refers to said type of plan as an "implentation intention."
           </p>
-          <p>
+          <p id="p2">
             As he writes in his book: "By outlining a clear plan of action and
             clarifying exactly what you need to work on, you make the task
             simpler which means it requires less motivation to do. So when you
@@ -49,7 +50,7 @@ export default function About() {
             you still might have enough to get started because the next step has
             already been outlined and is simple and clear."
           </p>
-          <h2>Stick with it!</h2>
+          <h2 aria-label="stick with it">Stick with it!</h2>
           <img
             src="img/habit_line.jpg"
             alt="The Habit Line Chart"

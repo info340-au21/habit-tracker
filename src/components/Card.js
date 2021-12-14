@@ -46,13 +46,13 @@ export default function Card(props) {
   // If there are 0 habits and you click "reset", you get an error. Handle this event!
   return (
     <div className="d-flex col-md-6 col-xl-3" id={card.cardText}>
-      <div id={cardColor} className="card mb-4">
+      <div id={cardColor} className="card mb-4" aria-label="card">
         <div className="card-body">
           <div className="row">
             <div className="col-sm-auto col-xl-12">
               <div className="col-sm" role="habit card">
-                <h2 className="card-title">{card.cardTitle}</h2>
-                <p className="card-text" role="paragraph">{text}</p>
+                <h2 className="card-title" aria-label={card.cardTitle}>{card.cardTitle}</h2>
+                <p className="card-text" aria-label={card.cardText}>{text}</p>
               </div>
             </div>
           </div>
@@ -71,6 +71,7 @@ export default function Card(props) {
             className={buttonClass}
             id={card.cardText}
             onClick={makeComplete}
+            aria-label={buttonName}
           >
             {buttonName}
           </button>
