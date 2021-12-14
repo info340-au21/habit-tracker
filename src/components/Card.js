@@ -60,7 +60,9 @@ export function Card(props) {
 
     } else {
 
+      props.decCount(event.target.id);
       props.removeGreen(event.target.id);
+      
 
     }
 

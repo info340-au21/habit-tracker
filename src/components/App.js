@@ -51,7 +51,7 @@ export default function App() {
             <Stats />
           </Route>
           <Route exact path="/recommend">
-            <Recommend />
+           
           </Route>
           <Redirect to="/" />
         </Switch>
