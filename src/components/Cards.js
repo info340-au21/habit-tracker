@@ -13,9 +13,9 @@ export default function Cards(props) {
   const [currentMax, setMax] = useState(null);
   const [currentMin, setMin] = useState(null);
   const db = getDatabase();
-  const habitRef = ref(db, props.user.uid + "/habits");
-  const maxRef = ref(db, props.user.uid + "/maxStreak");
-  const minRef = ref(db, props.user.uid + "/minStreak");
+  const habitRef = ref(db, "habits/" + props.user.uid);
+  const maxRef = ref(db, "habits/" + props.user.uid + "/maxStreak");
+  const minRef = ref(db, "habits/" + props.user.uid + "/minStreak");
 
   // code from lecture demo
   useEffect(() => {

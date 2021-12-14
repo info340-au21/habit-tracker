@@ -13,7 +13,7 @@ export default function Recommend(props) {
   const [habits, setHabits] = useState([]);
   const db = getDatabase();
   const recommendRef = ref(db, "recommend");
-  const habitRef = ref(db, props.user.uid + "/habits");
+  const habitRef = ref(db, "habits/" + props.user.uid);
 
   useEffect(() => {
     //function when component first loads
