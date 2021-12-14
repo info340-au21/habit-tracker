@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer(props) {
   return (
-    <footer id="footer" className="page-footer font-small pt-4">
+    <footer className="page-footer font-small pt-4">
       <div className="container">
         <p>&copy;Augene Pak, John Danielsson, Andrew Frazier, Luka Marceta</p>
         <p>

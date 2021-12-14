@@ -50,7 +50,7 @@ export function AddCard(props) {
       {/* Add Habit Form */}
       <Button
         variant="link"
-        id="main-page-background"
+        className="main-page-background"
         onClick={habitButtonHandler}
         aria-expanded={open}
         aria-controls="add-habit-form-button">
@@ -59,7 +59,7 @@ export function AddCard(props) {
       <Collapse in={open}>
         <form>
           <div className="form-group">
-            <label id="main-page-background" htmlFor="habit-title">
+            <label className="main-page-background" htmlFor="habit-title">
               {" "}
               <b>Action</b>{" "}
             </label>
@@ -74,8 +74,7 @@ export function AddCard(props) {
           </div>
           <div className="form-group">
             <label
-              className="mt-2"
-              id="main-page-background"
+              className="mt-2 main-page-background"
               htmlFor="habit-text"
             >
               {" "}

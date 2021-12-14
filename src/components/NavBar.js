@@ -16,7 +16,7 @@ export default function NavBar(props) {
   };
 
   return (
-    <Navbar collapseOnSelect expand="lg" className="navbar" class="navbar" id="navbar">
+    <Navbar collapseOnSelect expand="lg" className="navbarHeader">
       <NavLink exact to="/" activeClassName="activeLink">
         <div className="navbar-header">
           <a className="navbar-brand" href="/">
