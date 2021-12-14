@@ -56,16 +56,6 @@ export default function NavBar(props) {
             <li activeClassName="linkElement">
               <NavLink
                 exact
-                to="/stats"
-                activeClassName="activeLink linkElement"
-                aria-label="statistics page"
-              >
-                Statistics
-              </NavLink>
-            </li>
-            <li activeClassName="linkElement">
-              <NavLink
-                exact
                 to="/recommend"
                 activeClassName="activeLink linkElement"
                 aria-label="motivation page"

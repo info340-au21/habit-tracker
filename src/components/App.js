@@ -47,9 +47,6 @@ export default function App() {
           <Route exact path="/about" role="link">
             <About />
           </Route>
-          <Route exact path="/stats">
-            <Stats user={currentUser} />
-          </Route>
           <Route exact path="/recommend">
             <Recommend user={currentUser} />
           </Route>
