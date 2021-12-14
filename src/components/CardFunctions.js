@@ -121,7 +121,7 @@ export function ExpandCard(props) {
             </p>
           </div>
           <p className="h5 card-text text-center pt-4" aria-label={s}>
-            You've completed this habit <b>{card.completeCount} </b> times!
+            Your streak is <strong>{card.streak} </strong>.
           </p>
         </div>
         <div className="d-flex justify-content-center">
