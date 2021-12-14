@@ -254,6 +254,12 @@ input#habit-title:invalid:required, input#habit-text:invalid:required {
   }
 }
 
+@media (max-width: 912px) {
+  .mt-4 {
+    text-align: center;
+  }
+}
+
 .card {
   border: none;
   position: relative;
