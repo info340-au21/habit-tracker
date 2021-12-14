@@ -45,8 +45,8 @@ export function AddCard(props) {
   };
 
   return (
+    //Add Habit Form
     <div>
-      {/* Add Habit Form */}
       <Button
         variant="link"
         className="main-page-background"
@@ -90,12 +90,7 @@ export function AddCard(props) {
               required>
             </input>
           </div>
-          {/* Keep the first 2 commented-out things below just in case. */}
-          {/* {!hasBeenClicked && descriptionValue === '' && <p className="alert alert-warning">Must provide a value</p>} */}
-          {/* {descriptionValue === '' && <p className="alert alert-warning">Must provide a value</p>} */}
-
           <Button
-            //variant="button"
             id="add-task-button"
             className="btn p-2 mt-2 justify-content-left"
             onClick={handleClick}
