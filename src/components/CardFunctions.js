@@ -3,9 +3,7 @@ import { Card } from "./Card";
 
 export function CardList(props) {
   
-  setTimeout(() => {
-    console.log()
-  }, 3000);
+ 
   
   let notDone = props.cardHistory.map((item, index) => {
     
@@ -47,9 +45,9 @@ export function CardList(props) {
   return (
     <div>
       <div className="container ">
-        <h2 className="mt-4">Remaining Habits</h2>
+        <h2 className="mt-4">Remaining Habits:</h2>
         <div className="row">{notDone}</div>
-        <h2> Completed Habits </h2>
+        <h2 className="mt-4"> Completed Habits: </h2>
         <div className="row mb=4">{done}</div>
       </div>
     </div>

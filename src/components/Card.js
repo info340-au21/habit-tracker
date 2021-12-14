@@ -44,7 +44,7 @@ export function Card(props) {
     buttonClass = "btn btn-success m-2"
   } else {
     cardColor="card-complete-view";
-    buttonName = "Revert";
+    buttonName = "Undo";
     buttonClass = "btn btn-dark m-2"
   }
 
@@ -66,6 +66,9 @@ export function Card(props) {
 
 
   }
+
+
+
 
   return (
     <div className="d-flex col-md-6 col-xl-3" id={card.cardText}>
@@ -89,6 +92,7 @@ export function Card(props) {
             onClick={handleExpand}>
             Expand
           </button>
+          
           <button
             className={buttonClass}
             id={card.cardText}

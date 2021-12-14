@@ -154,9 +154,7 @@ export default function Cards(props) {
       console.log(item.cardDescription);
       return item;
     });
-    console.log(updatedArray);
-    console.log(cardDescription);
-    console.log(displayIndex);
+
 
     let focus = updatedArray[displayIndex];
     console.log(focus);
@@ -176,6 +174,25 @@ export default function Cards(props) {
   };
 
   let cardForm = <AddCard howToAddCard={addCard} key={2} />;
+
+  const cardReset = () => {
+    const updatedArray = currentCards.map((item) => {
+      
+        return {
+          cardTitle: item.cardTitle,
+          cardText: item.cardText,
+          impact: item.impact,
+          completeCount: item.completeCount,
+          isGreen: false
+        };
+      
+    });
+    firebaseSet(habitRef, updatedArray) //change the database
+    .catch((err) => {});
+    setCurrentCards(updatedArray);
+  };
+
+  
 
   // render homepage based on expansion
   let view;
@@ -204,8 +221,14 @@ export default function Cards(props) {
 
   return (
     <div id="homepage-background">
-      <h1>Current Habits</h1>
-      <div className="d-flex justify-content-center">{cardForm}</div>
+      <h1>Daily Habits</h1>
+      <div className="d-flex justify-content-center">
+        <button className="btn" onClick={cardReset}>Reset Day</button>
+      </div>
+      <div className="d-flex justify-content-center">
+     
+        {cardForm}
+      </div>
       {view}
     </div>
   );
