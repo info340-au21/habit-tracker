@@ -275,6 +275,7 @@ export default function Cards(props) {
     setMax(max);
     setMin(min);
 
+    setRecs([]);
     for (let user in currentAllHabits) {
       const userData = currentAllHabits[user];
       if (userData.hasOwnProperty("maxStreak")) {
