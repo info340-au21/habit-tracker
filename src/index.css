@@ -295,6 +295,14 @@ input#habit-title:invalid:required, input#habit-text:invalid:required {
   width:100%;
 }
 
+/* have a character number cut off for rendering cards e.g. if if II > 100 characters, add "..." at
+the end of the II and display the full text of the expanded card */
+
+/* div#card-basic-view.card.mb-4 */
+
+div#card-basic-view.card.mb-4 {
+  height:90%;
+}
 
 .col-sm, .col-sm-auto.col-xl-12, #card-basic-view {
   margin: auto;

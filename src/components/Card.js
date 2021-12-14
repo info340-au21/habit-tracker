@@ -38,6 +38,13 @@ export default function Card(props) {
     }
   };
 
+  let text = card.cardText;
+  let length = text.length;
+  if (length > 40) {
+    text = text.substring(0, 37) + "...";
+  }
+  // If there are 0 habits and you click "reset", you get an error. Handle this event!
+  // div#card-basic-view.card.mb-4
   return (
     <div className="d-flex col-md-6 col-xl-3" id={card.cardText}>
       <div id={cardColor} className="card mb-4">
@@ -46,7 +53,10 @@ export default function Card(props) {
             <div className="col-sm-auto col-xl-12">
               <div className="col-sm" role="habit card">
                 <h2 className="card-title">{card.cardTitle}</h2>
-                <p className="card-text">{card.cardText}</p>
+                <p className="card-text" role="paragraph">
+                  {text}
+                </p>
+                {/* <p className="card-text">{card.cardText}</p> */}
               </div>
             </div>
           </div>
@@ -90,7 +100,8 @@ export function RecCard(props) {
             <div className="col-sm-auto col-xl-12">
               <div className="col-sm" role="habit card">
                 <h2 className="card-title">{card.cardTitle}</h2>
-                <p className="card-text">{card.cardText}</p>
+                {/* <p className="card-text" role="paragraph">{text}</p> */}
+                <p className="card-text">{card.cardTitle}</p>
               </div>
             </div>
           </div>

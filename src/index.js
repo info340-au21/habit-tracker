@@ -14,6 +14,8 @@ const firebaseConfig = {
   messagingSenderId: "3176632655",
   appId: "1:3176632655:web:8862ab88f02717580e353a",
 };
+// when on smaller screen, swipe right with cards
+// set display:none for the carousel element above small screen size
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
