@@ -90,14 +90,6 @@ header {
   padding: 5rem;
   text-align: center;
 }
-/* 
-footer {
-  /* position: fixed;
-  height: 100px;
-  bottom: 0;
-  width: 100%;
-  color: white;
-//} */
 
 footer p {
   text-align: left;
@@ -138,8 +130,6 @@ section.non_list_content {
   box-sizing: border-box;
 }
 
-/*=============== LIST ===============*/
-/* Remove margins and padding from the list */
 ul {
   margin: 0;
   padding: 0;
@@ -147,8 +137,6 @@ ul {
   flex-direction: column;
   flex-wrap: wrap;
 }
-
-/* Set all odd list items to a different color (zebra-stripes) */
 
 .close {
   position: absolute;
@@ -195,14 +183,6 @@ p.alert-warning {
   margin: 2px;
   padding: 2px;
 }
-
-/* input:valid {
-  border: 2px solid black;
-}
-
-input#habit-title:invalid:required, input#habit-text:invalid:required {
-  border: 2px solid red;
-} */
 
 .flexbox.container {
   color: white;
@@ -270,28 +250,8 @@ input#habit-title:invalid:required, input#habit-text:invalid:required {
 }
 
 .card-body {
-  /* This makes the card text center-justified. Replacing it with
-  'width: auto' makes the text left-justified. */
-  /* padding: auto;
-  margin: 0 auto; */
   width: auto;
-}
-
-/* #card-basic-view {
-  width: 90%;
-} */
-
-/* .d-flex.col-md-6.col-xl-3 {
-  width:100%;
-} */
-
-/* .col-sm-auto.col-xl-12 {
-  width:90%;
-} */
-
-/* .col-sm {
-  width:100%;
-} */
+}s
 
 .col-sm-auto.col-xl-12, #card-basic-view {
   width:90%;
@@ -300,11 +260,6 @@ input#habit-title:invalid:required, input#habit-text:invalid:required {
 .col-sm, .d-flex.col-md-6.col-xl-3 {
   width:100%;
 }
-
-/* have a character number cut off for rendering cards e.g. if if II > 100 characters, add "..." at
-the end of the II and display the full text of the expanded card */
-
-/* div#card-basic-view.card.mb-4 */
 
 div#card-basic-view.card.mb-4 {
   height:90%;
@@ -355,65 +310,3 @@ div#card-basic-view.card.mb-4 {
   width: "500";
   height: "600";
 }
-
-/* ABOUT page */
-
-/* button.collapsible {
-    color: white;
-    background-color: silver;
-    width: 80%;
-    justify-self: center;
-} */
-
-button.collapsible {
-  color: white;
-  background-color: silver;
-  padding: 18px;
-  width: 80%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  border-radius: 10px;
-  display: inline-block;
-  margin: 1rem auto 1rem auto;
-}
-
-.active,
-button.collapsible:hover {
-  background-color: white;
-  color: silver;
-}
-
-.row-about {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  background-color: #eee;
-  width: 80%;
-}
-
-.add-habit-form {
-  width: 91.5rem;
-}
-
-/* .collapsible-content {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    background-color: #eee;
-    width: 80%;
-}
-
-.container-collapsibles {
-    align-items: center;
-    justify-content: center;
-    display: block;
-    width: 100%;
-} */
-
-/* button.collapsible:hover {
-    background-color: white;
-    color:silver;
-} */
-
