@@ -85,10 +85,11 @@ export function RecCard(props) {
   let card = props.info;
   const handleAdd = (event) => {
     event.preventDefault();
-    props.handleEvent(event.target.id);
+    console.log(event.target);
+    console.log(event.target.id);
+    console.log(event.target.title);
+    props.handleEvent(event.target.id, event.target.title);
   };
-  console.log(card.cardTitle);
-  console.log(card.cardText);
   return (
     <div className="d-flex col-md-6 col-xl-3" id={card.cardText}>
       <div className="card mb-4">
@@ -97,7 +98,8 @@ export function RecCard(props) {
             <div className="col-sm-auto col-xl-12">
               <div className="col-sm" role="habit card">
                 <h2 className="card-title">{card.cardTitle}</h2>
-                <p className="card-text">{card.cardTitle}</p>
+                {/* <p className="card-text" role="paragraph">{text}</p> */}
+                <p className="card-text">{card.cardText}</p>
               </div>
             </div>
           </div>
@@ -106,6 +108,7 @@ export function RecCard(props) {
           <button
             className=" btn btn-primary m-2"
             id={card.cardText}
+            title={card.cardTitle}
             onClick={handleAdd}
           >
             Add

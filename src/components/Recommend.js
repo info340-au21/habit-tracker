@@ -54,7 +54,7 @@ export default function Recommend(props) {
     return cleanup; //leave the instructions behind
   }, [db]); //when to re-run (never)
 
-  const handleClick = (cardTitle, cardDescription) => {
+  const handleClick = (cardDescription, cardTitle) => {
     const newHabit = {
       cardTitle: cardTitle,
       cardText: cardDescription,
@@ -64,14 +64,17 @@ export default function Recommend(props) {
     };
 
     let removalIndex = -1;
+    console.log(recs);
     const updatedRecs = recs.map((item, index) => {
-      if (item.cardTitle !== cardTitle) {
+      if (item.cardText !== cardDescription) {
         return item;
       } else {
         removalIndex = index;
         return;
       }
     });
+    console.log(removalIndex);
+
     updatedRecs.splice(removalIndex, 1);
     setRecs(updatedRecs);
 

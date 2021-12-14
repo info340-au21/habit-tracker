@@ -170,7 +170,6 @@ ul {
 
 input {
   margin: 0;
-  /* border: none; */
   border: 2px solid black;
   border-radius: 0;
   width: 75%;
@@ -231,6 +230,12 @@ p.alert-warning {
   .flex-row {
     flex: 60%;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 912px) {
+  .mt-4 {
+    text-align: center;
   }
 }
 

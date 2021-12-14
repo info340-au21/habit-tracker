@@ -38,12 +38,12 @@ export default function Cards(props) {
   }, [db]);
 
   useEffect(() => {
-    const offFunction = onValue(habitRef, (snapshot) => {
-      const habits = snapshot.val();
-      if (habits == null) {
-        setCurrentCards([]);
+    const offFunction = onValue(recRef, (snapshot) => {
+      const recs = snapshot.val();
+      if (recs == null) {
+        setRecs([]);
       } else {
-        setCurrentCards(habits);
+        setRecs(recs);
       }
     });
 
@@ -54,12 +54,12 @@ export default function Cards(props) {
   }, [db]);
 
   useEffect(() => {
-    const offFunction = onValue(recRef, (snapshot) => {
-      const recs = snapshot.val();
-      if (recs == null) {
-        setRecs([]);
+    const offFunction = onValue(habitRef, (snapshot) => {
+      const habits = snapshot.val();
+      if (habits == null) {
+        setCurrentCards([]);
       } else {
-        setRecs(recs);
+        setCurrentCards(habits);
       }
     });
 
@@ -245,6 +245,11 @@ export default function Cards(props) {
   let cardForm = <AddCard howToAddCard={addCard} key={2} />;
 
   const cardReset = () => {
+    let recs = new Array();
+    firebaseSet(recRef, recs) //reset recs
+      .catch((err) => {});
+    console.log(typeof recs);
+
     const updatedArray = currentCards.map((item) => {
       let newStreak = item.streak;
       if (!item.isComplete) {
@@ -275,16 +280,19 @@ export default function Cards(props) {
     setMax(max);
     setMin(min);
 
-    setRecs([]);
     for (let user in currentAllHabits) {
       const userData = currentAllHabits[user];
+      console.log(userData);
       if (userData.hasOwnProperty("maxStreak")) {
-        setRecs(recs.push(userData.maxStreak));
+        recs.push(userData.maxStreak);
+        console.log(userData.maxStreak);
       }
     }
+    console.log(recs);
 
     firebaseSet(recRef, recs) //change the database
       .catch((err) => {});
+    setRecs(recs);
 
     firebaseSet(habitRef, updatedArray) //change the database
       .catch((err) => {});
